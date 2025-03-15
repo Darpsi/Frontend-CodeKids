@@ -6,7 +6,8 @@ const Register = () => {
   const [formData, setFormData] = useState({
     pk_correo: '',
     nombre: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   });
 
   const [message, setMessage] = useState(''); // ✅ Para mostrar mensajes de éxito o error
@@ -23,12 +24,31 @@ const Register = () => {
     e.preventDefault();
     setMessage(''); // Limpiar mensaje anterior
 
+    // valido que las contraseñas coincidan
+    if (formData.password !== formData.confirmPassword) {
+      setMessage('⚠️ Las contraseñas no coinciden');
+      return;
+    }
+
     try {
-      const result = await registerUser(formData);
+      const result = await registerUser({
+        pk_correo: formData.pk_correo,
+        nombre: formData.nombre,
+        password: formData.password
+      });
+
       console.log('Usuario registrado:', result);
-      alert('Usuario registrado con éxito ✅'); // Mensaje si se registró correctamente
+      setMessage('✅ Usuario registrado con éxito'); // Mensaje de éxito
+
+      //Vacio los campos después del registro exitoso
+      setFormData({
+        pk_correo: '',
+        nombre: '',
+        password: '',
+        confirmPassword: ''
+      });
     } catch (error) {
-      alert(error.message); // Muestra el mensaje exacto del backend (como "El correo ya existe")
+      setMessage(`⚠️ ${error.message}`); // Mensaje de error del backend
     }
   };
 
@@ -67,7 +87,18 @@ const Register = () => {
           required
         />
 
+        <input
+          className="register-input"
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirmar contraseña"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+          required
+        />
+
         <button className="register-button" type="submit">Registrar Cuenta</button>
+
         {message && <p className="register-message">{message}</p>}
       </form>
     </div>

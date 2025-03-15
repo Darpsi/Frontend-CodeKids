@@ -48,3 +48,15 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+.register-message {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: rgb(172, 17, 17); /*Por defecto*/
+}
+
+/* Si el mensaje es de éxito, se verá verde */
+.register-message:contains('✅') {
+    color: green;
+}
