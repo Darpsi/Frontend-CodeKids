@@ -3,12 +3,13 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import RecoverPassword from '../pages/RecoverPassword';
 import Home from '../pages/Home';
+import Modulos from '../pages/Modulos';
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Modulos/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/recover-password" element={<RecoverPassword />} />

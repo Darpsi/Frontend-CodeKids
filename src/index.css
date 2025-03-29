@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&family=Sniglet:wght@400;700&display=swap');
+
+/* Aplicar Sniglet como fuente principal */
+body {
+  font-family: 'Sniglet', sans-serif;
+}
+
+button {
+    font-family: 'Sniglet', sans-serif;
+  }
+  
+/* Usar Sour Gummy para títulos */
+h1, h2, h3, .titulo {
+  font-family: 'Sour Gummy', sans-serif;
+}
