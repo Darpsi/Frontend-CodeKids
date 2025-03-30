@@ -1,15 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/styles/cartamodulos.css";
+import Frente from "../assets/images/cartafrente.jpg";
+import Reverso from "../assets/images/cartareverso.jpg";
+import Bloqueado from "../assets/images/cartabloqueada.jpg";
 
-const CartaModulos = ({ titulo }) => {
+const CartaModulos = ({ titulo, descripcion, disponible }) => {
+  const [volteada, setVolteada] = useState(false);
+
+  const volteo = () => {
+    if (disponible) {
+      setVolteada(!volteada);
+    }
+  };
+
+  const handleClick = (e) => {
+    e.stopPropagation();
+  };
+
   return (
-    <div className="carta">
-      <div className="carta-contenido">
-        <div className="carta-circulo"></div>
-        <p className="carta-texto">{titulo}</p>
-      </div>
+<div className={`carta ${volteada ? "volteada" : ""} ${!disponible ? "bloqueada" : ""}`} onClick={volteo}>
+  <div className="cara reverso">
+    <img src={disponible ? Reverso : Bloqueado} alt="Módulo" />
+    <h3>{titulo}</h3>
+  </div>
+  <div className="cara frente">
+    <div className="contenido-frente">
+      <p className="descripcion">{descripcion}</p>
+      <button className="entrar-btn" onClick={handleClick}>Entrar</button>
     </div>
+    <img className="fondo-imagen" src={Frente} alt="Frente" />
+  </div>
+</div>
   );
-};
+}
 
 export default CartaModulos;
