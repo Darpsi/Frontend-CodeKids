@@ -14,38 +14,71 @@ body {
 
 }
 
+/* Estilos generales */
 .login-container {
-    width: 400px; /* Ancho fijo para la tarjeta */
-    padding: 30px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-.login-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #082ac9;
+  }
+  
+  .login-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+  
+  .login-formulario {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
     text-align: center;
+  }  
+  
+  /* Título */
+  .login-title {
+    font-family: 'Gugi', sans-serif;
+    font-size: 24px;
+    color: #082ac9;
     margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #333;
-}
-
-.login-input {
+  }
+  
+  /* Inputs */
+  .login-input {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.login-button {
+    border: 2px solid #a1d6f8;
+    border-radius: 26px;
+    font-size: 16px;
+    color: #333;
+    background-color: #a1d6f8;
+  }
+  
+  .login-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Botón */
+  .login-button {
     width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
+    padding: 16px;
+    margin-top: 20px;
+    font-size: 20px;
+    background-color: #a1d6f8;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 26px;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
+  }
+  
+  .login-button:hover {
+    background-color: #8bc5e9;
+  }
+  
