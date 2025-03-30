@@ -4,6 +4,7 @@ import Register from '../pages/Register';
 import RecoverPassword from '../pages/RecoverPassword';
 import Home from '../pages/Home';
 import Modulos from '../pages/Modulos';
+import Level from '../pages/Level';
 
 function AppRouter() {
   return (
