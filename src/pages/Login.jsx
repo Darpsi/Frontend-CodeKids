@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { login } from "../services/authService"; // Asegúrate de que esta función existe
 import "../assets/styles/Login.css";
+import loginImage from "../assets/images/login-image.png"; // Importa la imagen arriba
+
 
 
 const Login = () => {
@@ -33,7 +35,7 @@ const Login = () => {
     <div className="login-container">
       {/* Contenedor para la imagen a la izquierda */}
       <div className="login-image">
-        <img src="../assets/images/login-image.png" alt="Chico con setup gaming" />
+        <img src={loginImage} alt="Chico con setup gaming" />
       </div>
 
       {/* Formulario a la derecha */}
@@ -63,7 +65,6 @@ const Login = () => {
         <button className="login-button" type="submit">
           Entrar
         </button>
-        {message && <p>{message}</p>}
       </form>
     </div>
   );
