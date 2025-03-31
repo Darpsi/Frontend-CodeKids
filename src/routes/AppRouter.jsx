@@ -10,9 +10,10 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Level/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Level/>} />
         <Route path="/recover-password" element={<RecoverPassword />} />
         {/* Otras rutas */}
       </Routes>
