@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../assets/styles/cartamodulos.css";
+import { useNavigate } from "react-router-dom";
 import Frente from "../assets/images/cartafrente.jpg";
 import Reverso from "../assets/images/cartareverso.jpg";
 import Bloqueado from "../assets/images/cartabloqueada.jpg";
@@ -13,8 +14,15 @@ const CartaModulos = ({ titulo, descripcion, disponible }) => {
     }
   };
 
+  const navigate = useNavigate();
+
   const handleClick = (e) => {
     e.stopPropagation();
+    try {
+          navigate("/level");
+        } catch (error) {
+          alert(error.message);
+        }
   };
 
   return (
