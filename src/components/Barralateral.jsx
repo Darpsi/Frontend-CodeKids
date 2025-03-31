@@ -19,7 +19,7 @@ const BarraLateral = () => {
         <button>Institución</button>
         <button>Progreso</button>
         <button>Insignias</button>
-        <button>Salir</button>
+        <a href="/">Salir</a>
       </div>
     </div>
     </div>

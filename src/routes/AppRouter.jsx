@@ -9,8 +9,9 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Modulos/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login/>} />
+        <Route path="/modulos" element={<Modulos/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/recover-password" element={<RecoverPassword />} />
         {/* Otras rutas */}

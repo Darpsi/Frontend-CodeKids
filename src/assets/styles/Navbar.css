@@ -1,0 +1,72 @@
+/* Navbar.css */
+.navbar{
+    height: 65px;
+    padding: 0 20px;
+    width: 85%;
+    background-color: #3498db;
+    padding: 10px;
+    border-radius: 20px;
+
+    display: flex; /* Asegura que los elementos dentro del nav se alineen */
+    align-items: center; /* Centra verticalmente los elementos */
+    flex-direction: row;
+    justify-content: end;
+
+    margin-top: 15px;
+}
+
+.lista-nav{
+    padding: 0 10px;
+    margin: 0;
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex; /* Coloca los elementos de la lista en línea */
+    flex-direction: row;
+    align-content: start; /* Espacia los elementos dentro de la lista */
+    gap: 30px; /* Espaciado entre los links */
+}
+
+.links-nav {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.links-nav-register {
+    font-size: 30px;
+    color: #3498db;
+    text-decoration: none;
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+.links-nav:hover {
+    background-color: white;
+    color: #3498db;
+    padding: 5px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.links-nav-register:hover {
+    background-color: #3498db;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+
+
+
