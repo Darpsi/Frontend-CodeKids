@@ -3,6 +3,7 @@ import "../assets/styles/modulos.css";
 import BarraLateral from "../components/Barralateral";
 import CartaModulos from "../components/CartaModulos";
 
+
 const Modulos = () => {
   return (
     <div className="modulos-container">

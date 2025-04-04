@@ -12,8 +12,9 @@ function AppRouter() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
+        <Route path="/modulos" element={<Modulos/>} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Level/>} />
+        <Route path="/level" element={<Level/>} />
         <Route path="/recover-password" element={<RecoverPassword />} />
         <Route path="/modulos" element={<Modulos />} />
         <Route path="/level" element={<Level />} />

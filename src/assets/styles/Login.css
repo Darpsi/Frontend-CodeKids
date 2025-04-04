@@ -76,6 +76,10 @@ body {
   align-items: center;
 }
 
+.login-formulario h2{
+  margin-left: 5px;
+}
+
 .login-title {
   font-family: 'Sour Gummy', sans-serif;
   font-size: 28px;
@@ -83,6 +87,13 @@ body {
   color: #000000;
   margin-bottom: 20px;
   margin-left: 20px;
+}
+
+.login-formulario a{
+  text-decoration: none;
+  color: #1E96FC;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 /* Inputs */

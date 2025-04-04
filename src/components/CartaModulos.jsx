@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Frente from "../assets/images/cartafrente.jpg";
 import Reverso from "../assets/images/cartareverso.jpg";
 import Bloqueado from "../assets/images/cartabloqueada.jpg";
+import { useNavigate } from "react-router-dom";
 
 const CartaModulos = ({ titulo, descripcion, disponible }) => {
   const [volteada, setVolteada] = useState(false);
@@ -13,16 +14,11 @@ const CartaModulos = ({ titulo, descripcion, disponible }) => {
       setVolteada(!volteada);
     }
   };
-
   const navigate = useNavigate();
 
   const handleClick = (e) => {
     e.stopPropagation();
-    try {
-          navigate("/level");
-        } catch (error) {
-          alert(error.message);
-        }
+    navigate("/level");
   };
 
   return (
@@ -34,7 +30,7 @@ const CartaModulos = ({ titulo, descripcion, disponible }) => {
   <div className="cara frente">
     <div className="contenido-frente">
       <p className="descripcion">{descripcion}</p>
-      <button className="entrar-btn" onClick={handleClick}>Entrar</button>
+      <button href= "/level" className="entrar-btn" onClick={handleClick}>Entrar</button>
     </div>
     <img className="fondo-imagen" src={Frente} alt="Frente" />
   </div>

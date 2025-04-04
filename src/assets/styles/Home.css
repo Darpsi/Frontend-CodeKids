@@ -1,42 +1,219 @@
-/* src/assets/styles/Home.css */
+body{
+  background-color: rgb(255, 255, 255);
+}
 
 .home-container {
-    text-align: center;
-    padding: 50px;
-    background-color: #f5f5f5;
-    min-height: 100vh;
-  }
-  
-  .home-title {
-    font-size: 3rem;
-    color: #333;
-    margin-bottom: 20px;
-    margin-left: 20px
-  }
-  
-  .home-subtitle {
-    font-size: 1.5rem;
-    color: #666;
-  }
-  
-  .home-button{
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 50px;
-  }
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .home-links{
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-left: 10px;
-    text-decoration: none;
-    color: black
+/* ------------ INICIO SECTION1 ------*/
+
+.section-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+
+.title {
+  font-size: 5rem; /* 80px/16 = 5rem */
+  color: #3498db;
+  margin-top: 1.5625rem; /* 25px/16 = 1.5625rem */;
+  margin-left: 50px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  height: 80vh;
+  flex-grow: 1;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+.content-img {
+  width: 70%;
+}
+
+.content-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.25rem; /* 20px */
+  transition: transform 0.5s ease;
+}
+
+.content-text {
+  font-size: 2rem;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.625rem; /* 10px */
+  text-align: start;
+  color: #3498db;
+}
+
+
+.content-img img:hover {
+  transform: scale(1.02);
+  transition: transform 0.5s ease;
+}
+
+/* ------------ FIN SECTION1 ------*/
+
+/* ------- INCIO SECTION 2 ------- */
+
+.section-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+
+/* ------- FIN SECTION 2 ------- */
+
+.section-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+/* Footer */
+.site-footer {
+  width: 85%;
+  background-color: #072AC8;
+  color: white;
+  padding: 40px 0 20px;
+  border-radius: 10px 10px 0 0;
+}
+
+.footer-content {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-logo h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #FCF300;
+}
+
+.footer-links {
+  display: flex;
+  gap: 40px;
+}
+
+.link-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #FCF300;
+}
+
+.link-column a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link-column a:hover {
+  color: #FCF300;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #FCF300;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ------------ FIN SECTION 3 ----------*/
+
+/* Media Queries para responsividad */
+@media (max-width: 1200px) {
+  .title {
+    font-size: 4rem;
   }
+  
+  .content-text p {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .content {
+    flex-direction: column;
+    width: 90%;
+
+  
+  .content-img,
+  .content-text {
+    width: 100%;
+  }
+  
+  .content-text {
+    padding: 1.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+    margin-top: 1rem;
+  }
+  
+  .content-text p {
+    font-size: 1.5rem;
+  }
+}
+
+

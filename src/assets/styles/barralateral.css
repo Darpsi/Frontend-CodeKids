@@ -54,7 +54,7 @@
   align-items: center;
 }
 
-.contenido-barra button {
+.contenido-barra button, .contenido-barra a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,13 +69,14 @@
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
 }
 
-.barra-lateral button:hover {
-background: rgb(162, 214, 249);
-transform: scale(1.05);
-border: 2px solid rgb(0, 0, 0);
-}
+
+.barra-lateral button:hover, .barra-lateral a:hover {
+  background: rgb(162, 214, 249);
+  transform: scale(1.05);
+  border: 2px solid rgb(0, 0, 0);}
 
 
 @media (max-width: 768px) {
