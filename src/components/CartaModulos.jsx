@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../assets/styles/cartamodulos.css";
+import { useNavigate } from "react-router-dom";
 import Frente from "../assets/images/cartafrente.jpg";
 import Reverso from "../assets/images/cartareverso.jpg";
 import Bloqueado from "../assets/images/cartabloqueada.jpg";

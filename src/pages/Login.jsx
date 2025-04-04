@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { login } from "../services/authService"; // Asegúrate de que esta función existe
 import "../assets/styles/Login.css";
 import loginImage from "../assets/images/login-image.png"; // Importa la imagen arriba
@@ -10,6 +11,8 @@ const Login = () => {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,9 +26,8 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const result = await login(formData);
-      console.log("Usuario logueado:", result);
-      alert("Usuario logueado con éxito ✅");
+      await login(formData);
+      navigate("/Modulos");
     } catch (error) {
       alert(error.message);
     }

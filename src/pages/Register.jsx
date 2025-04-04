@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { registerUser } from '../services/authService';
+import { useNavigate } from "react-router-dom";
 import '../assets/styles/Register.css';
 import registroImagen from '../assets/images/registro-imagen.jpg'; // Asegúrate de que la imagen está en la ruta correcta
 
@@ -12,6 +13,8 @@ const Register = () => {
   });
 
   const [message, setMessage] = useState('');
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +40,7 @@ const Register = () => {
         password: formData.password
       });
 
-      setMessage('✅ Usuario registrado con éxito');
+      navigate("/Modulos");
 
       setFormData({
         pk_correo: '',

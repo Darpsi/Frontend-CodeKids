@@ -16,6 +16,8 @@ function AppRouter() {
         <Route path="/register" element={<Register />} />
         <Route path="/level" element={<Level/>} />
         <Route path="/recover-password" element={<RecoverPassword />} />
+        <Route path="/modulos" element={<Modulos />} />
+        <Route path="/level" element={<Level />} />
         {/* Otras rutas */}
       </Routes>
     </BrowserRouter>
