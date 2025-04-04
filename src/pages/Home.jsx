@@ -4,7 +4,6 @@ import '../assets/styles/Home.css';
 // Importacion de componentes
 import Navbar from '../components/Navbar';
 import CardHome from '../components/Card-home';
-//import Typewriter from '../components/Text-home';
 
 // Importacion de imagenes
 import img_home from '../assets/images/home.jpg';
@@ -20,7 +19,6 @@ const Home = () => {
     {/* Se divide la pantall principal por diferentes secciones */}
       <section className="section-1">
         <Navbar />
-        {/*<Typewriter />*/} 
         <h1 className="title">Bienvenido a Codekids</h1>
         <div className="content">
           <div className="content-img">
@@ -28,8 +26,7 @@ const Home = () => {
           </div>
           <div className="content-text">
             <p className="description-text">
-            CodeKids es una plataforma educativa que enseña a los niños a programar de manera divertida y creativa. 
-            Con nuestros módulos de aprendizaje, los niños desarrollan habilidades tecnológicas y de resolución de problemas. 
+            CodeKids es una plataforma educativa que enseña a los niños a programar de manera divertida y creativa.
             </p> 
               
           </div>

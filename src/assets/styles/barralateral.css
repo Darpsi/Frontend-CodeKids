@@ -1,96 +1,94 @@
 .barra-lateral {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 250px;
-    background: rgb(7, 42, 200);
-    color: white;
-    padding: 40px;
-    height: 100vh;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .barra-lateral.oculta {
-    transform: translateX(-80%);
-  }
-  
-  .perfil img {
-    width: 71%;
-    height: 71%;
-    border-radius: 100%;
-    object-fit: cover;
-  }
-  
-  .toggle {
-    position: absolute;
-    top: 10px;
-    left: calc(100% - 16%);
-    background: rgb(7, 42, 200);
-    border: none;
-    color: white;
-    font-size: 120%;
-    cursor: pointer;
-    padding: 2%;
-    transition: left 0.3s ease-in-out;
-  }
-  
-  .contenido-barra {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .perfil {
-    text-align: center;
-  }
-
-  .botones-barra {
-    width: 88%;
-    border-top: 2px solid rgba(255, 255, 255, 0.3);
-    padding-top: 15%;
-    margin-top: 15%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  background: rgb(7, 42, 200);
+  color: white;
+  padding: 40px;
+  height: 100vh;
+  transition: transform 0.3s ease-in-out;
 }
 
-  .contenido-barra button, .contenido-barra a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    min-width: 120px;
-    padding: 5%;
-    margin: 12%;
-    background: rgba(7,42,200);
-    border: 2px solid rgb(30, 150, 252);
-    border-radius: 8px;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    text-decoration: none;
+.barra-lateral.oculta {
+  transform: translateX(-80%);
+}
+
+.perfil img {
+  width: 71%;
+  height: 71%;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.toggle {
+  position: absolute;
+  top: 10px;
+  left: calc(100% - 16%);
+  background: rgb(7, 42, 200);
+  border: none;
+  color: white;
+  font-size: 120%;
+  cursor: pointer;
+  padding: 2%;
+  transition: left 0.3s ease-in-out;
+}
+
+.contenido-barra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perfil {
+  text-align: center;
+}
+
+.botones-barra {
+  width: 88%;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  padding-top: 15%;
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenido-barra button, .contenido-barra a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  min-width: 120px;
+  padding: 5%;
+  margin: 12%;
+  background: rgba(7,42,200);
+  border: 2px solid rgb(30, 150, 252);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
 }
 
 
 .barra-lateral button:hover, .barra-lateral a:hover {
   background: rgb(162, 214, 249);
   transform: scale(1.05);
-  border: 2px solid rgb(0, 0, 0);
-}
+  border: 2px solid rgb(0, 0, 0);}
 
 
-  @media (max-width: 768px) {
-    .barra-lateral {
-      width: 200px;
-    }
-  
-    .toggle {
-      left: calc(100% - 30px);
-    }
-  
-    .barra-lateral.oculta .toggle {
-      left: calc(20% - 30px);
-    }
+@media (max-width: 768px) {
+  .barra-lateral {
+    width: 200px;
   }
-  
+
+  .toggle {
+    left: calc(100% - 30px);
+  }
+
+  .barra-lateral.oculta .toggle {
+    left: calc(20% - 30px);
+  }
+}

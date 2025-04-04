@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
+
+body {
+    font-family: 'Sour Gummy', sans-serif;
+    text-align: center;
+    background-color: white;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-left: -300px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: -300px;
+}
+
+.question-box {
+  background-color: #a2d6f9;
+  padding: 20px;
+  border-radius: 15px;
+  width: 70%;
+  margin: 20px auto;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: -80px;
+}
+
+.option {
+  background-color: #a2d6f9;
+  padding: 15px;
+  border-radius: 25px;
+  width: 60%;
+  margin: 10px auto;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: -55px;
+}
+
+.option:hover {
+  background-color: #1e96fc;
+}
+
+.progress-bar-container {
+  width: 60%;
+  height: 15px;
+  background-color: #ddd;
+  border-radius: 10px;
+  margin: 20px auto;
+  overflow: hidden;
+  margin-left: -55px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #072ac8;
+  width: 100%;
+  transition: width 0.1s linear;
+}
+
+.selected {
+  background-color: #1e96fc;
+}
+
+.correct {
+  background-color: green !important;
+  color: white;
+}
+
+.wrong {
+  background-color: red !important;
+  color: white;
+}
+
+.reset {
+  background-color: white !important;
+  color: black !important;
+  transition: none;
+}

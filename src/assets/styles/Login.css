@@ -1,51 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
+
+
+/* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  font-family: 'Sour Gummy', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
+/* Contenedor general */
 .login-container {
-    width: 400px; /* Ancho fijo para la tarjeta */
-    padding: 30px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex;
+  width: 900px;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor flexible que divide imagen y formulario */
+.login-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 80vh;
+  background-color: #a2d6f9;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Imagen a la izquierda */
+.login-image {
+  background-image: url("../images/login-image.png");
+  background-size: cover;
+  background-position: center;
+  width: 50%; /* Ajusta según sea necesario */
+  height: 100vh;
+}
+
+
+.login-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Formulario a la derecha */
+.login-form-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* Estilos del formulario */
+.login-formulario {
+  flex: 1;
+  background: #ffffff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-formulario h2{
+  margin-left: 5px;
 }
 
 .login-title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #333;
+  font-family: 'Sour Gummy', sans-serif;
+  font-size: 28px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 20px;
 }
 
+.login-formulario a{
+  text-decoration: none;
+  color: #1E96FC;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Inputs */
 .login-input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: 2px solid #82c4e8;
+  border-radius: 26px;
+  font-size: 16px;
+  color: #333;
+  background-color: white;
 }
 
+.login-input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+
+/* Botón */
 .login-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 16px;
+  margin-top: 20px;
+  font-size: 20px;
+  background-color: #1E96FC;
+  border: none;
+  border-radius: 26px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #072ac8;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .login-wrapper {
+      flex-direction: column;
+      height: auto;
+  }
+
+  .login-image {
+      height: 250px;
+  }
 }

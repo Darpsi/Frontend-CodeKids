@@ -4,15 +4,17 @@ import Register from '../pages/Register';
 import RecoverPassword from '../pages/RecoverPassword';
 import Home from '../pages/Home';
 import Modulos from '../pages/Modulos';
+import Level from '../pages/Level';
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/modulos" element={<Modulos/>} />
         <Route path="/register" element={<Register />} />
+        <Route path="/level" element={<Level/>} />
         <Route path="/recover-password" element={<RecoverPassword />} />
         {/* Otras rutas */}
       </Routes>
