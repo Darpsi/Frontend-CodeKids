@@ -1,69 +1,108 @@
 .piramide-container {
-    text-align: center;
-    background: white;
-    padding: 2rem;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .piramide-rectangular {
-    position: relative;
-    height: 400px;
-    margin: 2rem auto;
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  /* Cada nivel base */
-  .nivel {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #fbc02d;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-    overflow: hidden;
-    padding: 0.5rem;
-    box-sizing: border-box;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
-  
-  /* Colores y tamaños de niveles (de mayor a menor hacia arriba) */
-  .nivel-1 { width: 100%; bottom: 0; height: 50px; }
-  .nivel-2 { width: 90%; bottom: 50px; height: 50px; }
-  .nivel-3 { width: 80%; bottom: 100px; height: 50px; }
-  .nivel-4 { width: 70%; bottom: 150px; height: 50px; }
-  .nivel-5 { width: 60%; bottom: 200px; height: 50px; }
-  .nivel-6 { width: 50%; bottom: 250px; height: 50px; }
-  .nivel-7 { width: 40%; bottom: 300px; height: 50px; }
-  
-  /* Cuando está activo se expande */
-  .nivel.activo {
-    height: 120px;
-    background-color: #fdd835;
-    z-index: 2;
-    justify-content: flex-start;
-    padding-top: 0.5rem;
-  }
-  
-  .label {
-    pointer-events: none;
-    margin-bottom: 0.5rem;
-  }
-  
-  .contenido {
-    font-size: 0.85rem;
-    background-color: #fffde7;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    border: 1px solid #fbc02d;
-  }
-  
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.contenido-central {
+  margin-left: 350px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.piramide-rectangular {
+  position: relative;
+  height: 455px;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+.nivel {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fbc02d;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  overflow: hidden;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Pirámide escalonada con bordes diagonales usando clip-path */
+.nivel-1 {
+  width: 140%;
+  bottom: 0;
+  height: 70px;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+.nivel-2 {
+  width: 112%;
+  bottom: 75px;
+  height: 70px;
+  clip-path: polygon(12% 0%, 88% 0%, 100% 100%, 0% 100%);
+}
+.nivel-3 {
+  width: 85%;
+  bottom: 150px;
+  height: 80px;
+  clip-path: polygon(14% 0%, 86% 0%, 100% 100%, 0% 100%);
+}
+.nivel-4 {
+  width: 61%;
+  bottom: 235px;
+  height: 70px;
+  clip-path: polygon(16% 0%, 84% 0%, 100% 100%, 0% 100%);
+}
+
+.nivel-5 {
+  width: 74%;
+  bottom: 310px;
+  height: 150px;
+  clip-path: polygon(50% 0%, 50% 0%, 78% 100%, 22% 100%);
+  transition: clip-path 0.5s ease;
+}
+
+
+.nivel.activo {
+  height: 120px;
+  background-color: #fdd835;
+  z-index: 2;
+  justify-content: flex-start;
+  padding-top: 0.5rem;
+}
+
+.nivel-5.activo {
+  height: 150px;
+  background-color: #fdd835;
+  z-index: 2;
+  justify-content: flex-start;
+  padding-top: 0.5rem;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.label {
+  pointer-events: none;
+  margin-bottom: 0.5rem;
+}
+
+.contenido {
+  font-size: 0.85rem;
+  background-color: #fffde7;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #fbc02d;
+}
+
   
   

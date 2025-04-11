@@ -8,8 +8,6 @@ const niveles = [
     { id: 3, label: "Nivel 3", info: "Tipos de datos y variables." },
     { id: 4, label: "Nivel 4", info: "Funciones y modularidad." },
     { id: 5, label: "Nivel 5", info: "Estructuras de datos." },
-    { id: 6, label: "Nivel 6", info: "Lógica de programación avanzada." },
-    { id: 7, label: "Nivel 7", info: "Resolución de problemas complejos." },
   ];
   
   const Piramide = () => {
@@ -22,8 +20,10 @@ const niveles = [
     return (
       <div className="piramide-container">
         <BarraLateral />
-        <h1>PIRÁMIDE DE CONOCIMIENTO</h1>
-        <h2>¡Demuestra lo que sabes!</h2>
+        <div className="contenido-central">
+          <h1>PIRÁMIDE DE CONOCIMIENTO</h1>
+          <h2>¡Elije un nivel!</h2>
+        </div>
   
         <div className="piramide-rectangular">
           {niveles.map((nivel) => (
