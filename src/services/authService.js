@@ -1,65 +1,79 @@
 // src/services/authService.js
 // Aqui se encuentran las funciones para hacer peticiones al backend.
 
+// src/services/authService.js
+
 import axios from 'axios';
 
-const API_URL = 'http://localhost:4000/'; // Ruta del backend
+const API_URL = 'http://localhost:4000';
 
+// Función para iniciar sesión
 export const login = async (formData) => {
   try {
-    const result = await fetch('http://localhost:4000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ 
-        pk_correo: formData.email, 
-        password: formData.password 
-      })
-      
+    const response = await axios.post(`${API_URL}/login`, {
+      pk_correo: formData.email,
+      password: formData.password
     });
 
-    const data = await result.json();
-
-    if (!result.ok) {
-      throw new Error(data.message || 'Error al iniciar sesión');
-    }
-
-    return data;
-    
+    return response.data;
   } catch (error) {
-    console.error('Error en la petición:', error.message);
-    throw error;
+    handleAxiosError(error, 'Error al iniciar sesión');
   }
 };
-
 
 // Función para registrar un usuario
 export const registerUser = async (formData) => {
   try {
-    const response = await fetch('http://localhost:4000/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.message ||'Error al registrar usuario');
-    }
-
-    return data;
+    const response = await axios.post(`${API_URL}/users`, formData);
+    return response.data;
   } catch (error) {
-    console.error('Error en la petición:', error.message);
-    throw error; // Re-lanzar el error para que Register.jsx lo maneje
+    handleAxiosError(error, 'Error al registrar usuario');
   }
 };
 
-
+// Función para solicitar recuperación de contraseña
 export const recoverPassword = async (email) => {
-  const result = await axios.post(`${API_URL}/recover-password`, { email });
-  return result.data;
+  try {
+    const response = await axios.post(`${API_URL}/request-reset`, { email });
+    return response.data;
+  } catch (error) {
+    throw handleAxiosError(error, 'Error al recuperar contraseña');
+  }
 };
+
+// Función para verificar el token recibido por email
+export const verifyToken = async (token) => {
+  try {
+    const response = await axios.post(`${API_URL}/verify-token`, { token });
+    return response.data;
+  } catch (error) {
+    handleAxiosError(error, 'Error al verificar el token');
+  }
+};
+
+// Función para cambiar la contraseña con el token
+export const resetPassword = async (token, newPassword) => {
+  try {
+    const response = await axios.post(`${API_URL}/reset-password`, {
+      token,
+      newPassword
+    });
+    return response.data;
+  } catch (error) {
+    handleAxiosError(error, 'Error al restablecer la contraseña');
+  }
+};
+
+// Función reutilizable para manejar errores de axios
+const handleAxiosError = (error, defaultMessage) => {
+  if (error.response && error.response.data) {
+    const data = error.response.data;
+    const message = data.message || data.error; // ← aquí se considera ambos casos
+    if (message) {
+      throw new Error(message);
+    }
+  }
+  console.error(defaultMessage, error);
+  throw new Error(defaultMessage);
+};
+

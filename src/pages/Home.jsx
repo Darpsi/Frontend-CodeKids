@@ -4,98 +4,55 @@ import '../assets/styles/Home.css';
 // Importacion de componentes
 import Navbar from '../components/Navbar';
 import CardHome from '../components/Card-home';
+import Footer from '../components/Footer';
 
 // Importacion de imagenes
-import img_home from '../assets/images/home.jpg';
-import home1 from '../assets/images/Home1.jpg';
-import home2 from '../assets/images/Home2.jpg';
-import home3 from '../assets/images/Home3.jpg';
+import niño_home from '../assets/images/home/niño-home.jpg'
+import logica from "../assets/images/home/logica.png"
+import conceptos from "../assets/images/home/conceptos.png"
+import sueños from "../assets/images/home/sueños.png"
+
 
 const Home = () => {
+
   return (
-    // contenedor principal MAIN
     <div className="home-container">
 
-    {/* Se divide la pantall principal por diferentes secciones */}
       <section className="section-1">
         <Navbar />
-        <h1 className="title">Bienvenido a Codekids</h1>
-        <div className="content">
-          <div className="content-img">
-            <img src= {img_home} alt="Codekids" />
+        <div className="contenido-1">
+          <div className='contenido-text1'>
+            <h1>Bienvenido</h1>
+            <h2>a Codekids!</h2>
+            <p>Aprende las bases de la programación con Codekids, diviertete y sueña con las diversas clases que tenemos preparadas para ti! </p>
+            <p>No lo dudes mas y <a href="/register">Aprende ahora!</a></p>
           </div>
-          <div className="content-text">
-            <p className="description-text">
-            CodeKids es una plataforma educativa que enseña a los niños a programar de manera divertida y creativa.
-            </p> 
-              
+          <div className='contenido-img1'>
+            <img src={niño_home} alt="Codekids" />
           </div>
         </div>
       </section>
 
-      {/* Seccion 2 se encuentran las cartas informativas */}
-      <section className="section-2">
-        <CardHome 
-          img={home1}
-          title="Conoce mas sobre CodeKids"
-          text="Con Codektids podrás programar tus sueños, no dudes más y empieza ahora esta gran aventura."
-        />
+      <section className='section-2'>
+        <h2 className='titulo'>En Codekids</h2>
+        <h2 className='subtitulo'>Desarrollaras nuevas habilidades</h2>
+        <div className='tarjetas'>
 
-        <CardHome 
-          img={home2}
-          title="Módulos de aprendizaje"
-          text="Tenemos diversos módulos de aprendizaje en donde te enfrentarás a grandes retos, ganarás premios y te divertirás como nunca!"
-          reverse={true}
-        />
+          <CardHome 
+          img = {logica}
+          text = "Aprende a pensar como un programador y resuelve problemas de forma eficiente"/>
+          <CardHome 
+          img = {conceptos}
+          text = "Descubre herramientas y conocimientos que te ayudarán a crear grandes proyectos"/>
+          <CardHome 
+          img = {sueños}
+          text = "Explora, crea e innova, el único límite es tu creatividad."/>
+
+        </div>
       </section>
 
-      {/* Seccion 3 se encuentra una carta informativa y el footer */}
-      <section className="section-3">
-        <CardHome 
-          img={home3}
-          title="Aprende a programar"
-          text="La programación es como un superpoder. ¡Desarrolla tu creatividad y conviértete en
-          un genio digital!"
-        />
-
-        <footer className="site-footer">
-          <div className="footer-content">
-            <div className="footer-logo">
-              <h3>CodeKids</h3>
-              <p>Programando el futuro de los niños</p>
-            </div>
-            
-            <div className="footer-links">
-              <div className="link-column">
-                <h4>Explorar</h4>
-                <a href="/">Módulos</a>
-                <a href="/">Precios</a>
-                <a href="/">Blog</a>
-              </div>
-              
-              <div className="link-column">
-                <h4>Soporte</h4>
-                <a href="/">Preguntas frecuentes</a>
-                <a href="/">Contacto</a>
-                <a href="/">Política de privacidad</a>
-              </div>
-            </div>
-            
-            <div className="footer-social">
-              <h4>Síguenos</h4>
-              <div className="social-icons">
-                <a href="/"><i className="fab fa-facebook"></i></a>
-                <a href="/"><i className="fab fa-twitter"></i></a>
-                <a href="/"><i className="fab fa-instagram"></i></a>
-                <a href="/"><i className="fab fa-youtube"></i></a>
-              </div>
-            </div>
-          </div>
-          
-          <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} CodeKids. Todos los derechos reservados.</p>
-          </div>
-        </footer>
+      <section className='section-footer'>
+        <Footer />
       </section>
 
     </div>

@@ -3,10 +3,11 @@ body{
 }
 
 .home-container {
-  background-color: rgb(255, 255, 255);
+  background-color: #F2F2F2;
   margin: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,114 +23,139 @@ body{
 
   width: 100%;
   height: 100vh;
-  background-color: rgb(255, 255, 255);
+  background-color: transparent;
 }
 
-.title {
-  font-size: 5rem; /* 80px/16 = 5rem */
+.contenido-1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: calc(100vh - 70px);
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.contenido-text1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 50%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.contenido-text1 h1{
+  font-size: 7rem; 
   color: #3498db;
-  margin-top: 1.5625rem; /* 25px/16 = 1.5625rem */;
   margin-left: 50px;
 }
 
-.content {
+.contenido-text1 h2{
+  font-size: 5rem; 
+  color: #FFC600;
+  margin-top: -2rem; 
+  margin-left: 50px;
+}
+
+.contenido-text1 p{
+  text-align: start;
+  font-size: 2rem; 
+  color: #3498db;
+  margin-top: 2.5rem;
+  margin-left: 50px;
+  width: 80%;
+}
+
+.contenido-text1 a{
+  text-decoration: none;
+  color: black;
+  background-color: #FFC600;
+  padding: 0.520rem 1rem;
+  border-radius: 0.625rem;;
+  transition: all 0.3s ease;
+}
+
+.contenido-text1 a:hover{
+  background-color: #FFD700; /* Amarillo más brillante */
+    transform: scale(1.1); /* Efecto de crecimiento */
+    box-shadow: 0 0 20px rgba(255, 198, 0, 0.6);
+}
+
+.contenido-img1{
   display: flex;
-  flex-direction: row;
-  width: 85%;
-  height: 80vh;
-  flex-grow: 1;
-  background-color: rgb(255, 255, 255);
-  margin-bottom: 1.25rem; /* 20px */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 70%;
+  background-color: transparent
 }
 
-.content-img {
-  width: 70%;
-}
-
-.content-img img {
+.contenido-img1 img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 1.25rem; /* 20px */
-  transition: transform 0.5s ease;
-}
-
-.content-text {
-  font-size: 2rem;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0.625rem; /* 10px */
-  text-align: start;
-  color: #3498db;
-}
-
-
-.content-img img:hover {
-  transform: scale(1.02);
-  transition: transform 0.5s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* ------------ FIN SECTION1 ------*/
 
-/* ------- INCIO SECTION 2 ------- */
 
-.section-2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* ------------ INICIO SECTION2 ------*/
+
+.section-2{
+  min-height: 100vh;
   width: 100%;
-  height: 100vh;
-  background-color: rgb(255, 255, 255);
-}
+  background-color: #F2F2F2;
 
-/* ------- FIN SECTION 2 ------- */
-
-.section-3 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+
+.titulo{
+  font-size: 5rem;
+  color: #FFC600;
+}
+
+.subtitulo{
+  font-size: 4rem;
+  color: #3498db;
+  margin-top: -1.8rem;
+  
+}
+
+.titulo, .subtitulo{
+  margin-left: 20px;
+}
+
+.tarjetas{
+  width: 95%;
+  height: calc(100vh - 11rem);
+
+  display: flex;
+  flex-direction: row;
+}
+
+/* ------------ FIN SECTION2 ------*/
+
+
+
+/* ------------ INICIO FOOTER ------*/
+
+.section-footer {
   width: 100%;
-  height: 100vh;
-  background-color: rgb(255, 255, 255);
-}
-/* Footer */
-.site-footer {
-  width: 85%;
-  background-color: #072AC8;
-  color: white;
-  padding: 40px 0 20px;
-  border-radius: 10px 10px 0 0;
-}
-
-.footer-content {
-  width: 85%;
-  margin: 0 auto;
+  min-height: 30vh; 
+  background-color: #F2F2F2;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-}
 
-.footer-logo h3 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #FCF300;
-}
-
-.footer-links {
-  display: flex;
-  gap: 40px;
-}
-
-.link-column {
-  display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  justify-content: flex-start; 
 }
 
 .link-column h4 {
@@ -203,6 +229,7 @@ body{
   .content-text {
     padding: 1.5rem 0;
   }
+  }
 }
 
 @media (max-width: 768px) {
@@ -216,4 +243,7 @@ body{
   }
 }
 
+
+
+/* ------------ FIN FOOTER ------*/
 

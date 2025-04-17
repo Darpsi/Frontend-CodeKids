@@ -1,16 +1,15 @@
 import React from "react";
 import "../assets/styles/Card-home.css";
 
-const CardHome = ({ img, text, title, reverse = false }) => {
+const CardHome = ({ img, text}) => {
   return (
-    <div className={`card-content ${reverse ? 'reverse-layout' : ''}`}>
-      <div className="card-img">
-        <img src={img} alt={title || "Imagen descriptiva"} />
-      </div>
-      <div className="card-text">
-        {title && <h3 className="card-title">{title}</h3>}
-        <p>{text}</p>
-      </div>
+    <div className="card-contain">
+        <div className="card-img">
+            <img src={img} alt="imagen" />     
+        </div>
+        <div className="card-text">
+            <p>{text}</p>
+        </div>
     </div>
   );
 };

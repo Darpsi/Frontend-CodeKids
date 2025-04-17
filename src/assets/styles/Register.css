@@ -1,24 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Sour Gummy', sans-serif;
-    background-color: #a2d6f9;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-body, html {
-    background-color: #a2d6f9 !important;
-    min-height: 100vh;
-}
 
 .register-page {
     background-color: #a2d6f9;
@@ -121,4 +106,18 @@ body, html {
 /* Si el mensaje es de éxito, se verá verde */
 .register-message:contains('✅') {
     color: green;
+}
+
+.links-form{
+    width: 70%;
+    display: flex;
+    justify-content: start;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+.links-form a{
+    text-decoration: none;
+    color:#3498db;
+    font-size: 18px;
 }
