@@ -1,16 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
-
-
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Sour Gummy', sans-serif;
-  background-color: #f5f5f5;
+.section-login{
+  background-color: #a2d6f9;
   display: flex;
   justify-content: center;
   align-items: center;
