@@ -1,0 +1,68 @@
+.maxgame-container {
+    text-align: center;
+    background-color: #fff9c4;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-family: 'Comic Sans MS', cursive;
+  }
+
+  .maxgame-container h2 {
+    text-align: left;
+    margin-left: 100px;
+  }
+  
+  .max-img {
+    width: 150px;
+    margin-bottom: 1rem;
+  }
+  
+  .acciones-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .accion-btn {
+    background-color: #f0f4c3;
+    border: 2px solid #cddc39;
+    border-radius: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .accion-btn img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .orden-container {
+    margin-bottom: 2rem;
+  }
+  
+  .orden-item {
+    display: inline-block;
+    margin: 0 0.5rem;
+  }
+  
+  .orden-item img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .botones button {
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border: none;
+    background-color: #aed581;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  

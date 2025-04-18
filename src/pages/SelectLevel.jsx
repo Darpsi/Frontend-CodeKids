@@ -3,12 +3,25 @@ import "../assets/styles/SelectLevel.css";
 import BarraLateral from "../components/Barralateral";
 
 const niveles = [
-    { id: 1, label: "Nivel 1", info: "Conceptos básicos de programación." },
-    { id: 2, label: "Nivel 2", info: "Sintaxis y estructuras de control." },
-    { id: 3, label: "Nivel 3", info: "Tipos de datos y variables." },
-    { id: 4, label: "Nivel 4", info: "Funciones y modularidad." },
-    { id: 5, label: "Nivel 5", info: "Estructuras de datos." },
+  {
+    id: 1,
+    label: "Nivel 1",
+    info: (
+      <>
+        Introducción a conceptos básicos de programación.
+        <br />
+        ¡Prueba tu conocimiento previo! Responde 2 de 3 preguntas correctas y pasa 
+        <br />
+        al siguiente nivel.
+      </>
+    ),
+  },
+  { id: 2, label: "Nivel 2", info: "Secuencias y logica basicas." },
+  { id: 3, label: "Nivel 3", info: "Tipos de datos y variables." },
+  { id: 4, label: "Nivel 4", info: "Funciones y modularidad." },
+  { id: 5, label: "Nivel 5", info: "Estructuras de datos." },
   ];
+
   
   const Piramide = () => {
     const [activo, setActivo] = useState(null);
