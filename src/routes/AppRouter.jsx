@@ -12,7 +12,7 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MaxGame/>} />
+        <Route path="/" element={<SelectLevel/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/modulos" element={<Modulos/>} />
         <Route path="/register" element={<Register />} />

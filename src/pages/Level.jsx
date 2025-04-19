@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../assets/styles/Level.css";
 import BarraLateral from "../components/Barralateral";
 
@@ -26,8 +27,12 @@ const Level0 = () => {
   const [timeLeft, setTimeLeft] = useState(100);
   const [timeUp, setTimeUp] = useState(false);
   const [quizFinished, setQuizFinished] = useState(false);
-  const correctAnswer = questions[currentQuestionIndex].correct;
+  const [correctCount, setCorrectCount] = useState(0);
   const [optionStyles, setOptionStyles] = useState({});
+  const [result, setResult] = useState("");
+
+  const navigate = useNavigate();
+  const correctAnswer = questions[currentQuestionIndex].correct;
 
   useEffect(() => {
     if (!quizFinished) {
@@ -55,9 +60,14 @@ const Level0 = () => {
 
       return () => clearInterval(timer);
     } else if (timeLeft === 0) {
+      const isCorrect = selectedOption === correctAnswer;
+      if (isCorrect) setCorrectCount((prev) => prev + 1);
+
       setOptionStyles({
-        [selectedOption]: selectedOption === correctAnswer ? "correct" : "wrong", [correctAnswer]: "correct",
+        [selectedOption]: isCorrect ? "correct" : "wrong",
+        [correctAnswer]: "correct",
       });
+
       setTimeout(() => {
         if (currentQuestionIndex < questions.length - 1) {
           setSelectedOption(null);
@@ -67,6 +77,7 @@ const Level0 = () => {
           setOptionStyles({});
         } else {
           setQuizFinished(true);
+          setResult(isCorrect || correctCount >= 2 ? "ganado" : "perdido");
         }
       }, 1000);
     }
@@ -76,11 +87,36 @@ const Level0 = () => {
     setSelectedOption(option);
   };
 
+  const handleRetry = () => {
+    setCurrentQuestionIndex(0);
+    setSelectedOption(null);
+    setTimeLeft(100);
+    setTimeUp(false);
+    setQuizFinished(false);
+    setCorrectCount(0);
+    setOptionStyles({});
+    setResult("");
+  };
+
+  const handleBack = () => {
+    navigate("/select-level");
+  };
+
   if (quizFinished) {
     return (
       <div className="container">
         <h1>NIVEL 0</h1>
-        <h2>¡Has completado el cuestionario!</h2>
+        {result === "ganado" ? (
+          <h2>✅ ¡Has completado el cuestionario con éxito!</h2>
+        ) : (
+          <h2>❌ No lograste responder suficientes preguntas. Intenta de nuevo.</h2>
+        )}
+        <div style={{ marginTop: "1.5rem" }}>
+          <button onClick={handleRetry} className="boton-final">🔁 Reintentar</button>
+          <button onClick={handleBack} className="boton-final" style={{ marginLeft: "1rem" }}>
+            🔙 Volver a Niveles
+          </button>
+        </div>
       </div>
     );
   }
@@ -108,5 +144,6 @@ const Level0 = () => {
 };
 
 export default Level0;
+
 
 

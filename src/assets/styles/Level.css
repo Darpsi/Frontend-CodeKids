@@ -82,3 +82,18 @@ h2 {
   color: black !important;
   transition: none;
 }
+
+.boton-final {
+  padding: 0.7rem 1.2rem;
+  background-color: #ffd54f;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.boton-final:hover {
+  background-color: #fbc02d;
+}

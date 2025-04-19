@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
+
 .piramide-container {
   text-align: center;
   background: white;
   padding: 2rem;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Sour Gummy', sans-serif;
 }
 
 .contenido-central {
@@ -39,7 +41,6 @@
   font-weight: bold;
 }
 
-/* Pirámide escalonada con bordes diagonales usando clip-path */
 .nivel-1 {
   width: 140%;
   bottom: 0;
@@ -104,5 +105,25 @@
   border: 1px solid #fbc02d;
 }
 
-  
+.espaciado-boton {
+  margin-top: 1rem;
+}
+
+.boton-entrar {
+  background-color: #fbc02d;
+  color: #333;
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Sour Gummy', sans-serif;
+}
+
+.boton-entrar:hover {
+  background-color: #fdd835;
+}
+
+
   
