@@ -7,6 +7,7 @@ import Level from '../pages/Level';
 import RecoverPassword from '../pages/Forgot-password';
 import VerifyToken from '../pages/Verify-token';
 import ResetPassword from '../pages/Reset-password';
+import Perfil from "../pages/Perfil";
 
 function AppRouter() {
   return (
@@ -18,6 +19,7 @@ function AppRouter() {
         <Route path="/register" element={<Register />} />
         <Route path="/level" element={<Level/>} />
         <Route path="/forgot-password" element={<RecoverPassword />} />
+        <Route path="/perfil" element={<Perfil />} />
         <Route path="/verify-token" element={<VerifyToken />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         {/* Otras rutas */}
