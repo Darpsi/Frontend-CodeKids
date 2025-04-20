@@ -1,110 +1,49 @@
+.card-contain{
+    height: 85%;
+    width: 30%;
 
-.card-content {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 
-    width: 85%;
-    height: 50vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0.625rem;
+    margin-left: 2.5rem;
+    margin-top: 2rem;
 
-    padding: 15px;
-    margin: 1.5rem;
+    transition: all 0.3s ease;
+}
 
-    border-radius: 1.25rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    
+.card-contain:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
 
-    background: white;
-    overflow: hidden;
-  }
-  
-  .card-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    background-color: white;
-  }
-  
-  .card-content.reverse-layout {
-    flex-direction: row-reverse;
-  }
-  
-  .card-img {
-    width: 40%;
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: all 0.4s ease;
-  }
-  
-  .card-content:hover .card-img {
-    transform: scale(1.02);
-  }
-  
-  .card-img img {
+.card-img{
+    height: 50%;
+    width: 100%;
+}
+
+.card-img img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  .card-content:hover .card-img img {
-    transform: scale(1.05);
-  }
-  
-  .card-text {
-    width: 50%;
-    padding: 1.5rem;
-    font-size: 1.5rem;
-    line-height: 1.6;
-    color: #333;
-  }
-  
-  .card-title {
-    font-size: 2.2rem;
-    color: #072AC8;
-    margin-bottom: 1rem;
-    position: relative;
-  }
-  
-  .card-title::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: #3498db;
-    transition: width 0.3s ease;
-  }
-  
-  .card-content:hover .card-title::after {
-    width: 100px;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 992px) {
-    .card-content {
-      flex-direction: column;
-      height: auto;
-    }
-    
-    .card-img,
-    .card-text {
-      width: 100%;
-    }
-    
-    .card-img {
-      height: 40vh;
-      margin-bottom: 1.5rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .card-text {
-      font-size: 1.2rem;
-    }
-    
-    .card-title {
-      font-size: 1.8rem;
-    }
-  }
+    object-fit: contain;
+    padding: 20px;
+    padding-top: 30px;
+}
+
+.card-text{
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-text p{
+    color: #3498db;
+    font-size: 2rem;
+}

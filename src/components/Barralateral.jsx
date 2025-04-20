@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import "../assets/styles/barralateral.css";
+import { useNavigate } from "react-router-dom";
 import perfil from "../assets/images/perfil.png";
+import "../assets/styles/barralateral.css";
 
 const BarraLateral = () => {
   const [visible, setVisible] = useState(true);
+  const navigate = useNavigate();
+
+  const irAPerfil = () => {
+    navigate("/perfil");
+  };
 
   return (
     <div className={`barra-lateral ${visible ? "visible" : "oculta"}`}>
@@ -13,15 +19,12 @@ const BarraLateral = () => {
       <div className="contenido-barra">
         <div className="perfil">
           <img src={perfil} alt="Perfil" />
-          <p>Perfil</p>
+          <button onClick={irAPerfil}>Perfil</button>
         </div>
         <div className="botones-barra">
-        <button>Institución</button>
-        <button>Progreso</button>
-        <button>Insignias</button>
-        <a href="/">Salir</a>
+          <a href="/">Salir</a>
+        </div>
       </div>
-    </div>
     </div>
   );
 };
