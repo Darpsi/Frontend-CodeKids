@@ -1,0 +1,95 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import perfilImg from "../assets/images/perfil.png";
+import PopupModal from "../components/PopupModal";
+import "../assets/styles/Perfil.css";
+
+const Perfil = () => {
+  const [modalVisible, setModalVisible] = useState(null); // "cambio" o "insignias"
+  const [modalPos, setModalPos] = useState({ top: "50%", left: "50%" });
+
+  const navigate = useNavigate();
+
+  const abrirModalDesde = (e, tipo) => {
+    const rect = e.target.getBoundingClientRect();
+    const scrollY = window.scrollY || window.pageYOffset;
+    const scrollX = window.scrollX || window.pageXOffset;
+
+    const centerTop = rect.top + scrollY + rect.height / 2;
+    const centerLeft = rect.left + scrollX + rect.width / 2;
+
+    setModalPos({ top: `${centerTop}px`, left: `${centerLeft}px` });
+    setModalVisible(tipo);
+  };
+
+  return (
+    <div className="perfil-container">
+      <button className="btn-volver" onClick={() => navigate("/modulos")}>
+        ⬅ Volver
+      </button>
+
+      <div className="perfil-header">
+        <h2>Nombre del Usuario</h2>
+      </div>
+
+      <hr className="separador" />
+
+      <div className="perfil-imagen-y-info">
+        <div className="perfil-imagen">
+          <img src={perfilImg} alt="Perfil" />
+        </div>
+
+        <div className="perfil-nivel">
+          <p className="font-bold text-lg">Nivel 3 - Explorador</p>
+          <div className="w-48 h-4 bg-gray-200 rounded-full overflow-hidden">
+            <div className="h-full bg-blue-500" style={{ width: '65%' }}></div>
+          </div>
+          <p className="text-sm text-gray-600">65% para el siguiente nivel</p>
+          <div className="perfil-stats">
+            <p><strong>Módulos completados:</strong> 2/4 PURA DECORACION</p>
+            <p><strong>Tiempo total:</strong> 3h 25min</p>
+            <p><strong>Insignias:</strong> 4</p>
+          </div>
+        </div>
+      </div>
+
+      <hr className="separador" />
+
+      <div className="perfil-cuadros">
+        <div className="cuadro cambio" onClick={(e) => abrirModalDesde(e, "cambio")}>
+          <p>Cambiar Contraseña</p>
+        </div>
+        <div className="cuadro insignias" onClick={(e) => abrirModalDesde(e, "insignias")}>
+          <p>Insignias</p>
+        </div>
+      </div>
+
+      <div className="barra-inferior"></div>
+
+      {/* Modal para cambiar contraseña */}
+      <PopupModal
+        visible={modalVisible === "cambio"}
+        onClose={() => setModalVisible(null)}
+        title="Cambiar Contraseña"
+        triggerPosition={modalPos}
+      >
+        <input type="password" placeholder="Contraseña actual" />
+        <input type="password" placeholder="Nueva contraseña" />
+        <input type="password" placeholder="Confirmar nueva contraseña" />
+        <button>Aceptar</button>
+      </PopupModal>
+
+      {/* Modal para insignias */}
+      <PopupModal
+        visible={modalVisible === "insignias"}
+        onClose={() => setModalVisible(null)}
+        title="Insignias"
+        triggerPosition={modalPos}
+      >
+        <p>Aquí van las insignias o logros obtenidos.</p>
+      </PopupModal>
+    </div>
+  );
+};
+
+export default Perfil;
