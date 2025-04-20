@@ -5,6 +5,8 @@ import ropaImg from "../assets/images/ropa.png";
 import desayunoImg from "../assets/images/desayuno.png";
 import casaImg from "../assets/images/casa.png";
 import maxImg from "../assets/images/max.png";
+import BarraLateral from "../components/Barralateral";
+import { useNavigate } from "react-router-dom";
 
 const acciones = [
   { id: 1, nombre: "🧼 Bañarse", imagen: duchaImg },
@@ -17,12 +19,11 @@ const MaxGame = () => {
   const [orden, setOrden] = useState([]);
   const [mostrarMensaje, setMostrarMensaje] = useState(true);
   const [mostrarBoton, setMostrarBoton] = useState(false);
+  const [resultado, setResultado] = useState(null);
+  const navigate = useNavigate(); // Para redireccionar
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setMostrarBoton(true);
-    }, 4000); // Aparece el botón después del fade-in del mensaje
-
+    const timer = setTimeout(() => setMostrarBoton(true), 4000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -34,22 +35,31 @@ const MaxGame = () => {
   const verificarOrden = () => {
     const correcto = [1, 2, 3, 4];
     const actual = orden.map((a) => a.id);
-    if (JSON.stringify(correcto) === JSON.stringify(actual)) {
-      alert("¡Muy bien! Max está listo para salir 🎉");
-    } else {
-      alert("¡Ups! Revisa el orden. ¿Está Max en pijama todavía? 😅");
-    }
+    const gano = JSON.stringify(correcto) === JSON.stringify(actual);
+
+    setResultado(
+      gano
+        ? "🎉 ¡Muy bien! Max está listo para salir."
+        : "😅 ¡Ups! Revisa el orden. ¿Está Max en pijama todavía?"
+    );
   };
 
-  const reiniciar = () => setOrden([]);
+  const reiniciar = () => {
+    setOrden([]);
+    setResultado(null);
+  };
+
+  const volverANiveles = () => {
+    navigate("/select-level");
+  };
 
   return (
     <div className="maxgame-container">
+      <BarraLateral />
       {mostrarMensaje ? (
         <div className="mensaje-inicial">
           <p>
             🧠 Las computadoras no piensan como los humanos. Solo entienden pasos precisos y en orden.
-            Por eso, cuando les damos instrucciones, el orden en que las escribimos puede cambiarlo todo.
             En este juego, tendrás que ayudar a Max a prepararse siguiendo el orden correcto para que pueda comenzar su día. ¡Buena suerte! 💻🌞
           </p>
           {mostrarBoton && (
@@ -87,8 +97,18 @@ const MaxGame = () => {
           </div>
 
           <div className="botones">
-            <button onClick={verificarOrden}>Verificar</button>
-            <button onClick={reiniciar}>Reiniciar</button>
+            {!resultado ? (
+              <>
+                <button onClick={verificarOrden}>Verificar</button>
+                <button onClick={reiniciar}>Reiniciar</button>
+              </>
+            ) : (
+              <>
+                <div className="resultado">{resultado}</div>
+                <button onClick={reiniciar}>Reintentar</button>
+                <button onClick={volverANiveles}>Volver a Niveles</button>
+              </>
+            )}
           </div>
         </>
       )}
@@ -97,4 +117,3 @@ const MaxGame = () => {
 };
 
 export default MaxGame;
-

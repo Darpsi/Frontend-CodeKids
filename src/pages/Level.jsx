@@ -104,14 +104,15 @@ const Level0 = () => {
 
   if (quizFinished) {
     return (
-      <div className="container">
-        <h1>NIVEL 0</h1>
+      <div className="app-container">
+        <BarraLateral />
+        <h1>NIVEL 1</h1>
         {result === "ganado" ? (
           <h2>✅ ¡Has completado el cuestionario con éxito!</h2>
         ) : (
           <h2>❌ No lograste responder suficientes preguntas. Intenta de nuevo.</h2>
         )}
-        <div style={{ marginTop: "1.5rem" }}>
+        <div>
           <button onClick={handleRetry} className="boton-final">🔁 Reintentar</button>
           <button onClick={handleBack} className="boton-final" style={{ marginLeft: "1rem" }}>
             🔙 Volver a Niveles
@@ -120,9 +121,9 @@ const Level0 = () => {
       </div>
     );
   }
-
+  
   return (
-    <div className="container">
+    <div className="app-container">
       <BarraLateral />
       <h1>NIVEL 0</h1>
       <h2>¡Demuestra lo que sabes!</h2>

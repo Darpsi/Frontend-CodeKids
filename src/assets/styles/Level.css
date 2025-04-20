@@ -1,36 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
-
-body {
-    font-family: 'Sour Gummy', sans-serif;
-    text-align: center;
-    background-color: white;
+.app-container {
+  font-family: 'Sour Gummy', sans-serif;
+  text-align: center;
+  background-color: white;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1 {
+.app-container h1 {
   font-size: 50px;
   font-weight: bold;
-  margin-left: -300px;
+  margin-bottom: 1rem;
 }
 
-h2 {
+.app-container h2 {
   font-size: 30px;
   font-weight: bold;
-  margin-left: -300px;
+  margin-bottom: 2rem;
 }
 
-.question-box {
+/* Pregunta */
+.app-container .question-box {
   background-color: #a2d6f9;
   padding: 20px;
   border-radius: 15px;
   width: 70%;
-  margin: 20px auto;
   font-size: 20px;
   font-weight: bold;
-  margin-left: -80px;
+  margin-bottom: 1rem;
 }
 
-.option {
-  background-color: #ffffff;
+.app-container .option {
+  background-color: #a2d6f9;
   padding: 15px;
   border-radius: 25px;
   width: 60%;
@@ -39,61 +42,60 @@ h2 {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-left: -55px;
 }
 
-.option:hover {
+.app-container .option:hover {
   background-color: #1e96fc;
 }
 
-.progress-bar-container {
+.app-container .progress-bar-container {
   width: 60%;
   height: 15px;
   background-color: #ddd;
   border-radius: 10px;
-  margin: 20px auto;
   overflow: hidden;
-  margin-left: -55px;
+  margin: 20px auto;
 }
 
-.progress-bar {
+.app-container .progress-bar {
   height: 100%;
   background-color: #072ac8;
   width: 100%;
   transition: width 0.1s linear;
 }
 
-.selected {
+.app-container .selected {
   background-color: #1e96fc;
 }
 
-.correct {
+.app-container .correct {
   background-color: green !important;
   color: white;
 }
 
-.wrong {
+.app-container .wrong {
   background-color: red !important;
   color: white;
 }
 
-.reset {
-  background-color: white !important;
+.app-container .reset {
+  background-color: #a2d6f9 !important;
   color: black !important;
   transition: none;
 }
 
-.boton-final {
+.app-container .boton-final {
   padding: 0.7rem 1.2rem;
-  background-color: #ffd54f;
+  background-color: #fcf300;
   border: none;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease;
+  margin-top: 1rem;
 }
 
-.boton-final:hover {
-  background-color: #fbc02d;
+.app-container .boton-final:hover {
+  background-color: #ffc600;
 }

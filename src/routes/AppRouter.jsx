@@ -7,12 +7,13 @@ import Modulos from '../pages/Modulos';
 import Level from '../pages/Level';
 import SelectLevel from '../pages/SelectLevel';
 import MaxGame from '../pages/Maxgame';
+import Exam from '../pages/Exam';
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SelectLevel/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/modulos" element={<Modulos/>} />
         <Route path="/register" element={<Register />} />
@@ -23,6 +24,7 @@ function AppRouter() {
         <Route path="/home" element={<Home />} />
         <Route path="/maxgame" element={<MaxGame />} />
         <Route path="/select-level" element={<SelectLevel />} />
+        <Route path="/exam" element={<Exam />} />
         {/* Otras rutas */}
       </Routes>
     </BrowserRouter>

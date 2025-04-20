@@ -2,7 +2,7 @@
 
 .maxgame-container {
     text-align: center;
-    background-color: #fff9c4;
+    background-color: white;
     padding: 2rem;
     border-radius: 1rem;
     font-family: 'Sour Gummy', sans-serif;
@@ -28,7 +28,7 @@
   
   .accion-btn {
     background-color: #f0f4c3;
-    border: 2px solid #cddc39;
+    border: 2px solid #fcf300;
     border-radius: 1rem;
     padding: 1rem;
     cursor: pointer;
@@ -63,7 +63,7 @@
     padding: 0.5rem 1rem;
     font-weight: bold;
     border: none;
-    background-color: #aed581;
+    background-color: #1E96FC    ;
     border-radius: 0.5rem;
     cursor: pointer;
   }

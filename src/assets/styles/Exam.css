@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
+
+.examen-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    background-color: #f5f5dc;
+    border-radius: 1rem;
+    font-family: 'Sour Gummy', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-height: 100vh;
+    overflow-y: auto;
+    height: auto;
+  }
+  
+  .examen-container h1 {
+    text-align: center;
+    margin-left: 30px;
+    margin-bottom: 2rem;
+    color: #444;
+    max-height: auto;
+    overflow-y: auto;
+    height: auto;
+    font-family: 'Sour Gummy', sans-serif;
+  }
+  
+  .pregunta {
+    margin-bottom: 1.5rem;
+  }
+  
+  .pregunta h3 {
+    color: #333;
+  }
+  
+  .opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .opcion-btn {
+    padding: 0.7rem 1rem;
+    border: 2px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-align: left;
+  }
+  
+  .opcion-btn:hover {
+    background-color: #e0f7fa;
+    border-color: #4dd0e1;
+  }
+  
+  .seleccionada {
+    background-color: #c8e6c9;
+    border-color: #388e3c;
+    font-weight: bold;
+  }
+  
+  .confirmar-btn {
+    margin-top: 2rem;
+    background-color: #4caf50;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .confirmar-btn:hover {
+    background-color: #388e3c;
+  }
+  
+  .resultado {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #2e7d32;
+    font-weight: bold;
+  }
+  

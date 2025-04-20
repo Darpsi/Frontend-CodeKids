@@ -14,9 +14,9 @@ const niveles = [
     ),
   },
   { id: 2, label: "Nivel 2", info: "Secuencias y lógica básicas." },
-  { id: 3, label: "Nivel 3", info: "Tipos de datos y variables." },
-  { id: 4, label: "Nivel 4", info: "Funciones y modularidad." },
-  { id: 5, label: "Nivel 5", info: "Estructuras de datos." },
+  { id: 3, label: "Nivel 3", info: "Condiciones y decisiones." },
+  { id: 4, label: "Nivel 4", info: "Bucles y repeticiones." },
+  { id: 5, label: "Nivel 5", info: "EXAMEN FINAL" },
 ];
 
 const Piramide = () => {
@@ -30,6 +30,7 @@ const Piramide = () => {
   const irANivel = (id) => {
     if (id === 1) navigate("/level");
     else if (id === 2) navigate("/maxgame");
+    else if (id === 5) navigate("/exam");
   };
 
   return (
@@ -52,7 +53,7 @@ const Piramide = () => {
               <div className="contenido">
                 <div>{nivel.info}</div>
                 <div className="espaciado-boton">
-                  {(nivel.id === 1 || nivel.id === 2) && (
+                  {(nivel.id === 1 || nivel.id === 2 || nivel.id === 5) && (
                     <button
                       className="boton-entrar"
                       onClick={(e) => {
