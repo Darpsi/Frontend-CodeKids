@@ -8,6 +8,9 @@ import RecoverPassword from '../pages/Forgot-password';
 import VerifyToken from '../pages/Verify-token';
 import ResetPassword from '../pages/Reset-password';
 import Perfil from "../pages/Perfil";
+import SelectLevel from "../pages/SelectLevel";
+import Maxgame from "../pages/Maxgame";
+import Exam from "../pages/Exam";
 
 function AppRouter() {
   return (
@@ -22,6 +25,9 @@ function AppRouter() {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/verify-token" element={<VerifyToken />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/select-level" element={<SelectLevel />} />
+        <Route path="/maxgame" element={<Maxgame />} />
+        <Route path="/exam" element={<Exam />} />
         {/* Otras rutas */}
       </Routes>
     </BrowserRouter>
