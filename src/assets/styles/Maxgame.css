@@ -68,3 +68,63 @@
     cursor: pointer;
   }
   
+  .mensaje-inicial {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 1.2rem;
+    background-color: #fff59d;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .mensaje-inicial {
+    animation: fadeIn 1.5s ease-in;
+    background-color: #fffde7;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .boton-continuar {
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ffeb3b;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 1s 1 forwards;
+    animation-delay: 4s;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    85% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+  
