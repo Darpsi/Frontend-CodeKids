@@ -24,7 +24,7 @@ const Perfil = () => {
 
   return (
     <div className="perfil-container">
-      <button className="btn-volver" onClick={() => navigate("/modulos")}>
+      <button className="btn-volver" onClick={() => navigate("/modules")}>
         ⬅ Volver
       </button>
 
