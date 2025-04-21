@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles/Level.css";
-import BarraLateral from "../components/Barralateral";
+import BarraLateral from "../components/Sidebar";
 
 const questions = [
   {
@@ -105,7 +105,7 @@ const Level0 = () => {
   if (quizFinished) {
     return (
       <div className="app-container">
-        <BarraLateral />
+        <BarraLateral/>
         <h1>NIVEL 1</h1>
         {result === "ganado" ? (
           <h2>✅ ¡Has completado el cuestionario con éxito!</h2>
@@ -123,8 +123,8 @@ const Level0 = () => {
   }
   
   return (
-    <div className="app-container">
-      <BarraLateral />
+    <div className="container">
+      <BarraLateral/>
       <h1>NIVEL 0</h1>
       <h2>¡Demuestra lo que sabes!</h2>
       <div className="question-box">{questions[currentQuestionIndex].question}</div>

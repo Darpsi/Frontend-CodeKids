@@ -219,6 +219,7 @@ body{
   .content {
     flex-direction: column;
     width: 90%;
+  }
 
   
   .content-img,
@@ -230,7 +231,7 @@ body{
     padding: 1.5rem 0;
   }
   }
-}
+
 
 @media (max-width: 768px) {
   .title {

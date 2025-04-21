@@ -13,3 +13,12 @@ button {
 h1, h2, h3, .titulo {
   font-family: 'Sour Gummy', sans-serif;
 }
+
+html, body {
+  height: auto;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
