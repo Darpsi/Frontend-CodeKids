@@ -17,8 +17,7 @@ const CartaModulos = ({ titulo, descripcion, disponible, moduleId }) => {
 
   const handleClick = (e) => {
     e.stopPropagation();
-    /* navigate(`/modules/${moduleId}`); */
-    navigate("1/levels/1");
+    navigate(`/modules/${moduleId}`); 
   };
 
   return (

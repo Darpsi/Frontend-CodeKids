@@ -28,8 +28,8 @@ const Piramide = () => {
   };
 
   const irANivel = (id) => {
-    if (id === 1) navigate("/level");
-    else if (id === 2) navigate("/maxgame");
+    if (id === 1) navigate("/modules/1/levels/1");
+    else if (id === 3) navigate("/maxgame");
     else if (id === 5) navigate("/exam");
   };
 
@@ -53,7 +53,7 @@ const Piramide = () => {
               <div className="contenido">
                 <div>{nivel.info}</div>
                 <div className="espaciado-boton">
-                  {(nivel.id === 1 || nivel.id === 2 || nivel.id === 5) && (
+                  {(nivel.id <= 5) && (
                     <button
                       className="boton-entrar"
                       onClick={(e) => {
