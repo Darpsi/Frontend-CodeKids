@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../assets/styles/levels.css";
+import { useNavigate } from "react-router-dom";
+
 
 const Levels = ({ secciones, titulo }) => {
   const [indice, setIndice] = useState(0);
@@ -16,6 +18,8 @@ const Levels = ({ secciones, titulo }) => {
       setIndice(indice - 1);
     }
   };
+
+  const navigate = useNavigate();
 
   const soloTexto = !seccionActual.imagen && !seccionActual.video;
 
@@ -63,9 +67,19 @@ const Levels = ({ secciones, titulo }) => {
         >
           Atrás
         </button>
-        <button onClick={avanzar}>
+        <button
+          onClick={() => {
+            if (indice === secciones.length - 1) {
+              // acción al finalizar
+              navigate("/modules/1"); // cambia "/ruta-final" por la ruta a la que quieras ir
+            } else {
+              avanzar();
+            }
+          }}
+        >
           {indice === secciones.length - 1 ? "Finalizar" : "Siguiente"}
         </button>
+
       </div>
     </div>
   );

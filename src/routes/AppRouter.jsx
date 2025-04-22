@@ -26,7 +26,7 @@ function AppRouter() {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/verify-token" element={<VerifyToken />} />
         <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/select-level" element={<SelectLevel />} />
+        <Route path="/modules/1" element={<SelectLevel />} />
         <Route path="/maxgame" element={<Maxgame />} />
         <Route path="/exam" element={<Exam />} />
         <Route path="/modules/:moduleId/levels/:levelId" element={<Levelm />} />
