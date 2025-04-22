@@ -38,7 +38,7 @@ const Piramide = () => {
       <BarraLateral />
       <div className="contenido-central">
         <h1>PIRÁMIDE DE CONOCIMIENTO</h1>
-        <h2>¡Elije un nivel!</h2>
+        <h2>¡Elige un nivel!</h2>
       </div>
 
       <div className="piramide-rectangular">
