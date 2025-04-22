@@ -50,7 +50,7 @@ const MaxGame = () => {
   };
 
   const volverANiveles = () => {
-    navigate("/select-level");
+    navigate("/modules/1");
   };
 
   return (

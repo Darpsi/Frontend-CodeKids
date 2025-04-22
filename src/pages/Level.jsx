@@ -99,7 +99,7 @@ const Level0 = () => {
   };
 
   const handleBack = () => {
-    navigate("/select-level");
+    navigate("/modules/1");
   };
 
   if (quizFinished) {
@@ -126,6 +126,7 @@ const Level0 = () => {
   
   return (
     <div className="container-level">
+      <div className="app-container">
       <BarraLateral/>
       <h1>NIVEL 0</h1>
       <h2>¡Demuestra lo que sabes!</h2>
@@ -142,6 +143,7 @@ const Level0 = () => {
       <div className="progress-bar-container">
         <div className="progress-bar" style={{ width: `${timeLeft}%` }}></div>
       </div>
+    </div>
     </div>
   );
 };

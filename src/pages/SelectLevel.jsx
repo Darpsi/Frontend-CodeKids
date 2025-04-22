@@ -29,6 +29,7 @@ const Piramide = () => {
 
   const irANivel = (id) => {
     if (id === 1) navigate("/modules/1/levels/1");
+    else if (id === 2) navigate("/level");
     else if (id === 3) navigate("/maxgame");
     else if (id === 5) navigate("/exam");
   };
@@ -45,12 +46,12 @@ const Piramide = () => {
         {niveles.map((nivel) => (
           <div
             key={nivel.id}
-            className={`nivel nivel-${nivel.id} ${activo === nivel.id ? "activo" : ""}`}
+            className={`nivel-piramide nivel-${nivel.id} ${activo === nivel.id ? "activo" : ""}`}
             onClick={() => toggleNivel(nivel.id)}
           >
-            <div className="label">{nivel.label}</div>
+            <div className="label-piramide">{nivel.label}</div>
             {activo === nivel.id && (
-              <div className="contenido">
+              <div className="contenido-piramide">
                 <div>{nivel.info}</div>
                 <div className="espaciado-boton">
                   {(nivel.id <= 5) && (

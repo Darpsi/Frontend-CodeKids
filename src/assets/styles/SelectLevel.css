@@ -27,7 +27,7 @@
   max-width: 400px;
 }
 
-.nivel {
+.nivel-piramide {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -81,7 +81,7 @@
 }
 
 
-.nivel.activo {
+.nivel-piramide.activo {
   height: 120px;
   background-color: #fdd835;
   z-index: 2;
@@ -98,12 +98,12 @@
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.label {
+.label-piramide {
   pointer-events: none;
   margin-bottom: 0.5rem;
 }
 
-.contenido {
+.contenido-piramide {
   font-size: 0.85rem;
   background-color: #fffde7;
   padding: 0.5rem;
