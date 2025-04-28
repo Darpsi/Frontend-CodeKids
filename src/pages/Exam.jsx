@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import "../assets/styles/Exam.css";
-import BarraLateral from "../components/Barralateral";
-import { useNavigate } from "react-router-dom";
+// src/pages/FinalExamPage.jsx
+import React from "react";
+import Examen from "../components/Examen";
 
-const preguntas = [
+const preguntasExamenFinal = [
   {
     texto: "¿Qué es la programación?",
     opciones: ["Jugar con la consola", "Escribir instrucciones para una computadora", "Hablar otro idioma", "Crear música"],
@@ -56,77 +55,8 @@ const preguntas = [
   },
 ];
 
-const Examen = () => {
-  const [respuestas, setRespuestas] = useState(Array(preguntas.length).fill(null));
-  const [resultado, setResultado] = useState(null);
-  const [estadoFinal, setEstadoFinal] = useState(null); // 'ganaste' o 'perdiste'
-  const navigate = useNavigate();
-
-  const handleSeleccion = (indicePregunta, indiceOpcion) => {
-    const nuevas = [...respuestas];
-    nuevas[indicePregunta] = indiceOpcion;
-    setRespuestas(nuevas);
-  };
-
-  const confirmarRespuestas = () => {
-    const correctas = respuestas.reduce((acc, respuesta, i) => {
-      return respuesta === preguntas[i].correcta ? acc + 1 : acc;
-    }, 0);
-
-    if (correctas >= 6) {
-      setEstadoFinal("ganaste");
-      setResultado(`🎉 ¡Ganaste! Obtuviste ${correctas} de ${preguntas.length} respuestas correctas.`);
-    } else {
-      setEstadoFinal("perdiste");
-      setResultado(`😓 Perdiste. Solo obtuviste ${correctas} de ${preguntas.length} respuestas correctas.`);
-    }
-  };
-
-  const reintentar = () => {
-    setRespuestas(Array(preguntas.length).fill(null));
-    setResultado(null);
-    setEstadoFinal(null);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const volverANiveles = () => {
-    navigate("/select-level"); 
-  };
-
-  return (
-    <div className="examen-container">
-      <BarraLateral />
-      <h1>🧠 Examen Final</h1>
-      {preguntas.map((pregunta, i) => (
-        <div key={i} className="pregunta">
-          <h3>{i + 1}. {pregunta.texto}</h3>
-          <div className="opciones">
-            {pregunta.opciones.map((opcion, j) => (
-              <button
-                key={j}
-                className={`opcion-btn ${respuestas[i] === j ? "seleccionada" : ""}`}
-                onClick={() => handleSeleccion(i, j)}
-                disabled={resultado !== null}
-              >
-                {opcion}
-              </button>
-            ))}
-          </div>
-        </div>
-      ))}
-      {!resultado && (
-        <button className="confirmar-btn" onClick={confirmarRespuestas}>Confirmar respuestas</button>
-      )}
-      {resultado && (
-        <div className="resultado">
-          <p>{resultado}</p>
-          <button className="confirmar-btn" onClick={reintentar}>🔁 Reintentar examen</button>
-          <button className="confirmar-btn" onClick={volverANiveles}>🏁 Volver a niveles</button>
-        </div>
-      )}
-    </div>
-  );
+const Exam = () => {
+  return <Examen preguntas={preguntasExamenFinal} />;
 };
 
-export default Examen;
-
+export default Exam;
