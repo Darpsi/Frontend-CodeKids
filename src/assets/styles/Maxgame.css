@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
 
 .maxgame-container {
     text-align: center;
@@ -9,8 +8,7 @@
   }
 
   .maxgame-container h2 {
-    text-align: left;
-    margin-left: 100px;
+    text-align: center;
   }
   
   .max-img {

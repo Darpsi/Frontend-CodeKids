@@ -64,6 +64,21 @@ export const resetPassword = async (token, newPassword) => {
   }
 };
 
+//Funcion para cambiar la contraseña desde el perfil
+export const changePasword = async (email, password, newPassword) => {
+  try {
+
+    const response = await axios.post(`${API_URL}/users/change-password`, {
+      email,
+      password,
+      newPassword
+    });
+    return response.data;
+  } catch (error) {
+    handleAxiosError(error, 'Error al cambiar la contraseña');
+  }
+}
+
 // Función reutilizable para manejar errores de axios
 const handleAxiosError = (error, defaultMessage) => {
   if (error.response && error.response.data) {

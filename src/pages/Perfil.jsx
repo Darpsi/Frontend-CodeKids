@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import perfilImg from "../assets/images/perfil.png";
 import PopupModal from "../components/PopupModal";
+import { changePasword } from "../services/authService";
 import "../assets/styles/Perfil.css";
 
 const Perfil = () => {
@@ -9,6 +10,37 @@ const Perfil = () => {
   const [modalPos, setModalPos] = useState({ top: "50%", left: "50%" });
 
   const navigate = useNavigate();
+
+  const email = localStorage.getItem("email");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const currentPassword = form.currentPassword.value;
+    const newPassword = form.newPassword.value;
+    const confirmNewPassword = form.confirmNewPassword.value;
+
+    if (newPassword !== confirmNewPassword) {
+      alert("Las contraseñas no coinciden.");
+      return;
+    }
+
+    try {
+      changePasword(email, currentPassword, newPassword)
+        .then((response) => {
+          alert("Contraseña cambiada con éxito");
+          setModalVisible(null);
+        })
+        .catch((error) => {
+          console.error("Error al cambiar la contraseña:", error);
+          alert("Error al cambiar la contraseña. Intenta nuevamente.");
+        });
+    }catch(error){
+      console.error("Error al cambiar la contraseña:", error);
+      alert("Error al cambiar la contraseña. Intenta nuevamente.");
+    }
+
+  }
 
   const abrirModalDesde = (e, tipo) => {
     const rect = e.target.getBoundingClientRect();
@@ -24,7 +56,7 @@ const Perfil = () => {
 
   return (
     <div className="perfil-container">
-      <button className="btn-volver" onClick={() => navigate("/modulos")}>
+      <button className="btn-volver" onClick={() => navigate("/modules")}>
         ⬅ Volver
       </button>
 
@@ -73,11 +105,15 @@ const Perfil = () => {
         title="Cambiar Contraseña"
         triggerPosition={modalPos}
       >
-        <input type="password" placeholder="Contraseña actual" />
-        <input type="password" placeholder="Nueva contraseña" />
-        <input type="password" placeholder="Confirmar nueva contraseña" />
-        <button>Aceptar</button>
+        <form onSubmit={handleSubmit}>
+          <input name="currentPassword" type="password" placeholder="Contraseña actual" required />
+          <input name="newPassword" type="password" placeholder="Nueva contraseña" required />
+          <input name="confirmNewPassword" type="password" placeholder="Confirmar nueva contraseña" required />
+          <button type="submit">Aceptar</button>
+        </form>
       </PopupModal>
+
+
 
       {/* Modal para insignias */}
       <PopupModal

@@ -1,3 +1,13 @@
+.container-level{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  width: 100%;
+  height: 100vh;
+}
+
 .app-container {
   font-family: 'Sour Gummy', sans-serif;
   text-align: center;
@@ -6,21 +16,18 @@
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  margin-left: 400;
 }
 
 .app-container h1 {
   font-size: 50px;
   font-weight: bold;
   margin-bottom: 1rem;
-  margin-left: 400;
 }
 
 .app-container h2 {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 2rem;
-  margin-left: 400;
 }
 
 /* Pregunta */
@@ -34,7 +41,6 @@
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 1rem;
-  margin-left: 400;
 }
 
 .app-container .option {
