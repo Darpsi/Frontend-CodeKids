@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import BarraLateral from "./Barralateral";
+import BarraLateral from "./Sidebar";
 import "../assets/styles/Level.css";
 
 const Quiz = ({ titulo = "NIVEL", subtitulo = "¡Demuestra tu conocimiento!", questions = [], rutaVolver = "/select-level" }) => {

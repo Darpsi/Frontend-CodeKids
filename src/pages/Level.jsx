@@ -24,7 +24,7 @@ const Level0 = () => {
       titulo="NIVEL 0" 
       subtitulo="¡Demuestra lo que sabes!" 
       questions={questions} 
-      rutaVolver="/select-level"
+      rutaVolver="/modules/1"
     />
   );
 };

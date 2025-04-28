@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../assets/styles/Exam.css";
-import BarraLateral from "./Barralateral";
+import BarraLateral from "./Sidebar";
 import { useNavigate } from "react-router-dom";
 
 const Examen = ({ preguntas }) => {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles/SelectLevel.css";
-import BarraLateral from "../components/Barralateral";
+import BarraLateral from "../components/Sidebar";
 
 const Piramide = ({ titulo = "PIRÁMIDE DE CONOCIMIENTO", subtitulo = "¡Elije un nivel!", niveles = [] }) => {
   const [activo, setActivo] = useState(null);

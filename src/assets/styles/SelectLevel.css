@@ -3,7 +3,7 @@
 .piramide-container {
   text-align: center;
   background: #a2d6f9;
-  padding: 2rem;
+  padding: 1.75rem;
   font-family: 'Sour Gummy', sans-serif;
   max-width: 900px;
   align-items: center;
@@ -12,10 +12,7 @@
 }
 
 .contenido-central-piramide {
-  margin-left: 350px;
   text-align: center;
-  margin-bottom: 2rem;
-  margin-right: 300px;
 }
 
 .piramide-rectangular {
