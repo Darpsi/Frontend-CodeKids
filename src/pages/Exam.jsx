@@ -1,4 +1,3 @@
-// src/pages/FinalExamPage.jsx
 import React from "react";
 import Examen from "../components/Examen";
 
