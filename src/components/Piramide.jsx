@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles/SelectLevel.css";
 import BarraLateral from "../components/Sidebar";
+import nube from "../assets/images/Levels/nube.png";
+import sol from "../assets/images/Levels/sol.gif";
+import cactus from "../assets/images/Levels/cactus.png";
+import desert from "../assets/images/Levels/desert.png";
 
 const Piramide = ({ titulo = "PIRÁMIDE DE CONOCIMIENTO", subtitulo = "¡Elije un nivel!", niveles = [] }) => {
   const [activo, setActivo] = useState(null);
@@ -27,7 +31,7 @@ const Piramide = ({ titulo = "PIRÁMIDE DE CONOCIMIENTO", subtitulo = "¡Elije u
         {niveles.map((nivel) => (
           <div
             key={nivel.id}
-            className={`nivel nivel-${nivel.id} ${activo === nivel.id ? "activo" : ""}`}
+            className={`nivel nivel-${nivel.id} ${activo === Number(nivel.id) ? "activo" : ""}`}
             onClick={() => toggleNivel(nivel.id)}
           >
             <div className="label-piramide">{nivel.label}</div>
@@ -51,6 +55,14 @@ const Piramide = ({ titulo = "PIRÁMIDE DE CONOCIMIENTO", subtitulo = "¡Elije u
             )}
           </div>
         ))}
+        <div className="decoraciones-piramide">
+          <img src={nube} alt="Nube 1" className="nube-1" />
+          <img src={nube} alt="Nube 2" className="nube-2" />
+          <img src={cactus} alt="Cactus 1" className="cactus-1" />
+          <img src={cactus} alt="Cactus 2" className="cactus-2" />
+          <img src={sol} alt="Sol" className="sol" />
+          <img src={desert} alt="Desierto" className="desert" />
+        </div>
       </div>
     </div>
   );
