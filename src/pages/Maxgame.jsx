@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../assets/styles/Maxgame.css";
-import duchaImg from "../assets/images/Levels/ducha.png";
-import ropaImg from "../assets/images/Levels/ropa.png";
-import desayunoImg from "../assets/images/Levels/desayuno.png";
-import casaImg from "../assets/images/Levels/casa.png";
-import maxImg from "../assets/images/Levels/max.png";
+import duchaImg from "../assets/images/levels/ducha.png";
+import ropaImg from "../assets/images/levels/ropa.png";
+import desayunoImg from "../assets/images/levels/desayuno.png";
+import casaImg from "../assets/images/levels/casa.png";
+import maxImg from "../assets/images/levels/max.png";
 import BarraLateral from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 

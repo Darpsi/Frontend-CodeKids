@@ -79,6 +79,25 @@ export const changePasword = async (email, password, newPassword) => {
   }
 }
 
+export const getName = async (email) => {
+  try {
+    const response = await axios.get(`${API_URL}/users/name/${email}`);
+    return response.data;
+  } catch (error) {
+    handleAxiosError(error, 'Error al obtener el nombre');
+  }
+};
+
+export const getNameInstitution = async (email) => {
+  try {
+    const response = await axios.get(`${API_URL}/users/institution/${email}`);
+    return response.data;
+  } catch (error) {
+    handleAxiosError(error, 'Error al obtener el nombre de la institución');
+  }
+};
+
+
 // Función reutilizable para manejar errores de axios
 const handleAxiosError = (error, defaultMessage) => {
   if (error.response && error.response.data) {

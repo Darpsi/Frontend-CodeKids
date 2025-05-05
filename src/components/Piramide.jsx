@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles/SelectLevel.css";
 import BarraLateral from "../components/Sidebar";
-import nube from "../assets/images/Levels/nube.png";
-import sol from "../assets/images/Levels/sol.gif";
-import cactus from "../assets/images/Levels/cactus.png";
-import desert from "../assets/images/Levels/desert.png";
+import nube from "../assets/images/levels/nube.png";
+import sol from "../assets/images/levels/sol.gif";
+import cactus from "../assets/images/levels/cactus.png";
+import desert from "../assets/images/levels/desert.png";
 
 const Piramide = ({ titulo = "PIRÁMIDE DE CONOCIMIENTO", subtitulo = "¡Elije un nivel!", niveles = [] }) => {
   const [activo, setActivo] = useState(null);
