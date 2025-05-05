@@ -22,6 +22,7 @@ const BarraLateral = () => {
           <button onClick={irAPerfil}>Perfil</button>
         </div>
         <div className="botones-barra">
+          <a href="/modules">Módulos</a>
           <a href="/">Salir</a>
         </div>
       </div>
