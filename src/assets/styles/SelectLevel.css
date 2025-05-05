@@ -41,6 +41,7 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  z-index: 1;
 }
 
 .nivel-1 {
@@ -162,7 +163,14 @@
   left: 500px;
   width: 150px;
   height: 150px;
-  animation: girar 20s linear infinite;
+}
+
+.desert {
+  width: 900px;
+  height: 310px;
+  top: 205px;
+  left: -250px;
+  z-index: -1;
 }
 
 
