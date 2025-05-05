@@ -146,7 +146,24 @@ const Perfil = () => {
         title="Insignias"
         triggerPosition={modalPos}
       >
-        <p>Aquí van las insignias o logros obtenidos.</p>
+        <div className="insignias-grid">
+          {[...Array(35)].map((_, i) => {
+            const nombre = `insignia${i + 1}`;
+            const bn = require(`../assets/insignias/${nombre}-bn.png`);
+            const color = require(`../assets/insignias/${nombre}-color.png`);
+            return (
+              <img
+                key={i}
+                src={bn}
+                alt={`Insignia ${i + 1}`}
+                className="insignia"
+                onMouseEnter={e => e.currentTarget.src = color}
+                onMouseLeave={e => e.currentTarget.src = bn}
+                />
+            );
+          }
+          )}
+        </div>
       </PopupModal>
     </div>
   );
