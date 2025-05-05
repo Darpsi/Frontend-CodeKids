@@ -128,5 +128,42 @@
   background-color: #fdd835;
 }
 
+.decoraciones-piramide img {
+  position: absolute;
+  z-index: 0;
+}
+
+.nube-1 {
+  top: 20px;
+  left: 350px;
+  width: 100px;
+}
+
+.nube-2 {
+  top: 80px;
+  right: 350px;
+  width: 120px;
+}
+
+.cactus-1 {
+  bottom: 0px;
+  right: 500px;
+  width: 80px;
+}
+
+.cactus-2 {
+  bottom: 0px;
+  left: 500px;
+  width: 90px;
+}
+
+.sol {
+  top: -100px;
+  left: 500px;
+  width: 150px;
+  height: 150px;
+  animation: girar 20s linear infinite;
+}
+
 
   
