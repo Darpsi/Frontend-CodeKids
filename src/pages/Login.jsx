@@ -25,8 +25,7 @@ const Login = () => {
 
     try {
       const result = await login(formData);
-      console.log("Usuario logueado:", result);
-      alert("Usuario logueado con éxito ✅");
+      alert(result.message);
       localStorage.setItem('email', formData.email);
       navigate('/modules')
 

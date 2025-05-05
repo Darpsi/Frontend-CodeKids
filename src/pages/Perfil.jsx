@@ -1,15 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import perfilImg from "../assets/images/perfil.png";
 import PopupModal from "../components/PopupModal";
-import { changePasword } from "../services/authService";
+import { changePasword, getName, getNameInstitution } from "../services/authService";
 import "../assets/styles/Perfil.css";
 
 const Perfil = () => {
   const [modalVisible, setModalVisible] = useState(null); // "cambio" o "insignias"
   const [modalPos, setModalPos] = useState({ top: "50%", left: "50%" });
-
   const navigate = useNavigate();
+
+  const [userName, setUserName] = useState("");
+  const [institutionName, setInstitutionName] = useState("");
+
+  useEffect(() => {
+    const email = localStorage.getItem("email");
+  
+    if (email) {
+      getName(email)
+        .then((name) => {
+          setUserName(name);
+        })
+        .catch((error) => {
+          console.error("Error al obtener el nombre del usuario:", error);
+        });
+
+      getNameInstitution(email)
+        .then((instName) => {
+          setInstitutionName(instName);
+        })
+        .catch((error) => {
+          console.error("Error al obtener el nombre de la institución:", error);
+        });
+    }
+  }, []);
 
   const email = localStorage.getItem("email");
 
@@ -61,9 +85,9 @@ const Perfil = () => {
       </button>
 
       <div className="perfil-header">
-        <h2>Nombre del Usuario</h2>
-      </div>
+      <h2>{userName ? `Hola, ${userName}` : "Cargando nombre..."}</h2>
 
+      </div>
       <hr className="separador" />
 
       <div className="perfil-imagen-y-info">
@@ -76,7 +100,7 @@ const Perfil = () => {
           <div className="w-48 h-4 bg-gray-200 rounded-full overflow-hidden">
             <div className="h-full bg-blue-500" style={{ width: '65%' }}></div>
           </div>
-          <p className="text-sm text-gray-600">65% para el siguiente nivel</p>
+          <p className="text-sm text-gray-600">Institución: {institutionName ? institutionName : "No perteneces a ninguna institución"}</p>
           <div className="perfil-stats">
             <p><strong>Módulos completados:</strong> 2/4 PURA DECORACION</p>
             <p><strong>Tiempo total:</strong> 3h 25min</p>
