@@ -19,9 +19,28 @@ const Examen = ({ preguntas }) => {
       respuesta === preguntas[i].correcta ? acc + 1 : acc
     ), 0);
 
-    if (correctas >= preguntas.length * 0.6) {
-      setResultado({ estado: "ganaste", mensaje: `🎉 ¡Ganaste! Obtuviste ${correctas} de ${preguntas.length} respuestas correctas.` });
-    } else {
+    if (correctas >= preguntas.length * 0.8) {
+      setResultado({
+        estado: "ganaste",
+        mensaje: `🎉 ¡Ganaste! Obtuviste ${correctas} de ${preguntas.length} respuestas correctas.`
+      });
+    
+      const correo = localStorage.getItem("email");
+    
+      fetch("http://localhost:4000/progreso/actualizar", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          correo,
+          modulo: 1// Actualizar 100% componente para sprint 5
+        })
+      })
+        .then(res => res.json())
+        .then(data => console.log("Progreso actualizado:", data))
+        .catch(err => console.error("Error actualizando progreso:", err));
+    }else {
       setResultado({ estado: "perdiste", mensaje: `😓 Perdiste. Solo obtuviste ${correctas} de ${preguntas.length} respuestas correctas.` });
     }
   };
@@ -33,7 +52,7 @@ const Examen = ({ preguntas }) => {
   };
 
   const volverANiveles = () => {
-    navigate("/select-level");
+    navigate("/modules/1");
   };
 
   return (
