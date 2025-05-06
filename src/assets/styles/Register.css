@@ -121,3 +121,16 @@
     color:#3498db;
     font-size: 18px;
 }
+
+.logo-top {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }  
+  
+  .logo-top img {
+    width: 150px;    /* o 80px, 120px, según prefieras */
+    height: auto;
+  }
+  
+  

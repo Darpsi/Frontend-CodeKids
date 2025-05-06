@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../services/authService';
 import '../assets/styles/Register.css';
 import registroImagen from '../assets/images/registro-imagen.jpg'; // Asegúrate de que la imagen está en la ruta correcta
+import logo from "../assets/images/logo.png";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -53,6 +54,10 @@ const Register = () => {
       <div className="register-container">
       {/* Formulario a la izquierda */}
         <div className="register-formulario">
+          <div className="logo-top">
+            <img src={logo} alt="Logo Codekids" />
+          </div>
+
         <h2 className="register-title">Registrarse</h2>
           <form onSubmit={handleSubmit}>
             <input

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../services/authService"; // Asegúrate de que esta función existe
 import "../assets/styles/Login.css";
 import loginImage from "../assets/images/login-image.png"; // Importa la imagen arriba
+import logo from "../assets/images/logo.png";
+
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -44,6 +46,10 @@ const Login = () => {
 
         {/* Formulario a la derecha */}
         <form className="login-formulario" onSubmit={handleSubmit}>
+          <div className="logo-top">
+            <img src={logo} alt="Logo Codekids" />
+          </div>
+
           <h2 className="login-title">Iniciar Sesión</h2>
 
           <input

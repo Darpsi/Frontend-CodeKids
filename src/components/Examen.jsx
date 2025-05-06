@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../assets/styles/Exam.css";
 import BarraLateral from "./Sidebar";
+import Mascota from "./Mascota"; // ✅ ¡Mascota!
 import { useNavigate } from "react-router-dom";
 
 const Examen = ({ preguntas }) => {
@@ -15,33 +16,31 @@ const Examen = ({ preguntas }) => {
   };
 
   const confirmarRespuestas = () => {
-    const correctas = respuestas.reduce((acc, respuesta, i) => (
-      respuesta === preguntas[i].correcta ? acc + 1 : acc
-    ), 0);
+    const correctas = respuestas.reduce((acc, respuesta, i) =>
+      respuesta === preguntas[i].correcta ? acc + 1 : acc, 0
+    );
 
     if (correctas >= preguntas.length * 0.8) {
       setResultado({
         estado: "ganaste",
         mensaje: `🎉 ¡Ganaste! Obtuviste ${correctas} de ${preguntas.length} respuestas correctas.`
       });
-    
+
       const correo = localStorage.getItem("email");
-    
+
       fetch("http://localhost:4000/progreso/actualizar", {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          correo,
-          modulo: 1// Actualizar 100% componente para sprint 5
-        })
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ correo, modulo: 1 })
       })
         .then(res => res.json())
         .then(data => console.log("Progreso actualizado:", data))
         .catch(err => console.error("Error actualizando progreso:", err));
-    }else {
-      setResultado({ estado: "perdiste", mensaje: `😓 Perdiste. Solo obtuviste ${correctas} de ${preguntas.length} respuestas correctas.` });
+    } else {
+      setResultado({
+        estado: "perdiste",
+        mensaje: `😓 Perdiste. Solo obtuviste ${correctas} de ${preguntas.length} respuestas correctas.`
+      });
     }
   };
 
@@ -55,9 +54,20 @@ const Examen = ({ preguntas }) => {
     navigate("/modules/1");
   };
 
+  const obtenerTipoMascota = () => {
+    if (!resultado) return "normal";
+    return resultado.estado === "ganaste" ? "feliz" : "triste";
+  };
+
   return (
     <div className="examen-container">
       <BarraLateral />
+
+      {/* 🐶 Mascota flotante */}
+      <div className="mascota-examen">
+        <Mascota tipo={obtenerTipoMascota()} tamaño="150px" />
+      </div>
+
       <h1>🧠 Examen Final</h1>
       {preguntas.map((pregunta, i) => (
         <div key={i} className="pregunta">
@@ -76,13 +86,17 @@ const Examen = ({ preguntas }) => {
           </div>
         </div>
       ))}
+
       {!resultado && (
-        <button className="confirmar-btn" onClick={confirmarRespuestas}>Confirmar respuestas</button>
+        <button className="confirmar-btn" onClick={confirmarRespuestas}>
+          Confirmar respuestas
+        </button>
       )}
+
       {resultado && (
         <div className="resultado">
           <p>{resultado.mensaje}</p>
-          <button className="confirmar-btn" onClick={reintentar}>🔁 Reintentar examen</button>
+          <button className="confirmar-btn" onClick={reintentar}>🔁 Reintentar</button>
           <button className="confirmar-btn" onClick={volverANiveles}>🏁 Volver a niveles</button>
         </div>
       )}

@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import perfil from "../assets/images/perfil.png";
 import useUserData from "../hooks/User-data"; // Asegúrate de que el nombre del archivo coincida exactamente
 import "../assets/styles/sidebar.css";
+import logo from "../assets/images/logo.png";
+
+
 
 const BarraLateral = () => {
   const [visible, setVisible] = useState(true);
@@ -20,6 +23,10 @@ const BarraLateral = () => {
   return (
     <>
       <div className={`barra-lateral ${visible ? "visible" : "oculta"}`}>
+        <div className="logo-container">
+          <img src={logo} alt="Logo" />
+        </div>
+
         <button className="toggle" onClick={() => setVisible(!visible)}>
           {visible ? "<<" : ">>"}
         </button>

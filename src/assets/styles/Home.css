@@ -13,6 +13,18 @@ body{
   align-items: center;
 }
 
+.logo-home {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.logo-home img {
+  max-width: 150px;
+  height: auto;
+}
+
+
+
 /* ------------ INICIO SECTION1 ------*/
 
 .section-1{
@@ -247,6 +259,7 @@ body{
   padding-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.2);
 }
+
 
 /* ------------ FIN SECTION-FOOTER ----------*/
 
