@@ -12,6 +12,10 @@ import SelectLevel from "../pages/SelectLevel";
 import Maxgame from "../pages/Maxgame";
 import Exam from "../pages/Exam";
 import Levelm from '../pages/Levelm';
+import BugCatcher from '../pages/Bug-1-2';
+import CodeSorter from '../pages/Sorter-1-3';
+import Module2 from '../pages/Module2';
+import CodeMazeExample from '../pages/Maze1';
 
 function AppRouter() {
   return (
@@ -29,6 +33,10 @@ function AppRouter() {
         <Route path="/modules/1" element={<SelectLevel />} />
         <Route path="/maxgame" element={<Maxgame />} />
         <Route path="/exam" element={<Exam />} />
+        <Route path="/bugcatcher" element={<BugCatcher />} />
+        <Route path="/sorter" element={<CodeSorter />} />
+        <Route path="/modules/2" element={<Module2 />} />
+        <Route path="/maze" element={<CodeMazeExample />} />
         <Route path="/modules/:moduleId/levels/:levelId" element={<Levelm />} />
         {/* Otras rutas */}
       </Routes>

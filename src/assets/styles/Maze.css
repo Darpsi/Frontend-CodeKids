@@ -1,0 +1,97 @@
+.code-maze-card {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #a2d6f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+  }
+  
+  .code-maze-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .code-maze-prompt {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #555;
+  }
+  
+  .code-maze-step {
+    margin-bottom: 15px;
+  }
+  
+  .code-maze-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+  }
+  
+  .code-maze-option {
+    padding: 8px 12px;
+    background-color: #eef3ff;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: monospace;
+  }
+  
+  .code-maze-option.selected {
+    background-color: #aee8c7;
+    border-color: #00a86b;
+  }
+  
+  .code-maze-button,
+  .code-maze-next {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #00a86b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .code-maze-button:hover,
+  .code-maze-next:hover {
+    background-color: #008e5b;
+  }
+  
+  .code-maze-feedback {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .code-maze-end {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #444;
+  }
+
+  .code-maze-return {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .code-maze-return:hover {
+    background-color: #5a6268;
+  }
+  
