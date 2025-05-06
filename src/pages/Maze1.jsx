@@ -3,46 +3,46 @@ import CodeMaze from "../components/Maze";
 
 const levels = [
   {
-    prompt: "Lleva a tu robot al final del laberinto resolviendo condicionales.",
+    prompt: "Corrige la estructura condicional para que el código sea válido.",
     steps: [
       {
-        question: "if (x > 5) {",
-        options: ["caminar();", "saltar();"],
+        question: "if (i > 0) {",
+        options: ["console.log('positivo');", "console.log('positivo')"],
       },
       {
-        question: "} else {",
-        options: ["nadar();", "caminar();"],
+        question: "else",
+        options: ["{ console.log('negativo'); }", "console.log('negativo'); }"],
       },
     ],
     correctPath: [0, 0],
   },
   {
-    prompt: "Selecciona el camino correcto usando bucles.",
+    prompt: "Selecciona las líneas que completan correctamente un bucle for.",
     steps: [
       {
-        question: "for (let i = 0; i < 3; i++) {",
-        options: ["caminar();", "volar();"],
+        question: "for (let i = 0; i < 5; i++) {",
+        options: ["console.log(i);", "console.log(i)"],
       },
       {
-        question: "}",
-        options: ["esperar();", "romper();"],
+        question: "¿Cómo se cierra correctamente el bucle?",
+        options: ["}", "end for"],
       },
     ],
     correctPath: [0, 0],
   },
   {
-    prompt: "Resuelve la función misteriosa.",
+    prompt: "Completa correctamente la definición de una función.",
     steps: [
       {
-        question: "function misteriosa() {",
-        options: ["caminar();", "return 'listo';"],
+        question: "function saludar(nombre) {",
+        options: ["return 'Hola ' + nombre;", "return Hola nombre;"],
       },
       {
-        question: "}",
-        options: ["misteriosa();", "volar();"],
+        question: "¿Cómo termina correctamente la función?",
+        options: ["}", "fin función"],
       },
     ],
-    correctPath: [1, 0],
+    correctPath: [0, 0],
   },
 ];
 
