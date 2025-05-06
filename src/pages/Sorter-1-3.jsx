@@ -1,5 +1,5 @@
+import React from "react";
 import CodeSorter from "../components/Codesorter";
-import React, { useState } from "react";
 
 const levels = [
   {
@@ -32,47 +32,7 @@ const levels = [
 ];
 
 const Code_Sorter = () => {
-  const [currentLevel, setCurrentLevel] = useState(0);
-  const [levelPassed, setLevelPassed] = useState(false);
-  const [gameFinished, setGameFinished] = useState(false);
-
-  const handleSuccess = () => {
-    if (currentLevel < levels.length - 1) {
-      setLevelPassed(true);
-    } else {
-      setGameFinished(true);
-    }
-  };
-
-  const goToNextLevel = () => {
-    setCurrentLevel((prev) => prev + 1);
-    setLevelPassed(false);
-  };
-
-  return (
-    <div>
-      {!gameFinished ? (
-        <>
-          <CodeSorter
-            prompt={levels[currentLevel].prompt}
-            correctOrder={levels[currentLevel].correctOrder}
-            onSuccess={handleSuccess}
-            disabled={levelPassed}
-          />
-
-          {levelPassed && (
-            <button className="code-sorter-next-button" onClick={goToNextLevel}>
-              ➡️ Siguiente nivel
-            </button>
-          )}
-        </>
-      ) : (
-        <div className="code-sorter-finished">
-          🎉 ¡Felicidades! Has completado todos los niveles.
-        </div>
-      )}
-    </div>
-  );
+  return <CodeSorter levels={levels} />;
 };
 
 export default Code_Sorter;

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BarraLateral from "../components/Sidebar";
 import "../assets/styles/Bug-catcher.css"; 
+import "../assets/images/levels/caterpillar.gif"
 
 const BugCatcherMultiLevel = ({ levels }) => {
   const [currentLevel, setCurrentLevel] = useState(0);
@@ -35,9 +36,37 @@ const BugCatcherMultiLevel = ({ levels }) => {
 
   const levelData = levels[currentLevel];
 
+  useEffect(() => {
+    const bug = document.querySelector(".caterpillar");
+    let direction = 1;
+    let position = 251;
+  
+    const moveBug = () => {
+      if (!bug) return;
+      position += direction * 2;
+      if (position >= 850 || position <= 250) {
+        direction *= -1;
+        if (direction === -1) {
+          bug.style.transform = "scaleX(1)";
+        } else {
+          bug.style.transform = "scaleX(-1)";
+        }
+      }
+      bug.style.left = `${position}px`;
+      requestAnimationFrame(moveBug);
+    };
+  
+    moveBug();
+  }, []);
+
   return (
     <div className="bug-catcher-card">
         <BarraLateral />
+        <img
+          src={require("../assets/images/levels/caterpillar.gif")}
+          alt="bicho"
+          className="caterpillar"
+        />
       <h2 className="bug-catcher-title">🧠 Atrapa el Bug - Nivel {currentLevel + 1}</h2>
       <p className="bug-catcher-prompt">{levelData.prompt}</p>
 
@@ -62,8 +91,13 @@ const BugCatcherMultiLevel = ({ levels }) => {
       )}
 
       {completed && currentLevel === levels.length - 1 && (
-        <div className="bug-catcher-feedback">
-          🎊 ¡Has terminado todos los niveles!
+        <div className="bug-catcher-end">
+          <div className="bug-catcher-feedback">
+            🎊 ¡Has terminado todos los niveles!
+          </div>
+          <button className="bug-catcher-button" onClick={() => window.location.href = "/ruta-del-menu"}>
+            Volver al Menú Principal
+          </button>
         </div>
       )}
     </div>

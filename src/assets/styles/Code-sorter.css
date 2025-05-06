@@ -3,7 +3,7 @@
     margin: 30px auto;
     padding: 20px;
     border-radius: 10px;
-    background-color: #f9f9fc;
+    background-color: #a2d6f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: sans-serif;
   }
@@ -91,5 +91,13 @@
     color: #28a745;
     text-align: center;
     margin-top: 40px;
+  }
+  
+  .code-sorter-finished {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #222;
   }
   
