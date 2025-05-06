@@ -86,7 +86,6 @@ const Perfil = () => {
 
       <div className="perfil-header">
       <h2>{userName ? `Hola, ${userName}` : "Cargando nombre..."}</h2>
-
       </div>
       <hr className="separador" />
 

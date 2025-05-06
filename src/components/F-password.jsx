@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import "../assets/styles/Forgot-password.css"
+import Mascota from "../components/Mascota";
+
 
 const PasswordStepForm = ({ title, fields, label, onSubmit }) => {
   const [formData, setFormData] = useState(() => {
@@ -27,6 +29,7 @@ const PasswordStepForm = ({ title, fields, label, onSubmit }) => {
 
   return (
     <div className='section-total'>
+      <Mascota tipo="triste" tamaño="120px" />
       <div className='forgot-form-container'>
         <h2 className='forgot-form-title'>{title}</h2>
         <form onSubmit={handleSubmit} className="forgot-form">

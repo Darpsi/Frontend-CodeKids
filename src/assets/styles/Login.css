@@ -120,6 +120,19 @@
   background-color: #072ac8;
 }
 
+.logo-top {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.logo-top img {
+  width: 500px;    /* o 80px, 120px, según prefieras */
+  height: auto;
+}
+
+
+
 /* Responsivo */
 @media (max-width: 900px) {
   .login-wrapper {

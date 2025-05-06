@@ -1,4 +1,6 @@
 import Piramide from "../components/Piramide";
+import Mascota from "../components/Mascota";
+
 
 const nivelesPersonalizados = [
   { id: 1, label: "Introducción", info: "Base del funcionamiento de Codekids", ruta: "/modules/1/levels/1" },
@@ -14,6 +16,7 @@ function PaginaDeNiveles() {
       titulo="PIRAMIDE DE CONOCIMIENTO"
       subtitulo="¡Elije un nivel!"
       niveles={nivelesPersonalizados}
+      
     />
   );
 }

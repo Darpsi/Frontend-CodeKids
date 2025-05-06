@@ -134,3 +134,14 @@
     left: calc(20% - 30px);
   }
 }
+
+.logo-container {
+  text-align: center;
+  padding: 10px;
+}
+
+.logo-container img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
