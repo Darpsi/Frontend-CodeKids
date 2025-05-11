@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import "../assets/styles/Forgot-password.css"
-import Mascota from "../components/Mascota";
+import "../assets/styles/login/Forgot-password.css"
+import Mascota from "./pet";
 
 
 const PasswordStepForm = ({ title, fields, label, onSubmit }) => {

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import perfil from "../assets/images/perfil.png";
-import useUserData from "../hooks/User-data"; // Asegúrate de que el nombre del archivo coincida exactamente
+import useUserData from "../hooks/User-data";
 import "../assets/styles/sidebar.css";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/codekids_logo_n.png";
 
 
 
