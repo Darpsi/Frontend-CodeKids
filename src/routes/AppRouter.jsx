@@ -1,21 +1,20 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from '../pages/Login';
+import Login from '../pages/login/Login';
 import Register from '../pages/Register';
-import Home from '../pages/Home';
-import Modules from '../pages/Modules';
-import Level from '../pages/Level';
-import RecoverPassword from '../pages/Forgot-password';
-import VerifyToken from '../pages/Verify-token';
-import ResetPassword from '../pages/Reset-password';
+import Home from '../pages/home/Home';
+import Modules from '../pages/modules/Modules';
+import Level from '../pages/exams/quiz';
+import RecoverPassword from '../pages/login/Forgot-password';
+import VerifyToken from '../pages/login/Verify-token';
+import ResetPassword from '../pages/login/Reset-password';
 import Perfil from "../pages/Perfil";
-import SelectLevel from "../pages/SelectLevel";
-import Maxgame from "../pages/Maxgame";
-import Exam from "../pages/Exam";
-import Levelm from '../pages/Levelm';
-import BugCatcher from '../pages/Bug-1-2';
-import CodeSorter from '../pages/Sorter-1-3';
-import Module2 from '../pages/Module2';
-import CodeMazeExample from '../pages/Maze1';
+import SelectLevel from "../pages/modules/SelectLevel";
+import Maxgame from "../pages/minigames/Maxgame";
+import Exam from "../pages/exams/Exam";
+import Levelm from '../pages/modules/Levelm';
+import BugCatcher from '../pages/minigames/Bug-1-2';
+import CodeSorter from '../pages/minigames/Sorter-1-3';
+import CodeMazeExample from '../pages/minigames/Maze1';
 
 function AppRouter() {
   return (
@@ -30,15 +29,13 @@ function AppRouter() {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/verify-token" element={<VerifyToken />} />
         <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/modules/1" element={<SelectLevel />} />
+        <Route path="/modules/:moduleId" element={<SelectLevel />} />
         <Route path="/maxgame" element={<Maxgame />} />
-        <Route path="/exam" element={<Exam />} />
+        <Route path="/exam/:moduleId" element={<Exam />} />
         <Route path="/bugcatcher" element={<BugCatcher />} />
         <Route path="/sorter" element={<CodeSorter />} />
-        <Route path="/modules/2" element={<Module2 />} />
         <Route path="/maze" element={<CodeMazeExample />} />
         <Route path="/modules/:moduleId/levels/:levelId" element={<Levelm />} />
-        {/* Otras rutas */}
       </Routes>
     </BrowserRouter>
   );
