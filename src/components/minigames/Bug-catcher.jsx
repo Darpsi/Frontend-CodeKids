@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import BarraLateral from "./../Sidebar";
 import "../../assets/styles/minigames/Bug-catcher.css"; 
-import "../../assets/images/levels/caterpillar.gif"
+import "../../assets/images/levels/caterpillar.gif";
+import "../../assets/images/levels/grass.png";
 
 const BugCatcherMultiLevel = ({ levels }) => {
   const [currentLevel, setCurrentLevel] = useState(0);
@@ -66,6 +67,11 @@ const BugCatcherMultiLevel = ({ levels }) => {
           src={require("../../assets/images/levels/caterpillar.gif")}
           alt="bicho"
           className="caterpillar"
+        />
+        <img
+          src={require("../../assets/images/levels/grass.png")}
+          alt="pasto"
+          className="grassbg"
         />
       <h2 className="bug-catcher-title">🧠 Atrapa el Bug - Nivel {currentLevel + 1}</h2>
       <p className="bug-catcher-prompt">{levelData.prompt}</p>

@@ -38,7 +38,7 @@ const CodeMaze = ({ levels }) => {
   return (
     <div className="code-maze-card">
         <BarraLateral />
-      <h2 className="code-maze-title">🧠 Laberinto de Código</h2>
+      <h2 className="code-maze-title">🧠 Decisiones Lógicas</h2>
       <p className="code-maze-prompt">{level.prompt}</p>
 
       {level.steps.map((step, index) => (

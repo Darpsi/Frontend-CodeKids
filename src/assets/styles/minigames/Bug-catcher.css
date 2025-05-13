@@ -69,6 +69,15 @@
     z-index: 10;
   }
 
+  .grassbg {
+    position: absolute;
+    top: 350px;             
+    left: 19.1%;                
+    width: 850px;
+    height: 300px;
+    z-index: 9;
+  }
+
   .bug-catcher-end {
     text-align: center;
     margin-top: 20px;
