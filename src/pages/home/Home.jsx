@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../assets/styles/home/Home.css';
 
 // Importacion de componentes
@@ -22,7 +21,6 @@ const Home = () => {
 
   return (
     <div className="home-container">
-
       <section className="section-1">
         <Navbar />
         <div className="contenido-1">
@@ -67,7 +65,6 @@ const Home = () => {
           text = "Aprende a guardar, modificar y usar tus datos para crear programas útiles"
           reverse />
           </div>
-
           <div className='card-cont2'>
           <CardHome2
           img = {Funciones}
@@ -83,9 +80,8 @@ const Home = () => {
       <section className='section-footer'>
         <Footer />
       </section>
-
     </div>
   );
 };
 
-export default Home; 
+export default Home;
