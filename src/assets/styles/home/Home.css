@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(255, 255, 255);
+  background-color: #F2F2F2;
 }
 
 .home-container {
@@ -7,7 +7,6 @@ body{
   margin: 0;
   width: 100%;
   height: 100vh;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,19 +22,14 @@ body{
   height: auto;
 }
 
-
-
 /* ------------ INICIO SECTION1 ------*/
-
-.section-1{
+.section-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   width: 100%;
-  height: 100vh;
-  background-color: transparent;
+  height: auto;
 }
 
 .contenido-1{
@@ -88,6 +82,7 @@ body{
   padding: 0.520rem 1rem;
   border-radius: 0.625rem;;
   transition: all 0.3s ease;
+  font-size: 1.8rem;
 }
 
 .contenido-text1 a:hover{
@@ -113,17 +108,13 @@ body{
   border-radius: 1.25rem; /* 20px */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
 /* ------------ FIN SECTION1 ------*/
 
-
 /* ------------ INICIO SECTION2 ------*/
-
-.section-2{
-  min-height: 100vh;
+.section-2 {
+  min-height: auto;
   width: 100%;
   background-color: #F2F2F2;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,23 +139,22 @@ body{
 .tarjetas{
   width: 95%;
   height: calc(100vh - 11rem);
-
   display: flex;
   flex-direction: row;
 }
-
 /* ------------ FIN SECTION2 ------*/
 
-.section-3{
-  min-height: 100vh;
+/* ------------ INICIO SECTION 3 ------*/
+.section-3 {
+  min-height: auto;
   width: 100%;
   background-color: #F2F2F2;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 
 .card-contain-total2{
   display: flex;
@@ -172,12 +162,9 @@ body{
   justify-content: center;
   align-items: center;
   background-color: transparent;
-
   width: 90%;
   height: 95vh;
-
 }
-
 
 .card-cont1{
   display: flex;
@@ -185,10 +172,8 @@ body{
   justify-content: center;
   align-items: center;
   background-color: transparent;
-
   width: 50%;
   height: 100%;
-
 }
 
 .card-cont2{
@@ -197,11 +182,11 @@ body{
   justify-content: center;
   align-items: center;
   background-color: transparent;
-
   width: 50%;
   height: 100%;
   margin-left: 30px;
 }
+/* ------------ FIN SECTION 3 ------*/
 
 /* ------------ INICIO FOOTER ------*/
 
@@ -210,7 +195,6 @@ body{
   min-height: 30vh; 
   background-color: #F2F2F2;
   display: flex;
-
   flex-direction: column;
   align-items: center;
   justify-content: flex-start; 
@@ -257,13 +241,11 @@ body{
   text-align: center;
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 1px solid #3498db;
+  border-top: 1px solid rgba(255,255,255,0.2);
 }
-
-
 /* ------------ FIN SECTION-FOOTER ----------*/
 
-/* Media Queries para responsividad */
+/* Media Queries para 1200px*/
 @media (max-width: 1200px) {
   .title {
     font-size: 4rem;
@@ -272,15 +254,54 @@ body{
   .content-text p {
     font-size: 1.8rem;
   }
+  
+  .section-1{
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .contenido-1 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .contenido-text1 {
+    width: 90%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .contenido-img1 {
+    width: 60%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .contenido-text1 h1 {
+    font-size: 5rem;
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .contenido-text1 h2 {
+    font-size: 3.5rem;
+    margin-left: 0;
+  }
+
+  .contenido-text1 p {
+    font-size: 2rem;
+    margin-left: 0;
+    width: 100%;
+  }
 }
 
+/* Media Queries para 992px*/
 @media (max-width: 992px) {
   .content {
     flex-direction: column;
     width: 90%;
   }
 
-  
   .content-img,
   .content-text {
     width: 100%;
@@ -289,9 +310,31 @@ body{
   .content-text {
     padding: 1.5rem 0;
   }
+
+  .section-2{
+    margin-bottom: 1.5rem;
+    height: auto;
   }
 
+  .section-2 .titulo {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
 
+  .section-2 .subtitulo {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .tarjetas {
+    flex-direction: column;
+    align-items: center;
+    /* background-color: tomato; */
+  }
+}
+
+/* Media Queries para 768px*/
 @media (max-width: 768px) {
   .title {
     font-size: 3rem;
@@ -301,9 +344,60 @@ body{
   .content-text p {
     font-size: 1.5rem;
   }
+
+  .card-contain-total2{
+    flex-direction: column;
+    height: auto;
+  }
+  .card-cont1{
+    width: 90%;
+  }
+  .card-cont2{
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .contenido-1 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .contenido-text1, .contenido-img1 {
+    width: 90%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .contenido-text1 h1 {
+    font-size: 3rem;
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .contenido-text1 h2 {
+    font-size: 2.5rem;
+    margin-left: 0;
+  }
+
+  .contenido-text1 p, .contenido-text1 a {
+    font-size: 1.2rem;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .section-2 .titulo {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .section-2 .subtitulo {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .tarjetas {
+    flex-direction: column;
+    align-items: center;
+  }
 }
-
-
-
-/* ------------ FIN FOOTER ------*/
-

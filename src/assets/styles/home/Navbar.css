@@ -3,19 +3,19 @@
     width: 100%;
     background-color: #3498db;
     padding: 15px;
-    display: flex; /* Asegura que los elementos dentro del nav se alineen */
-    align-items: center; /* Centra verticalmente los elementos */
-    justify-content: space-between; /* Espacia los elementos a los extremos */
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
 }
 
 .lista-nav {
     padding: 0 10px;
     margin: 0;
-    list-style: none; /* Elimina los puntos de la lista */
-    display: flex; /* Coloca los elementos de la lista en línea */
+    list-style: none; 
+    display: flex; 
     flex-direction: row;
-    align-items: center; /* Alinea verticalmente los elementos dentro de la lista */
-    gap: 30px; /* Espaciado entre los links */
+    align-items: center;
+    gap: 30px; 
 }
 
 .links-nav, .codekids {
@@ -37,16 +37,57 @@
 }
 
 .links-nav:hover {
-    background-color: white; /* Fondo blanco traslúcido */
+    background-color: white;
     color: #3498db;
-    box-shadow: 0 0 10px rgba(52, 152, 219, 0.6); /* Brillo azul */
-    transform: scale(1.05); /* Ligera expansión */
-    padding: 8px 15px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.6); 
+    transform: scale(1.05);
+    padding: 8px 15px;
+    border-radius: 5px;
 }
 
 .links-nav-register:hover {
-    background-color: #FFD700; /* Amarillo más brillante */
-    transform: scale(1.1); /* Efecto de crecimiento */
-    box-shadow: 0 0 20px rgba(255, 198, 0, 0.6); /* Brillo amarillo */
+    background-color: #FFD700; 
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 198, 0, 0.6);
+}
+
+.hamburger {
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .right-nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #3498db;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 20px;
+        display: none;
+    }
+
+    .right-nav.open {
+        display: flex;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lista-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
 }
