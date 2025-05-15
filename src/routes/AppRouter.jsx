@@ -15,6 +15,7 @@ import Levelm from '../pages/modules/Levelm';
 import BugCatcher from '../pages/minigames/Bug-1-2';
 import CodeSorter from '../pages/minigames/Sorter-1-3';
 import CodeMazeExample from '../pages/minigames/Maze1';
+import Admin from '../pages/admin/Admin';
 
 function AppRouter() {
   return (
@@ -36,6 +37,7 @@ function AppRouter() {
         <Route path="/sorter" element={<CodeSorter />} />
         <Route path="/maze" element={<CodeMazeExample />} />
         <Route path="/modules/:moduleId/levels/:levelId" element={<Levelm />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,8 +1,3 @@
-// src/services/authService.js
-// Aqui se encuentran las funciones para hacer peticiones al backend.
-
-// src/services/authService.js
-
 import axios from 'axios';
 
 const API_URL = 'http://localhost:4000';
@@ -79,6 +74,7 @@ export const changePasword = async (email, password, newPassword) => {
   }
 }
 
+// Función para obtener el nombre del usuario
 export const getName = async (email) => {
   try {
     const response = await axios.get(`${API_URL}/users/name/${email}`);
@@ -88,6 +84,7 @@ export const getName = async (email) => {
   }
 };
 
+// Función para obtener el nombre de la institución
 export const getNameInstitution = async (email) => {
   try {
     const response = await axios.get(`${API_URL}/users/institution/${email}`);
@@ -96,6 +93,26 @@ export const getNameInstitution = async (email) => {
     handleAxiosError(error, 'Error al obtener el nombre de la institución');
   }
 };
+
+// Función para obtener el progreso del usuario (Modulo actual)
+export const getProgreso = async (correo) => {
+  try {
+    const response = await axios.get(`${API_URL}/progreso/${correo}`);
+    return response.data;
+  } catch (error) {
+    handleAxiosError(error, 'Error al obtener el progreso');
+  }
+};
+
+// Función para obtener los estudiantes de una institución
+export const getStudentsInInstitution = async (email) => {
+  try {
+    const response = await axios.get(`${API_URL}/users/in-institution/${email}`);
+    return response.data;
+  } catch (error) {
+    handleAxiosError(error, 'Error al obtener los estudiantes de la institución');
+  }
+}
 
 
 // Función reutilizable para manejar errores de axios

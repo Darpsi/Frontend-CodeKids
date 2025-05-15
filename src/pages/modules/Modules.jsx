@@ -2,23 +2,29 @@ import React, { useEffect, useState } from "react";
 import "../../assets/styles/modules/modules.css";
 import Sidebar from "../../components/Sidebar";
 import CartaModulos from "../../components/modules/Card-modules";
+import GetBarColor from "../../components/Progress/Getbarcolor"
+import { getProgreso  } from "../../services/authService";
 
 const Modulos = () => {
   const [maxModulo, setMaxModulo] = useState(0);
-  console.log("Maximo modulo:", maxModulo, localStorage.getItem("email"));
+
   useEffect(() => {
     const correo = localStorage.getItem("email");
     if (!correo) return;
-    fetch(`http://localhost:4000/progreso/${correo}`)
-      .then(res => res.json())
-      .then(data => {
+
+    const obtenerProgreso = async () => {
+      const data = await getProgreso(correo);
+      if (data && data.maxModulo !== undefined) {
         setMaxModulo(data.maxModulo);
         console.log("Progreso del usuario:", data.maxModulo);
-      })
-      .catch(error => {
-        console.error("Error obteniendo el progreso:", error);
-      });
+      }
+    };
+
+    obtenerProgreso();
   }, []);
+
+  const totalModulos = 8;
+  const progresoPorcentaje = Math.min((maxModulo / totalModulos) * 100, 100);
 
   const modulos = [
     {
@@ -80,6 +86,18 @@ const Modulos = () => {
       <Sidebar />
       <div className="modulos-content">
         <h2 className="modulos-title">« MODULOS »</h2>
+
+        <div className="xp-bar-container">
+          <p className="xp-label">Progreso del Curso</p>
+          <div className="xp-bar">
+            <div
+              className="xp-fill"
+              style={{ width: `${progresoPorcentaje}%`, backgroundColor: GetBarColor(progresoPorcentaje) }}
+            ></div>
+          </div>
+          <span className="xp-percentage">{Math.round(progresoPorcentaje)}%</span>
+        </div>
+
         <div className="modulos-grid">
           {modulos.map((modulo) => (
             <CartaModulos
