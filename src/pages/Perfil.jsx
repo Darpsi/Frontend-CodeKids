@@ -13,9 +13,9 @@ const Perfil = () => {
   const [userName, setUserName] = useState("");
   const [institutionName, setInstitutionName] = useState("");
 
+  const email = localStorage.getItem("email");
+
   useEffect(() => {
-    const email = localStorage.getItem("email");
-  
     if (email) {
       getName(email)
         .then((name) => {
@@ -33,9 +33,8 @@ const Perfil = () => {
           console.error("Error al obtener el nombre de la institución:", error);
         });
     }
-  }, []);
+  }, [email]);
 
-  const email = localStorage.getItem("email");
 
   const handleSubmit = (e) => {
     e.preventDefault();

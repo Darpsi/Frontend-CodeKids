@@ -29,8 +29,10 @@ const Login = () => {
       const result = await login(formData);
       alert(result.message);
       localStorage.setItem('email', formData.email);
-      navigate('/modules')
-
+      if (result.tipo === "normal")
+        navigate('/modules')
+      else if (result.tipo === "admin")
+        navigate('/admin')
     } catch (error) {
       alert(error.message);
     }
@@ -84,4 +86,3 @@ const Login = () => {
 };
 
 export default Login;
-
