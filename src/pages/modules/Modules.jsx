@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../assets/styles/modules/modules.css";
 import Sidebar from "../../components/Sidebar";
 import CartaModulos from "../../components/modules/Card-modules";
-import GetBarColor from "../../components/Progress/Getbarcolor"
+import GetBarColor from "../../components/Institution/Getbarcolor"
 import { getProgreso  } from "../../services/authService";
 
 const Modulos = () => {

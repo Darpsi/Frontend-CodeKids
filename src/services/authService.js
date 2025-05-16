@@ -114,6 +114,18 @@ export const getStudentsInInstitution = async (email) => {
   }
 }
 
+export const addUserInstitution = async (pk_correo, correo_institucion) => {
+  try {
+    const response = await axios.post(`${API_URL}/users/update-institution`,{
+      pk_correo,
+      correo_institucion
+    });
+    return response.data;
+  } catch (error) {
+    handleAxiosError(error, 'Error al agregar el usuario a la institución');
+  }
+}
+
 
 // Función reutilizable para manejar errores de axios
 const handleAxiosError = (error, defaultMessage) => {

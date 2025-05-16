@@ -1,7 +1,7 @@
 import '../../assets/styles/admin/progressStudent.css';
 import {getStudentsInInstitution} from '../../services/authService';
 import { useEffect, useState } from 'react';
-import DonaProgress from '../Progress/DonaProgress';
+import DonaProgress from '../Institution/DonaProgress';
 
 const ProgressPerStudent = () => {
   const [progresos, setProgresos] = useState([]);
@@ -29,7 +29,7 @@ const ProgressPerStudent = () => {
   };
 
   return (
-    <div>
+    <div className="progreso-estudiantes">
       <h2>Progreso por estudiante</h2>
       {progresos.map((estudiante, index) => (
         <div key={index} style={{ border: "1px solid #ccc", margin: "10px 0", borderRadius: "6px" }}>
@@ -45,7 +45,7 @@ const ProgressPerStudent = () => {
             {estudiante.nombre}
           </div>
           {abiertos[estudiante.nombre] && (
-            <div style={{ padding: "10px" }}>
+            <div className="contenido-dona">
               <DonaProgress moduloActual={estudiante.id_modulo_actual} />
             </div>
           )}

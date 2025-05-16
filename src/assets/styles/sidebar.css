@@ -55,7 +55,7 @@
 }
 
 .contenido-barra button,
-.contenido-barra a {
+.contenido-barra a, .contenido-barra p {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,6 +109,14 @@
   margin-bottom: 15px;
 }
 
+.modal-contenido input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #001996;
+  border-radius: 8px;
+}
+
 .modal-contenido button {
   padding: 10px 20px;
   color: white;
@@ -117,6 +125,7 @@
   border-radius: 8px;
   cursor: pointer;
   margin-top: 20px;
+  margin-left: 10px;
 }
 
 .modal-contenido button:hover {
