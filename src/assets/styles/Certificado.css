@@ -1,0 +1,43 @@
+.contenedor-certificado {
+  text-align: center;
+  padding: 20px;
+}
+
+.certificado {
+  margin: auto;
+  padding: 40px;
+  width: 800px;
+  background: url('../images/certificado.jpg') no-repeat center center;
+  background-size: cover;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  color: #333;
+  font-family: 'Georgia', serif;
+  position: relative;
+}
+
+.certificado h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.certificado h2 {
+  font-size: 28px;
+  color: #2a5d84;
+}
+
+.btn-descargar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-descargar:hover {
+  background-color: #388e3c;
+}
+/*   color: #2E4057;
+ */

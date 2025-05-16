@@ -2,20 +2,25 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import perfilImg from "../assets/images/perfil.png";
 import PopupModal from "../components/PopupModal";
+import Certificado from "../components/Certificado";
 import { changePasword, getName, getNameInstitution } from "../services/authService";
 import "../assets/styles/Perfil.css";
 
 const Perfil = () => {
-  const [modalVisible, setModalVisible] = useState(null); // "cambio" o "insignias"
+  const [modalVisible, setModalVisible] = useState(null); // "cambio", "insignias" o "certificado"
   const [modalPos, setModalPos] = useState({ top: "50%", left: "50%" });
   const navigate = useNavigate();
 
   const [userName, setUserName] = useState("");
   const [institutionName, setInstitutionName] = useState("");
+  const [certificadoDisponible, setCertificadoDisponible] = useState(true);
+  const [loadingCertificado, setLoadingCertificado] = useState(false);
+
+  const email = localStorage.getItem("email");
 
   useEffect(() => {
     const email = localStorage.getItem("email");
-  
+
     if (email) {
       getName(email)
         .then((name) => {
@@ -32,10 +37,14 @@ const Perfil = () => {
         .catch((error) => {
           console.error("Error al obtener el nombre de la institución:", error);
         });
-    }
-  }, []);
 
-  const email = localStorage.getItem("email");
+      fetch(`http://localhost:4000/certificado/estado/${email}`)
+        .then((res) => res.json())
+        .then((data) => setCertificadoDisponible(data.disponible))
+        .catch((error) => console.error("Error al verificar certificado:", error))
+        .finally(() => setLoadingCertificado(false));
+    }
+  }, [email]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,14 +76,24 @@ const Perfil = () => {
   }
 
   const abrirModalDesde = (e, tipo) => {
-    const rect = e.target.getBoundingClientRect();
-    const scrollY = window.scrollY || window.pageYOffset;
-    const scrollX = window.scrollX || window.pageXOffset;
+    if (tipo === "certificado") {
+      // 💥 Popup del certificado: más arriba en pantalla
+      const scrollX = window.scrollX || window.pageXOffset;
+      const centerLeft = e.target.getBoundingClientRect().left + scrollX + e.target.offsetWidth / 2;
 
-    const centerTop = rect.top + scrollY + rect.height / 2;
-    const centerLeft = rect.left + scrollX + rect.width / 2;
+      setModalPos({ top: `30vh`, left: `${centerLeft}px` });
+    } else {
+      // 🟢 Otros popups siguen su posición normal
+      const rect = e.target.getBoundingClientRect();
+      const scrollY = window.scrollY || window.pageYOffset;
+      const scrollX = window.scrollX || window.pageXOffset;
 
-    setModalPos({ top: `${centerTop}px`, left: `${centerLeft}px` });
+      const centerTop = rect.top + scrollY + rect.height / 2;
+      const centerLeft = rect.left + scrollX + rect.width / 2;
+
+      setModalPos({ top: `${centerTop}px`, left: `${centerLeft}px` });
+    }
+
     setModalVisible(tipo);
   };
 
@@ -85,7 +104,7 @@ const Perfil = () => {
       </button>
 
       <div className="perfil-header">
-      <h2>{userName ? `Hola, ${userName}` : "Cargando nombre..."}</h2>
+        <h2>{userName ? `Hola, ${userName}` : "Cargando nombre..."}</h2>
       </div>
       <hr className="separador" />
 
@@ -99,7 +118,9 @@ const Perfil = () => {
           <div className="w-48 h-4 bg-gray-200 rounded-full overflow-hidden">
             <div className="h-full bg-blue-500" style={{ width: '65%' }}></div>
           </div>
-          <p className="text-sm text-gray-600">Institución: {institutionName ? institutionName : "No perteneces a ninguna institución"}</p>
+          <p className="text-sm text-gray-600">
+            Institución: {institutionName || "No perteneces a ninguna institución"}
+          </p>
           <div className="perfil-stats">
             <p><strong>Módulos completados:</strong> 2/4 PURA DECORACION</p>
             <p><strong>Tiempo total:</strong> 3h 25min</p>
@@ -117,11 +138,19 @@ const Perfil = () => {
         <div className="cuadro insignias" onClick={(e) => abrirModalDesde(e, "insignias")}>
           <p>Insignias</p>
         </div>
+        {!loadingCertificado && certificadoDisponible && (
+          <div className="cuadro certificado" onClick={(e) => abrirModalDesde(e, "certificado")}>
+            <p>Ver Certificado</p>
+          </div>
+        )}
+        {!loadingCertificado && !certificadoDisponible && (
+          <p className="mensaje-certificado">El certificado aún no está disponible.</p>
+        )}
       </div>
 
       <div className="barra-inferior"></div>
 
-      {/* Modal para cambiar contraseña */}
+      {/* Modal: Cambiar Contraseña */}
       <PopupModal
         visible={modalVisible === "cambio"}
         onClose={() => setModalVisible(null)}
@@ -136,9 +165,7 @@ const Perfil = () => {
         </form>
       </PopupModal>
 
-
-
-      {/* Modal para insignias */}
+      {/* Modal: Insignias */}
       <PopupModal
         visible={modalVisible === "insignias"}
         onClose={() => setModalVisible(null)}
@@ -156,13 +183,22 @@ const Perfil = () => {
                 src={bn}
                 alt={`Insignia ${i + 1}`}
                 className="insignia"
-                onMouseEnter={e => e.currentTarget.src = color}
-                onMouseLeave={e => e.currentTarget.src = bn}
-                />
+                onMouseEnter={(e) => (e.currentTarget.src = color)}
+                onMouseLeave={(e) => (e.currentTarget.src = bn)}
+              />
             );
-          }
-          )}
+          })}
         </div>
+      </PopupModal>
+
+      {/* Modal: Certificado */}
+      <PopupModal
+        visible={modalVisible === "certificado"}
+        onClose={() => setModalVisible(null)}
+        title="Certificado"
+        triggerPosition={modalPos}
+      >
+        <Certificado correo={email} />
       </PopupModal>
     </div>
   );
