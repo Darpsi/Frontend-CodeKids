@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../assets/styles/minigames/Code-sorter.css";
 import BarraLateral from "./../Sidebar";
+import "../../assets/images/levels/puzzlew.gif";
 
 const CodeSorter = ({ levels }) => {
   const [currentLevel, setCurrentLevel] = useState(0);
@@ -85,6 +86,9 @@ const CodeSorter = ({ levels }) => {
       <BarraLateral />
       <h2 className="code-sorter-title">🧩 Ordena el Código</h2>
       <p className="code-sorter-prompt">{currentPrompt}</p>
+      <img className="code-sorter-puzzle" 
+      src={require("../../assets/images/levels/puzzlew.gif")}
+      alt="Puzzle GIF" />
 
       <div className="code-sorter-blocks">
         {blocks.map((line, index) => (

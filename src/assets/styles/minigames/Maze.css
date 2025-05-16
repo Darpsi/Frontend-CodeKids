@@ -94,4 +94,13 @@
   .code-maze-return:hover {
     background-color: #5a6268;
   }
+
+  .code-maze-thinking {
+    position: absolute;
+    top: 370px;             
+    left: 20%;                
+    width: 800px;
+    height: 275px;
+    z-index: 10;
+  }
   

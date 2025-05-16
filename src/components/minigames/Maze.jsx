@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../assets/styles/minigames/Maze.css";
 import "../../assets/styles/minigames/Maze.css";import BarraLateral from "./../Sidebar";
+import "../../assets/images/levels/thinkinw.gif";
 
 const CodeMaze = ({ levels }) => {
   const [currentLevel, setCurrentLevel] = useState(0);
@@ -39,6 +40,11 @@ const CodeMaze = ({ levels }) => {
     <div className="code-maze-card">
         <BarraLateral />
       <h2 className="code-maze-title">🧠 Decisiones Lógicas</h2>
+      <img
+        className="code-maze-thinking"
+        src={require("../../assets/images/levels/thinkinw.gif")}
+        alt="thinking"
+      />
       <p className="code-maze-prompt">{level.prompt}</p>
 
       {level.steps.map((step, index) => (
