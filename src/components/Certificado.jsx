@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+import "../assets/styles/Certificado.css";
 
 
 
@@ -45,6 +47,9 @@ const Certificado = ({ correo }) => {
         <p>Por completar satisfactoriamente el curso Codekids</p>
       </div>
 
+      <button className="btn-descargar" onClick={descargarPDF}>
+        Descargar PDF
+      </button>
     </div>
   );
 };
