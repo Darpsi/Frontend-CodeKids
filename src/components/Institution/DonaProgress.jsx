@@ -1,4 +1,6 @@
-import { PieChart, Pie, Cell, Legend } from "recharts";
+import { PieChart, Pie, Cell } from "recharts";
+import "../../assets/styles/admin/donaProgress.css";
+
 
 const DonaProgreso = ({ moduloActual }) => {
   const totalModulos = 8;
@@ -15,9 +17,8 @@ const DonaProgreso = ({ moduloActual }) => {
   const COLORS = ["#00C49F", "#FFBB28", "#FF8042"];
 
   return (
-    <div>
-      <h3>Progreso del estudiante</h3>
-      <PieChart width={300} height={250}>
+    <div className="dona-container">
+      <PieChart width={250} height={250}>
         <Pie
           data={data}
           cx="50%"
@@ -31,8 +32,20 @@ const DonaProgreso = ({ moduloActual }) => {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Legend />
       </PieChart>
+
+      <div className="dona-legend">
+        <h4 className="dona-title">Progreso del estudiante</h4>
+        {data.map((entry, index) => (
+          <div className="dona-item" key={entry.name}>
+            <div
+              className="dona-color"
+              style={{ backgroundColor: COLORS[index] }}
+            />
+            <span>{`${entry.name}: ${entry.value}`}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
