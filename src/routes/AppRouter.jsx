@@ -33,7 +33,7 @@ function AppRouter() {
         <Route path="/maxgame" element={<Maxgame />} />
         <Route path="/exam/:moduleId" element={<Exam />} />
         <Route path="/bugcatcher" element={<BugCatcher />} />
-        <Route path="/sorter" element={<CodeSorter />} />
+        <Route path="/minigame/:moduleid/sorter/:sorterid" element={<CodeSorter />} />
         <Route path="/maze" element={<CodeMazeExample />} />
         <Route path="/modules/:moduleId/levels/:levelId" element={<Levelm />} />
       </Routes>
