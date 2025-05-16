@@ -21,6 +21,7 @@ const Perfil = () => {
   useEffect(() => {
     const email = localStorage.getItem("email");
 
+    
     if (email) {
       getName(email)
         .then((name) => {
