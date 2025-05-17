@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "../../assets/styles/minigames/Maze.css";
 import "../../assets/styles/minigames/Maze.css";import BarraLateral from "./../Sidebar";
 import "../../assets/images/levels/thinkinw.gif";
+import { useParams } from "react-router-dom";
 
 const CodeMaze = ({ levels }) => {
+  const { moduleid } = useParams();
   const [currentLevel, setCurrentLevel] = useState(0);
   const [path, setPath] = useState([]);
   const [feedback, setFeedback] = useState(null);
@@ -86,7 +88,7 @@ const CodeMaze = ({ levels }) => {
         <div className="code-maze-end">
             🎉 ¡Completaste todos los niveles!
             <br />
-            <button className="code-maze-return" onClick={() => window.location.href = "/modules/2"}>
+            <button className="code-maze-return" onClick={() => window.location.href = `/modules/${moduleid}`}>
             ⬅ Volver al Menú Principal
             </button>
         </div>

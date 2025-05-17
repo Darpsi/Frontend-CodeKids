@@ -10,13 +10,13 @@ export const pyramidData = [
     ]
   },
   {
-    moduleId: 2,
-    niveles: [
-      { id: 1, label: "Control de Flujo", info: "Base del funcionamiento de Codekids", ruta: "/level" },
-      { id: 2, label: "Condiciones y estructuras if-else", info: "Examina el orden de las cosas", ruta: "/bugcatcher" },
-      { id: 3, label: "Bucles (for, while)", info: "Examina el orden de las cosas", ruta: "/sorter" }, 
-      { id: 4, label: "Operadores lógicos y relacionales", info: "Aprende tipos de datos básicos.", ruta: "/maze" },
-      { id: 5, label: "Examen Final", info: "¡Demuestra lo aprendido!", ruta: "/exam/2" },
+  moduleId: 2,
+  niveles: [
+    { id: 1, label: "Control de Flujo", info: "Aprende cómo toma decisiones un programa.", ruta: "/quiz/2" },
+    { id: 2, label: "Condiciones y estructuras if-else", info: "Explora cómo ejecutar instrucciones según diferentes condiciones.", ruta: "/minigame/2/catcher" },
+    { id: 3, label: "Bucles (for, while)", info: "Descubre cómo repetir tareas automáticamente con bucles.", ruta: "/minigame/2/sorter" }, 
+    { id: 4, label: "Operadores lógicos", info: "Combina condiciones usando AND, OR y NOT.", ruta: "/minigame/2/maze" },
+    { id: 5, label: "Examen Final", info: "¡Demuestra todo lo que has aprendido sobre control de flujo!", ruta: "/exam/2" },
     ]
-  }
+  },
 ];

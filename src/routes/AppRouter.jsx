@@ -24,7 +24,7 @@ function AppRouter() {
         <Route path="/login" element={<Login/>} />
         <Route path="/modules" element={<Modules/>} />
         <Route path="/register" element={<Register />} />
-        <Route path="/level" element={<Level/>} />
+        <Route path="/quiz/:moduleid" element={<Level/>} />
         <Route path="/forgot-password" element={<RecoverPassword />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/verify-token" element={<VerifyToken />} />
@@ -32,9 +32,9 @@ function AppRouter() {
         <Route path="/modules/:moduleId" element={<SelectLevel />} />
         <Route path="/maxgame" element={<Maxgame />} />
         <Route path="/exam/:moduleId" element={<Exam />} />
-        <Route path="/bugcatcher" element={<BugCatcher />} />
-        <Route path="/minigame/:moduleid/sorter/:sorterid" element={<CodeSorter />} />
-        <Route path="/maze" element={<CodeMazeExample />} />
+        <Route path="/minigame/:moduleid/catcher" element={<BugCatcher />} />
+        <Route path="/minigame/:moduleid/sorter" element={<CodeSorter />} />
+        <Route path="/minigame/:moduleid/maze" element={<CodeMazeExample />} />
         <Route path="/modules/:moduleId/levels/:levelId" element={<Levelm />} />
       </Routes>
     </BrowserRouter>

@@ -3,8 +3,10 @@ import BarraLateral from "./../Sidebar";
 import "../../assets/styles/minigames/Bug-catcher.css"; 
 import "../../assets/images/levels/caterpillar.gif";
 import "../../assets/images/levels/grass.png";
+import { useParams } from "react-router-dom";
 
 const BugCatcherMultiLevel = ({ levels }) => {
+  const { moduleid } = useParams();
   const [currentLevel, setCurrentLevel] = useState(0);
   const [userCode, setUserCode] = useState(levels[0].buggyCode);
   const [feedback, setFeedback] = useState(null);
@@ -101,7 +103,7 @@ const BugCatcherMultiLevel = ({ levels }) => {
           <div className="bug-catcher-feedback">
             🎊 ¡Has terminado todos los niveles!
           </div>
-          <button className="bug-catcher-button" onClick={() => window.location.href = "/ruta-del-menu"}>
+          <button className="bug-catcher-button" onClick={() => window.location.href = `/modules/${moduleid}`}>
             Volver al Menú Principal
           </button>
         </div>

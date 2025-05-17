@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../../assets/styles/minigames/Code-sorter.css";
 import BarraLateral from "./../Sidebar";
 import "../../assets/images/levels/puzzlew.gif";
+import { useParams } from "react-router-dom";
 
 const CodeSorter = ({ levels }) => {
+  const { moduleid } = useParams();
   const [currentLevel, setCurrentLevel] = useState(0);
   const [blocks, setBlocks] = useState([]);
   const [feedback, setFeedback] = useState(null);
@@ -105,15 +107,20 @@ const CodeSorter = ({ levels }) => {
         ))}
       </div>
 
-      <button
-        className="code-sorter-button"
-        onClick={checkAnswer}
-        disabled={levelPassed || gameFinished}
-      >
-        Verificar
-      </button>
+      {!gameFinished && (
+        <button
+          className="code-sorter-button"
+          onClick={checkAnswer}
+          disabled={levelPassed}
+        >
+          Verificar
+        </button>
+      )}
 
-      {feedback && <div className="code-sorter-feedback">{feedback}</div>}
+      {feedback && !gameFinished && (
+      <div className="code-sorter-feedback">{feedback}</div>
+      )}
+
 
       {gameFinished && (
         <div className="code-sorter-finished">
@@ -121,7 +128,7 @@ const CodeSorter = ({ levels }) => {
           <br />
           <button
             className="code-sorter-button"
-            onClick={() => (window.location.href = "/modules/2")}
+            onClick={() => (window.location.href = `/modules/${moduleid}`)}
           >
             🏠 Volver al Menú Principal
           </button>

@@ -97,10 +97,10 @@
 
   .code-maze-thinking {
     position: absolute;
-    top: 370px;             
-    left: 20%;                
-    width: 800px;
-    height: 275px;
+    top: 465px;             
+    left: 23%;                
+    width: 750px;
+    height: 180px;
     z-index: 10;
   }
   
