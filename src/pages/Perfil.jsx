@@ -17,6 +17,8 @@ const Perfil = () => {
   const [loadingCertificado, setLoadingCertificado] = useState(false);
   const email = localStorage.getItem("email");
 
+  const email = localStorage.getItem("email");
+
   useEffect(() => {
     if (email) {
       getName(email)
@@ -43,6 +45,7 @@ const Perfil = () => {
         .finally(() => setLoadingCertificado(false));
     }
   }, [email]);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();

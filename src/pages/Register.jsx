@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../services/authService';
 import '../assets/styles/Register.css';
 import registroImagen from '../assets/images/registro-imagen.jpg'; // Asegúrate de que la imagen está en la ruta correcta
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/codekids_logo_n.png";
 
 const Register = () => {
   const [formData, setFormData] = useState({
