@@ -13,8 +13,8 @@ const Perfil = () => {
 
   const [userName, setUserName] = useState("");
   const [institutionName, setInstitutionName] = useState("");
-  const [certificadoDisponible, setCertificadoDisponible] = useState(true);
-  const [loadingCertificado, setLoadingCertificado] = useState(false);
+  const [certificadoDisponible, setCertificadoDisponible] = useState(false);
+  const [loadingCertificado, setLoadingCertificado] = useState(true);
 
   const email = localStorage.getItem("email");
 
