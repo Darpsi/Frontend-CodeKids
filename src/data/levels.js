@@ -1,4 +1,4 @@
-import codekids_logo from "../assets/images/codekids_negro.png";
+import codekids_logo from "../assets/images/codekids_logo_n.png";
 import intro_video from "../assets/videos/vid_intro_codekids.mp4"
 import control from "../assets/images/levels/game_control.jpg"
 import program from "../assets/images/levels/program.png"

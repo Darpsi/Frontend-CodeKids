@@ -1,24 +1,27 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import perfil from "../assets/images/perfil.png";
-import useUserData from "../hooks/User-data";
-import "../assets/styles/sidebar.css";
-import logo from "../assets/images/codekids_logo_n.png";
-
+import { useState } from "react";
+import "../../assets/styles/sidebar.css";
+import logo from "../../assets/images/logo-institution.jpg";
+import { addUserInstitution } from "../../services/authService";
 
 
 const BarraLateral = () => {
   const [visible, setVisible] = useState(true);
   const [modalAbierto, setModalAbierto] = useState(false);
-  const navigate = useNavigate();
-  const { userName, institutionName } = useUserData();
-
-  const irAPerfil = () => {
-    navigate("/perfil");
-  };
+  const [pk_correo, setpk_correo] = useState(""); 
 
   const abrirModal = () => setModalAbierto(true);
   const cerrarModal = () => setModalAbierto(false);
+
+  const enviarForm = async () => {
+    const email = localStorage.getItem("email");
+    try {
+      const result = await addUserInstitution(pk_correo, email)
+      alert(result.message);
+      cerrarModal();
+    } catch (error) {
+      alert(error.message);
+    }
+  }
 
   return (
     <>
@@ -32,12 +35,10 @@ const BarraLateral = () => {
         </button>
         <div className="contenido-barra">
           <div className="perfil">
-            <img src={perfil} alt="Perfil" />
-            <button onClick={irAPerfil}>Perfil</button>
+            <p>Panel de administrador</p>
           </div>
           <div className="botones-barra">
-            <button onClick={abrirModal}>Institución</button>
-            <a href="/modules">Módulos</a>
+            <button onClick={abrirModal}>Agregar Estudiante</button>
             <a href="/">Salir</a>
           </div>
         </div>
@@ -46,9 +47,13 @@ const BarraLateral = () => {
       {modalAbierto && (
         <div className="modal-overlay" onClick={cerrarModal}>
           <div className="modal-contenido" onClick={(e) => e.stopPropagation()}>
-            <h2>Hola, {userName}</h2>
-            <p>La institución a la que perteneces es:</p>
-            <h3>{institutionName}</h3>
+            <h2>Ingresa el correo del estudiante</h2>
+            <input 
+            type="email"
+            value={pk_correo}
+            onChange={(e) => setpk_correo(e.target.value)}
+            required />
+            <button onClick={enviarForm}>Enviar</button>
             <button onClick={cerrarModal}>Cerrar</button>
           </div>
         </div>

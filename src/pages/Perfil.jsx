@@ -18,7 +18,6 @@ const Perfil = () => {
   const email = localStorage.getItem("email");
 
   useEffect(() => {
-
     if (email) {
       getName(email)
         .then((name) => {
@@ -36,6 +35,7 @@ const Perfil = () => {
           console.error("Error al obtener el nombre de la institución:", error);
         });
 
+      // Verificar disponibilidad del certificado
       fetch(`http://localhost:4000/certificado/estado/${email}`)
         .then((res) => res.json())
         .then((data) => setCertificadoDisponible(data.disponible))
@@ -43,6 +43,7 @@ const Perfil = () => {
         .finally(() => setLoadingCertificado(false));
     }
   }, [email]);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,7 +59,7 @@ const Perfil = () => {
 
     try {
       changePasword(email, currentPassword, newPassword)
-        .then((response) => {
+        .then(() => {
           alert("Contraseña cambiada con éxito");
           setModalVisible(null);
         })
@@ -66,22 +67,20 @@ const Perfil = () => {
           console.error("Error al cambiar la contraseña:", error);
           alert("Error al cambiar la contraseña. Intenta nuevamente.");
         });
-    }catch(error){
+    } catch (error) {
       console.error("Error al cambiar la contraseña:", error);
       alert("Error al cambiar la contraseña. Intenta nuevamente.");
     }
-
-  }
+  };
 
   const abrirModalDesde = (e, tipo) => {
     if (tipo === "certificado") {
-      // 💥 Popup del certificado: más arriba en pantalla
+      // Posición especial para certificado
       const scrollX = window.scrollX || window.pageXOffset;
       const centerLeft = e.target.getBoundingClientRect().left + scrollX + e.target.offsetWidth / 2;
 
       setModalPos({ top: `30vh`, left: `${centerLeft}px` });
     } else {
-      // 🟢 Otros popups siguen su posición normal
       const rect = e.target.getBoundingClientRect();
       const scrollY = window.scrollY || window.pageYOffset;
       const scrollX = window.scrollX || window.pageXOffset;
