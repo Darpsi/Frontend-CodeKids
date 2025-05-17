@@ -1,30 +1,19 @@
 import Quiz from "../../components/exams/Quiz";
-
-const questions = [
-  {
-    question: "¿Cuál de los siguientes es un lenguaje de programación?",
-    options: ["Inglés", "Python", "Español", "Lenguaje HTML"],
-    correct: "Python",
-  },
-  {
-    question: "¿Cuál de estos programas se usa para escribir código?",
-    options: ["Paint", "Word", "Scratch", "Excel"],
-    correct: "Scratch",
-  },
-  {
-    question: "¿Qué puedes crear con programación?",
-    options: ["Videojuegos", "Aplicaciones", "Páginas web", "Todas"],
-    correct: "Todas",
-  },
-];
+import { quizData } from "../../data/quiz.js";
+import { useParams } from "react-router-dom";
 
 const Level0 = () => {
+  const { moduleid } = useParams();
+  const questions = quizData[moduleid] || [];
+  if (!questions) {
+    return <div>⚠️ No se encontraron preguntas para este ID.</div>;
+  }
   return (
     <Quiz 
-      titulo="NIVEL 0" 
-      subtitulo="¡Demuestra lo que sabes!" 
+      titulo="QUIZ DE INICIO" 
+      subtitulo="¡Demuestra lo que aprendiste!" 
       questions={questions} 
-      rutaVolver="/modules/1"
+      rutaVolver= {`/modules/${moduleid}`}
     />
   );
 };

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "../../assets/styles/minigames/Maze.css";
 import "../../assets/styles/minigames/Maze.css";import BarraLateral from "./../Sidebar";
+import "../../assets/images/levels/thinkinw.gif";
+import { useParams } from "react-router-dom";
 
 const CodeMaze = ({ levels }) => {
+  const { moduleid } = useParams();
   const [currentLevel, setCurrentLevel] = useState(0);
   const [path, setPath] = useState([]);
   const [feedback, setFeedback] = useState(null);
@@ -38,7 +41,12 @@ const CodeMaze = ({ levels }) => {
   return (
     <div className="code-maze-card">
         <BarraLateral />
-      <h2 className="code-maze-title">🧠 Laberinto de Código</h2>
+      <h2 className="code-maze-title">🧠 Decisiones Lógicas</h2>
+      <img
+        className="code-maze-thinking"
+        src={require("../../assets/images/levels/thinkinw.gif")}
+        alt="thinking"
+      />
       <p className="code-maze-prompt">{level.prompt}</p>
 
       {level.steps.map((step, index) => (
@@ -80,7 +88,7 @@ const CodeMaze = ({ levels }) => {
         <div className="code-maze-end">
             🎉 ¡Completaste todos los niveles!
             <br />
-            <button className="code-maze-return" onClick={() => window.location.href = "/modules/2"}>
+            <button className="code-maze-return" onClick={() => window.location.href = `/modules/${moduleid}`}>
             ⬅ Volver al Menú Principal
             </button>
         </div>

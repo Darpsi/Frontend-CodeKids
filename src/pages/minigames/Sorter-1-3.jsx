@@ -1,38 +1,19 @@
 import React from "react";
 import CodeSorter from "../../components/minigames/Codesorter";
-
-const levels = [
-  {
-    prompt: "Nivel 1: Ordena el código para que la función 'saludar' funcione correctamente.",
-    correctOrder: [
-      "function saludar() {",
-      '  console.log("Hola mundo");',
-      "}",
-      "saludar();",
-    ],
-  },
-  {
-    prompt: "Nivel 2: Ordena el código para sumar dos números y mostrar el resultado.",
-    correctOrder: [
-      "function sumar(a, b) {",
-      "  return a + b;",
-      "}",
-      "console.log(sumar(5, 7));",
-    ],
-  },
-  {
-    prompt: "Nivel 3: Ordena el código para verificar si un número es par.",
-    correctOrder: [
-      "function esPar(n) {",
-      "  return n % 2 === 0;",
-      "}",
-      "console.log(esPar(6));",
-    ],
-  },
-];
+import { useParams } from "react-router-dom";
+import { sorterLevels } from "../../data/code_sorter";
 
 const Code_Sorter = () => {
-  return <CodeSorter levels={levels} />;
+  const { moduleid } = useParams(); 
+  const modId = parseInt(moduleid);
+
+  const levels = sorterLevels[modId];
+  
+  if (!levels) {
+    return <div>No se encontró el módulo o nivel.</div>;
+  }
+
+  return <CodeSorter levels={levels}/>;
 };
 
 export default Code_Sorter;
