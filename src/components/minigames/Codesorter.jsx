@@ -88,9 +88,6 @@ const CodeSorter = ({ levels }) => {
       <BarraLateral />
       <h2 className="code-sorter-title">🧩 Ordena el Código</h2>
       <p className="code-sorter-prompt">{currentPrompt}</p>
-      <img className="code-sorter-puzzle" 
-      src={require("../../assets/images/levels/puzzlew.gif")}
-      alt="Puzzle GIF" />
 
       <div className="code-sorter-blocks">
         {blocks.map((line, index) => (
