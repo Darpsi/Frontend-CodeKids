@@ -13,37 +13,36 @@ const Perfil = () => {
 
   const [userName, setUserName] = useState("");
   const [institutionName, setInstitutionName] = useState("");
-  const [certificadoDisponible, setCertificadoDisponible] = useState(false);
-  const [loadingCertificado, setLoadingCertificado] = useState(true);
-
+  const [certificadoDisponible, setCertificadoDisponible] = useState(true);
+  const [loadingCertificado, setLoadingCertificado] = useState(false);
   const email = localStorage.getItem("email");
 
-useEffect(() => {
-  if (email) {
-    getName(email)
-      .then((name) => {
-        setUserName(name);
-      })
-      .catch((error) => {
-        console.error("Error al obtener el nombre del usuario:", error);
-      });
+  useEffect(() => {
+    if (email) {
+      getName(email)
+        .then((name) => {
+          setUserName(name);
+        })
+        .catch((error) => {
+          console.error("Error al obtener el nombre del usuario:", error);
+        });
 
-    getNameInstitution(email)
-      .then((instName) => {
-        setInstitutionName(instName);
-      })
-      .catch((error) => {
-        console.error("Error al obtener el nombre de la institución:", error);
-      });
+      getNameInstitution(email)
+        .then((instName) => {
+          setInstitutionName(instName);
+        })
+        .catch((error) => {
+          console.error("Error al obtener el nombre de la institución:", error);
+        });
 
-    // Este bloque es importante: verifica si hay certificado disponible
-    fetch(`http://localhost:4000/certificado/estado/${email}`)
-      .then((res) => res.json())
-      .then((data) => setCertificadoDisponible(data.disponible))
-      .catch((error) => console.error("Error al verificar certificado:", error))
-      .finally(() => setLoadingCertificado(false));
-  }
-}, [email]);
+      // Verificar disponibilidad del certificado
+      fetch(`http://localhost:4000/certificado/estado/${email}`)
+        .then((res) => res.json())
+        .then((data) => setCertificadoDisponible(data.disponible))
+        .catch((error) => console.error("Error al verificar certificado:", error))
+        .finally(() => setLoadingCertificado(false));
+    }
+  }, [email]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -59,7 +58,7 @@ useEffect(() => {
 
     try {
       changePasword(email, currentPassword, newPassword)
-        .then((response) => {
+        .then(() => {
           alert("Contraseña cambiada con éxito");
           setModalVisible(null);
         })
@@ -67,22 +66,20 @@ useEffect(() => {
           console.error("Error al cambiar la contraseña:", error);
           alert("Error al cambiar la contraseña. Intenta nuevamente.");
         });
-    }catch(error){
+    } catch (error) {
       console.error("Error al cambiar la contraseña:", error);
       alert("Error al cambiar la contraseña. Intenta nuevamente.");
     }
-
-  }
+  };
 
   const abrirModalDesde = (e, tipo) => {
     if (tipo === "certificado") {
-      // 💥 Popup del certificado: más arriba en pantalla
+      // Posición especial para certificado
       const scrollX = window.scrollX || window.pageXOffset;
       const centerLeft = e.target.getBoundingClientRect().left + scrollX + e.target.offsetWidth / 2;
 
       setModalPos({ top: `30vh`, left: `${centerLeft}px` });
     } else {
-      // 🟢 Otros popups siguen su posición normal
       const rect = e.target.getBoundingClientRect();
       const scrollY = window.scrollY || window.pageYOffset;
       const scrollX = window.scrollX || window.pageXOffset;
