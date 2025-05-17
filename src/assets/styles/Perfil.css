@@ -269,3 +269,28 @@
 .insignia:hover {
   transform: scale(1.1);
 }
+
+.botones-perfil {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.botones-perfil button {
+  padding: 10px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.botones-perfil button:hover {
+  background-color: #0056b3;
+}
+.botones-perfil button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
