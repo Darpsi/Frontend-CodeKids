@@ -19,7 +19,6 @@ const Perfil = () => {
   const email = localStorage.getItem("email");
 
   useEffect(() => {
-    const email = localStorage.getItem("email");
 
     if (email) {
       getName(email)
