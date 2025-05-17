@@ -98,5 +98,95 @@ export const examQuestions = [
         correcta: 2,
       }
     ]
+  },
+  {
+    moduleId: 2,
+    preguntas: [
+      {
+        texto: "¿Qué es una variable en programación?",
+        opciones: [
+          "Una caja mágica donde puedes guardar información",
+          "Un dibujo en la pantalla",
+          "Una instrucción secreta",
+          "Un número misterioso"
+        ],
+        correcta: 0,
+      },
+      {
+        texto: "¿Cómo se crea una variable en Python?",
+        opciones: [
+          "nombre - valor",
+          "variable : valor",
+          "nombre = valor",
+          "crear variable valor"
+        ],
+        correcta: 2,
+      },
+      {
+        texto: "¿Cuál de estos nombres de variables es válido?",
+        opciones: [
+          "1nombre",
+          "nombre completo",
+          "nombre_completo",
+          "@nombre"
+        ],
+        correcta: 2,
+      },
+      {
+        texto: "¿Qué hace este código?\n\nedad = 8\nedad = 10",
+        opciones: [
+          "Borra la variable edad",
+          "Cambia el valor de la variable edad a 10",
+          "Crea dos variables diferentes",
+          "Da un error"
+        ],
+        correcta: 1,
+      },
+      {
+        texto: "¿Qué significa que una variable sea 'dinámica' en Python?",
+        opciones: [
+          "Que cambia sola con el tiempo",
+          "Que puede tener diferentes tipos de datos",
+          "Que siempre tiene texto",
+          "Que se borra después de usarla"
+        ],
+        correcta: 1,
+      },
+      {
+        texto: "¿Cuál es el resultado de este código?\n\nnombre = 'Alexis'\nmensaje = 'Hola ' + nombre",
+        opciones: [
+          "Hola Alexis",
+          "Hola + Alexis",
+          "nombre + mensaje",
+          "Error"
+        ],
+        correcta: 0,
+      },
+      {
+        texto: "¿Qué operador se usa para multiplicar en Python?",
+        opciones: ["x", "*", "/", "^"],
+        correcta: 1,
+      },
+      {
+        texto: "¿Qué operador se usa para saber el resto de una división?",
+        opciones: ["%", "#", "&", "/"],
+        correcta: 0,
+      },
+      {
+        texto: "¿Qué muestra este código?\n\nx = 5\nprint(x > 3)",
+        opciones: ["True", "False", "Error", "x > 3"],
+        correcta: 0,
+      },
+      {
+        texto: "¿Para qué sirven los comentarios en el código?",
+        opciones: [
+          "Para decorar el código",
+          "Para que la computadora los lea",
+          "Para que las personas entiendan mejor el código",
+          "Para que el programa funcione más rápido"
+        ],
+        correcta: 2,
+      }
+    ]
   }
 ];

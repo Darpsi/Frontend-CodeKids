@@ -12,7 +12,10 @@ const Levelm = () => {
     const modId = parseInt(moduleId);
     const lvlId = parseInt(levelId);
   
-    const sections = levelsData[modId]?.[lvlId];
+    const module = levelsData[modId];
+    const sections = module?.niveles?.[lvlId];
+    const rutaFinal = module?.ruta;
+
   
     if (!sections) {
       return <div>No se encontró este nivel.</div>;
@@ -22,7 +25,7 @@ const Levelm = () => {
       <div className="levelm-container">
         <Sidebar />
         <div className="levelm-content">
-        <Levels secciones={sections} titulo={`Módulo ${modId} - Nivel ${lvlId}`} />
+        <Levels secciones={sections} titulo={`Módulo ${modId} - Nivel ${lvlId}`} rutaFinal={rutaFinal} />
       </div>
       </div>
     );
