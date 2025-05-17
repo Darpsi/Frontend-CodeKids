@@ -15,7 +15,6 @@ const Perfil = () => {
   const [institutionName, setInstitutionName] = useState("");
   const [certificadoDisponible, setCertificadoDisponible] = useState(true);
   const [loadingCertificado, setLoadingCertificado] = useState(false);
-
   const email = localStorage.getItem("email");
 
   useEffect(() => {
