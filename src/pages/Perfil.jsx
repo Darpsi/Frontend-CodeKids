@@ -18,33 +18,32 @@ const Perfil = () => {
 
   const email = localStorage.getItem("email");
 
-  useEffect(() => {
-    const email = localStorage.getItem("email");
+useEffect(() => {
+  if (email) {
+    getName(email)
+      .then((name) => {
+        setUserName(name);
+      })
+      .catch((error) => {
+        console.error("Error al obtener el nombre del usuario:", error);
+      });
 
-    if (email) {
-      getName(email)
-        .then((name) => {
-          setUserName(name);
-        })
-        .catch((error) => {
-          console.error("Error al obtener el nombre del usuario:", error);
-        });
+    getNameInstitution(email)
+      .then((instName) => {
+        setInstitutionName(instName);
+      })
+      .catch((error) => {
+        console.error("Error al obtener el nombre de la institución:", error);
+      });
 
-      getNameInstitution(email)
-        .then((instName) => {
-          setInstitutionName(instName);
-        })
-        .catch((error) => {
-          console.error("Error al obtener el nombre de la institución:", error);
-        });
-
-      fetch(`http://localhost:4000/certificado/estado/${email}`)
-        .then((res) => res.json())
-        .then((data) => setCertificadoDisponible(data.disponible))
-        .catch((error) => console.error("Error al verificar certificado:", error))
-        .finally(() => setLoadingCertificado(false));
-    }
-  }, [email]);
+    // Este bloque es importante: verifica si hay certificado disponible
+    fetch(`http://localhost:4000/certificado/estado/${email}`)
+      .then((res) => res.json())
+      .then((data) => setCertificadoDisponible(data.disponible))
+      .catch((error) => console.error("Error al verificar certificado:", error))
+      .finally(() => setLoadingCertificado(false));
+  }
+}, [email]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
