@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import perfilImg from "../assets/images/perfil.png";
 import PopupModal from "../components/PopupModal";
 import Certificado from "../components/Certificado";
+import axios from "axios";
 import { changePasword, getName, getNameInstitution } from "../services/authService";
 import "../assets/styles/Perfil.css";
 
@@ -16,6 +17,8 @@ const Perfil = () => {
   const [certificadoDisponible, setCertificadoDisponible] = useState(true);
   const [loadingCertificado, setLoadingCertificado] = useState(false);
   const email = localStorage.getItem("email");
+  const [insigniasDesbloqueadas, setInsigniasDesbloqueadas] = useState([]);
+
 
   useEffect(() => {
     if (email) {
@@ -43,6 +46,21 @@ const Perfil = () => {
         .finally(() => setLoadingCertificado(false));
     }
   }, [email]);
+
+  useEffect(() => {
+  const fetchInsignias = async () => {
+    try {
+      const res = await axios.get(`http://localhost:4000/insignias-desbloqueadas/${email}`);
+      setInsigniasDesbloqueadas(res.data.desbloqueadas);
+    } catch (error) {
+      console.error("Error al obtener las insignias desbloqueadas:", error);
+    }
+  };
+
+  if (modalVisible === "insignias") {
+    fetchInsignias();
+  }
+}, [modalVisible, email]);
 
 
   const handleSubmit = (e) => {
@@ -163,30 +181,38 @@ const Perfil = () => {
       </PopupModal>
 
       {/* Modal: Insignias */}
-      <PopupModal
-        visible={modalVisible === "insignias"}
-        onClose={() => setModalVisible(null)}
-        title="Insignias"
-        triggerPosition={modalPos}
-      >
-        <div className="insignias-grid">
-          {[...Array(35)].map((_, i) => {
-            const nombre = `insignia${i + 1}`;
-            const bn = require(`../assets/insignias/${nombre}-bn.png`);
-            const color = require(`../assets/insignias/${nombre}-color.png`);
-            return (
-              <img
-                key={i}
-                src={bn}
-                alt={`Insignia ${i + 1}`}
-                className="insignia"
-                onMouseEnter={(e) => (e.currentTarget.src = color)}
-                onMouseLeave={(e) => (e.currentTarget.src = bn)}
-              />
-            );
-          })}
-        </div>
-      </PopupModal>
+<PopupModal
+  visible={modalVisible === "insignias"}
+  onClose={() => setModalVisible(null)}
+  title="Insignias"
+  triggerPosition={modalPos}
+>
+  <div className="insignias-grid">
+    {[...Array(35)].map((_, i) => {
+      const id = i + 1;
+      const nombre = `insignia${id}`;
+      const bn = require(`../assets/insignias/${nombre}-bn.png`);
+      const color = require(`../assets/insignias/${nombre}-color.png`);
+      const estaDesbloqueada = insigniasDesbloqueadas.includes(id);
+
+      return (
+        <img
+          key={id}
+          src={estaDesbloqueada ? color : bn}
+          alt={`Insignia ${id}`}
+          className="insignia"
+          onMouseEnter={(e) => {
+            if (!estaDesbloqueada) e.currentTarget.src = color;
+          }}
+          onMouseLeave={(e) => {
+            if (!estaDesbloqueada) e.currentTarget.src = bn;
+          }}
+        />
+      );
+    })}
+  </div>
+</PopupModal>
+
 
       {/* Modal: Certificado */}
       <PopupModal
