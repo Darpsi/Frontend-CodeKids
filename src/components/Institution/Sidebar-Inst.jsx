@@ -39,6 +39,7 @@ const BarraLateral = () => {
           </div>
           <div className="botones-barra">
             <button onClick={abrirModal}>Agregar Estudiante</button>
+            <button>Eliminar Estudiante</button>
             <a href="/">Salir</a>
           </div>
         </div>

@@ -29,6 +29,23 @@ import comment_code from "../assets/images/levels/level2/comment_code.png"
 import hints from "../assets/images/levels/level2/hints.png"
 import disable_line from "../assets/images/levels/level2/disable_line.png"
 
+// imagenes modulo3
+import robot from "../assets/images/levels/level3/robot.png"
+import semaforo from "../assets/images/levels/level3/semaforos.jpg"
+import game_logic from "../assets/images/levels/level3/game_logic.jpg"
+import control_flujo_if from "../assets/images/levels/level3/control_flujo_if.png"
+import control_flujo_else from "../assets/images/levels/level3/control_flujo_else.png"
+import if_else from "../assets/images/levels/level3/if_else.png"
+import rain from "../assets/images/levels/level3/rain.png"
+import test from "../assets/images/levels/level3/test.png"
+import ciclo_for from "../assets/images/levels/level3/ciclo_for.png"
+import ciclo_while from "../assets/images/levels/level3/ciclo_while.png"
+import ciclo_while_contador from "../assets/images/levels/level3/ciclo_while_contador.png"
+import control_ciclo_for from "../assets/images/levels/level3/control_ciclo_for.png"
+import operadores from "../assets/images/levels/level3/operadores.jpg"
+import operadores_logicos from "../assets/images/levels/level3/operadores_logicos.png"
+import game_lock from "../assets/images/levels/level3/game_lock.png"
+
 
 export const levelsData = {
   1: {
@@ -193,5 +210,82 @@ export const levelsData = {
         }
       ]
     }
+  },
+  3: {
+    ruta: "/modules/3",
+    niveles: {
+      1: [ // Control de flujo
+        {
+          text: "🧠 Imagina que eres un robot que sigue instrucciones. Pero… ¿qué pasa si te dan varias opciones? \n\nEl *control de flujo* te ayuda a decidir qué camino tomar según lo que pasa. ¡Como elegir entre pizza o hamburguesa! 🍕🍔",
+          imagen: robot
+        },
+        {
+          text: "🚦 El control de flujo es como un semáforo. Si está verde, pasas. Si está rojo, te detienes. \n\nLos programas usan instrucciones parecidas para tomar decisiones según ciertas condiciones.",
+          imagen: semaforo
+        },
+        {
+          text: "📋 Usamos estas decisiones para decirle a la computadora: \"Si pasa esto, haz esto otro\". Así se comporta de diferentes maneras dependiendo de lo que ocurra. ¡Como un videojuego que cambia de nivel si ganas! 🎮✨",
+          imagen: game_logic
+        },
+        {
+          text: "Para realiza un control de flujo en Python usamos la palabra reservada `if` (si) para decirle a la computadora que haga algo si se cumple una condición. \n\nPor ejemplo: Si tengo hambre, voy a comer. \n\n Algo asi se veria en Python:",
+          imagen: control_flujo_if
+        },
+        {
+          text: "🔄 Si quieres que haga algo diferente si no se cumple la condición, usas `else` (sino). \n\nPor ejemplo: Si tengo hambre voy a comer, en caso contrario no lo hare. \n\n¡Así puedes controlar lo que pasa en tu programa! 🎮",
+          imagen: control_flujo_else
+        }
+      ],
+      2: [ // Condiciones y estructuras if-else
+        {
+          text: "🔍 La estructura `if-else` es como decirle a la computadora:\n\n✅ *Si* pasa algo, haz esto\n❌ *Si no*, haz otra cosa.\n\n¡Como si mamá dijera: \"Si haces la tarea, puedes jugar. Si no, te toca estudiar más!\" 😅",
+          imagen: if_else
+        },
+        {
+          text: "🌦️ Otro ejemplo:\n\n Si esta lloviendo debo salir con paraguas en caso de que no este lloviendo puedo salir sin el. \n\nEs como decidir qué hacer según el clima. ☂️☀️",
+          imagen: rain
+        },
+        {
+          text: "🧪 Esto permite que el programa *reaccione* a lo que pasa, como un científico haciendo pruebas. Si el experimento da un resultado, se hace algo. Si da otro, se hace otra cosa. 🔬",
+          imagen: test
+        }
+      ],
+      3: [ // Bucles
+        {
+          text: "🔁 Los bucles sirven para repetir cosas muchas veces sin escribirlas una por una.\n\nImagina que tienes que decir \"Hola\" 10 veces. En vez de escribirlo 10 veces, puedes usar un *bucle* para que lo haga por ti automáticamente. 😎",
+        },
+        {
+          text: "🚂 El bucle `for` es como un tren que pasa por cada estación. En cada parada hace algo. Y cuando llega al final… ¡se detiene! 🛤️ \n\n Por ejemplo: `for i in range(10):` El va a pasar por cada elemento i en el rango de 0 a 9. \n\n significa que el tren va a parar 10 veces y en cada parada hará algo. \n\n",
+          imagen: ciclo_for
+        },
+        {
+          text: "Podemos usar el bucle for con condiciones para que si se cumple una condición haga algo diferente. \n\nEn este caso el bucle for va a recorrer los números del 1 al 10 y si el número es igual a 5 lo va a atrapar. \n\n¡Así puedes hacer tu programa mucho mas completo.! 🦾",
+          imagen: control_ciclo_for
+        },
+        {
+          text: "🔄 El bucle `while` sigue repitiendo mientras algo sea verdadero. Es como decir: *Mientras tenga hambre, seguiré comiendo* 🍽️",
+          imagen: ciclo_while
+        },
+        {
+          text: "🔁 En este ejemplo, el bucle `while` sigue sumando hasta que la suma sea mayor que 10. \n\n¡Así puedes hacer que tu programa repita cosas sin cansarse! 🦾",
+          imagen: ciclo_while_contador
+        }
+      ],
+      4: [ // Operadores lógicos
+        {
+          text: "🧩 Los *operadores lógicos* permiten combinar condiciones. Son como piezas de rompecabezas que juntas para tomar decisiones más complejas. \n\nUsamos: `AND`, `OR`, `NOT`. 🤯",
+          imagen: operadores
+        },
+        {
+          text: "👉 `AND` (y): solo es verdadero si **ambas** cosas son verdaderas.\n👉 `OR` (o): es verdadero si **una** de las cosas lo es.\n👉 `NOT` (no): cambia lo verdadero a falso, y lo falso a verdadero.",
+          imagen: operadores_logicos
+        },
+        {
+          text: "🎮 En un juego podrías decir:\n\n` Si tengo la llave y encontre la puerta, entonces puedo entrar a la sala`\n\nSolo puedes entrar si *ambas* condiciones se cumplen.",
+          imagen: game_lock
+        }
+      ]
+    }
   }
+
 };
