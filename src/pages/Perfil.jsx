@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import perfilImg from "../assets/images/perfil.png";
 import PopupModal from "../components/PopupModal";
+import PopupCert from "../components/PopupCert";
 import Certificado from "../components/Certificado";
 import axios from "axios";
 import { changePasword, getName, getNameInstitution } from "../services/authService";
@@ -10,6 +11,7 @@ import "../assets/styles/Perfil.css";
 const Perfil = () => {
   const [modalVisible, setModalVisible] = useState(null); // "cambio", "insignias" o "certificado"
   const [modalPos, setModalPos] = useState({ top: "50%", left: "50%" });
+  const [certificadoPos, setCertificadoPos] = useState({ top: "50%", left: "50%" });
   const navigate = useNavigate();
 
   const [userName, setUserName] = useState("");
@@ -154,7 +156,7 @@ const Perfil = () => {
           <p>Insignias</p>
         </div>
         {!loadingCertificado && certificadoDisponible && (
-          <div className="cuadro certificado" onClick={(e) => abrirModalDesde(e, "certificado")}>
+          <div className="cuadro certificado" onClick={(e) => abrirModalDesde(e, "contenedor-certificado")}>
             <p>Ver Certificado</p>
           </div>
         )}
@@ -215,14 +217,14 @@ const Perfil = () => {
 
 
       {/* Modal: Certificado */}
-      <PopupModal
-        visible={modalVisible === "certificado"}
+      <PopupCert
+        visible={modalVisible === "contenedor-certificado"}
         onClose={() => setModalVisible(null)}
         title="Certificado"
-        triggerPosition={modalPos}
+        triggerPosition={certificadoPos}
       >
         <Certificado correo={email} />
-      </PopupModal>
+      </PopupCert>
     </div>
   );
 };

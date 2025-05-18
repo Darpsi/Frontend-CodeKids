@@ -2,28 +2,28 @@ import React, { useEffect, useRef, useState } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import "../assets/styles/Certificado.css";
-
-
+import { getName } from "../services/authService";
 
 const Certificado = ({ correo }) => {
-  const [datos, setDatos] = useState(null);
+  const [nombreUsuario, setNombreUsuario] = useState("");
   const [cargando, setCargando] = useState(true);
   const refCertificado = useRef();
 
   useEffect(() => {
-    const obtenerDatos = async () => {
+    const obtenerNombreUsuario = async () => {
       try {
-        const res = await fetch(`http://localhost:4000/certificado/${correo}`);
-        const data = await res.json();
-        setDatos(data);
+        const nombre = await getName(correo); 
+        setNombreUsuario(nombre);
       } catch (err) {
-        console.error("Error al obtener el certificado:", err);
+        console.error("Error al obtener el nombre del usuario:", err);
       } finally {
         setCargando(false);
       }
     };
 
-    obtenerDatos();
+    if (correo) {
+      obtenerNombreUsuario();
+    }
   }, [correo]);
 
   const descargarPDF = async () => {
@@ -36,14 +36,14 @@ const Certificado = ({ correo }) => {
   };
 
   if (cargando) return <p>Cargando certificado...</p>;
-  if (!datos) return <p>No se pudo cargar el certificado.</p>;
+  if (!nombreUsuario) return <p>No se pudo cargar el nombre del usuario.</p>;
 
   return (
     <div className="contenedor-certificado">
-      <div className="certificado" ref={refCertificado}>
+      <div className="certificado_descargar" ref={refCertificado}>
         <h1>Certificado de Finalización</h1>
         <p>Otorgado a:</p>
-        <h2>{datos.nombre}</h2>
+        <h2>{nombreUsuario}</h2>
         <p>Por completar satisfactoriamente el curso Codekids</p>
       </div>
 
