@@ -25,16 +25,22 @@ const Admin = () => {
   , []);
 
     return (
-      <div className="admin-container">
+      <div className="layout-container">
         <Sidebar />
-        <h1>Panel de progreso</h1>
-        <GraficoProgreso estudiantes={estudiantes} />
+        <div className="admin-container">
+          <h1>Panel de progreso</h1>
+          <div className='admin-progreso-general'>
+            <GraficoProgreso estudiantes={estudiantes} />
+          </div>
 
-        <div className='progresoEstudiantes'>
-          <ProgressStudent />
+          <div className='admin-progreso-por-estudiante'>
+            <div className='progresoEstudiantes'>
+              <ProgressStudent />
+            </div>
+          </div>
         </div>
       </div>
-  );
+    );
 }
 
 export default Admin;
