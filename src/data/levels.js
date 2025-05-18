@@ -46,6 +46,26 @@ import operadores from "../assets/images/levels/level3/operadores.jpg"
 import operadores_logicos from "../assets/images/levels/level3/operadores_logicos.png"
 import game_lock from "../assets/images/levels/level3/game_lock.png"
 
+// Imagenes modulo4
+import funcion_magica from "../assets/images/levels/level4/funcion_magica.png"
+import funcion_saludo from "../assets/images/levels/level4/funcion_saludo.png"
+import funcion_reutilizable from "../assets/images/levels/level4/funcion_reutilizable.png"
+import variable_local from "../assets/images/levels/level4/variable_local.png"
+import variable_global from "../assets/images/levels/level4/variable_global.png"
+import factorial_recursivo from "../assets/images/levels/level4/factorial_recursivo.png"
+import recursion_error from "../assets/images/levels/level4/recursion_error.png"
+import lambda_lista from "../assets/images/levels/level4/lambda_lista.png"
+import lambda_atajo from "../assets/images/levels/level4/lambda_atajo.png"
+
+// Imagenes modulo5
+import lista_uso from "../assets/images/levels/level5/lista_uso.png"
+import lista_bucle from "../assets/images/levels/level5/lista_bucle.png"
+import diccionario_uso from "../assets/images/levels/level5/diccionario_uso.png"
+import diccionario_mod from "../assets/images/levels/level5/diccionario_mod.png"
+import archivo_lectura from "../assets/images/levels/level5/archivo_lectura.png"
+import validacion_datos from "../assets/images/levels/level5/validacion_datos.png"
+import metodos_listas from "../assets/images/levels/level5/metodos_listas.png"
+import buscar_datos from "../assets/images/levels/level5/buscar_datos.png"
 
 export const levelsData = {
   1: {
@@ -286,6 +306,121 @@ export const levelsData = {
         }
       ]
     }
+  },
+  4: {
+  ruta: "/modules/4",
+  niveles: {
+    1: [ // Funciones
+      {
+        text: "🛠️ Las *funciones* son como cajas mágicas que hacen una tarea por ti. Les das algo (entrada), hacen algo adentro, y te devuelven un resultado (salida).",
+        imagen: funcion_magica
+      },
+      {
+        text: "📦 Por ejemplo, una función para saludar podría recibir un nombre y devolver un saludo: `def saludar(nombre): return 'Hola ' + nombre`",
+        imagen: funcion_saludo
+      },
+      {
+        text: "🔁 Puedes usar la misma función muchas veces sin tener que escribir el mismo código una y otra vez. ¡Es como tener un robot que siempre hace lo mismo por ti! 🤖",
+        imagen: funcion_reutilizable
+      }
+    ],
+    2: [ // Ámbito de variables
+      {
+        text: "🔒 El *ámbito* de una variable es el lugar del código donde puede usarse. Algunas solo viven dentro de una función y otras viven en todo el programa.",
+      },
+      {
+        text: "👀 Una variable *local* solo existe dentro de la función donde se creó. Afuera, nadie la conoce.",
+        imagen: variable_local
+      },
+      {
+        text: "🌎 Una variable *global* existe fuera de las funciones y puede usarse en muchas partes del programa. ¡Pero hay que tener cuidado al usarla! ⚠️",
+        imagen: variable_global
+      }
+    ],
+    3: [ // Funciones recursivas
+      {
+        text: "♻️ Una *función recursiva* es una función que se llama a sí misma. Es útil cuando algo se repite en partes más pequeñas.",
+      },
+      {
+        text: "🧮 Ejemplo clásico: el factorial de un número.\n`def factorial(n): return 1 if n==0 else n * factorial(n-1)`",
+        imagen: factorial_recursivo
+      },
+      {
+        text: "📉 Pero cuidado: si no hay una condición para detener la repetición, ¡la función nunca termina y el programa se traba!",
+        imagen: recursion_error
+      }
+    ],
+    4: [ // Funciones anónimas
+      {
+        text: "🙊 Una *función anónima* es una función sin nombre. En Python se escribe con la palabra `lambda`. Es útil para cosas rápidas o simples.",
+      },
+      {
+        text: "⚡ Por ejemplo: `lambda x: x * 2` es una función que recibe un número y lo duplica. Se puede usar en listas u otras funciones.",
+        imagen: lambda_lista
+      },
+      {
+        text: "🎯 Usamos funciones lambda para escribir menos código cuando no necesitamos una función completa. Son como atajos. 🛣️",
+        imagen: lambda_atajo
+      }
+    ]
   }
+  },
+  5: {
+  ruta: "/modules/5",
+  niveles: {
+    1: [ // Listas y arreglos
+      {
+        text: "📚 Una *lista* es como una fila de casillas donde puedes guardar muchos datos. Puedes recorrerla, ordenarla y modificarla.",
+      },
+      {
+        text: "📦 Por ejemplo: `nombres = ['Ana', 'Luis', 'Pedro']` te guarda varios nombres en una sola variable.",
+        imagen: lista_uso
+      },
+      {
+        text: "🔁 Puedes usar un bucle `for` para recorrer la lista y hacer algo con cada elemento. ¡Es muy útil! 🚀",
+        imagen: lista_bucle
+      }
+    ],
+    2: [ // Diccionarios y mapas
+      {
+        text: "🗂️ Un *diccionario* guarda información en forma de *clave: valor*. Como una libreta de contactos donde cada nombre tiene un número.",
+      },
+      {
+        text: "🗝️ Por ejemplo: `contactos = {'Ana': 123, 'Luis': 456}`. Para ver el número de Ana, usas `contactos['Ana']`",
+        imagen: diccionario_uso
+      },
+      {
+        text: "🔧 Puedes añadir, cambiar o eliminar valores en un diccionario. Es ideal para organizar información. 🧠",
+        imagen: diccionario_mod
+      }
+    ],
+    3: [ // Lectura de datos
+      {
+        text: "📥 Los programas pueden leer datos que tú escribas con el teclado usando `input()`. Así pueden reaccionar a lo que digas. 🧑‍💻",
+      },
+      {
+        text: "🗂️ También pueden leer información guardada en archivos. Como cuando abres una receta o un cuento en la compu. 📖",
+        imagen: archivo_lectura
+      },
+      {
+        text: "✅ Es importante validar los datos que llegan para asegurarse de que tengan sentido antes de usarlos. ¡Evita errores! 🛡️",
+        imagen: validacion_datos
+      }
+    ],
+    4: [ // Manipulación de datos
+      {
+        text: "🛠️ *Manipular datos* significa cambiarlos, ordenarlos o filtrarlos. ¡Así los programas entienden mejor la información! 🧮",
+      },
+      {
+        text: "🧹 Puedes usar métodos como `.append()`, `.sort()`, o `filter()` para trabajar con listas. Es como limpiar y ordenar tus juguetes. 🧸",
+        imagen: metodos_listas
+      },
+      {
+        text: "🔍 También puedes buscar datos dentro de listas y diccionarios con bucles o condiciones.",
+        imagen: buscar_datos
+      }
+    ]
+  }
+  },
 
 };
