@@ -1,8 +1,9 @@
 .progreso-estudiantes{
     margin-top: 1rem;
-    width: 80%;
+    width: 100%;
+    padding: 1rem;
 }
 
 .contenido-dona{
-    padding: 10px;
+    padding: 1rem;
 }

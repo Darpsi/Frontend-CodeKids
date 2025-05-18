@@ -15,8 +15,8 @@ const GraficoProgreso = ({ estudiantes, totalModulos = 8}) => {
   }));
 
   return (
-    <div style={{ width: "70%", height: 350, marginLeft: "10%"}}>
-      <h3>Progreso General de Estudiantes</h3>
+    <div style={{ width: "100%", height: 350, padding: "20px 0" }}>
+      <h3 style={{marginLeft: "4rem"}}>Progreso General de Estudiantes</h3>
       <ResponsiveContainer>
         <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" />

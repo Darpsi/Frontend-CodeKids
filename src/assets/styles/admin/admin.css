@@ -3,13 +3,36 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  width: 100%;
+  width: calc(100%);
   min-height: 100vh;
   height: auto;
+  background-color: #F2F2F2;
 }
 
 .admin-container h1 {
   margin-bottom: 2rem;
+}
+
+.layout-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.admin-progreso-general{
+  width: 70%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.admin-progreso-por-estudiante{
+  width: 70%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .progresoEstudiantes{
@@ -17,7 +40,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 40%;
+  width: 50%;
   height: auto;
-  margin-top: 3rem;
 }

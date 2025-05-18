@@ -1,42 +1,17 @@
 import React from "react";
 import BugCatcher from "../../components/minigames/Bug-catcher";
+import { useParams } from "react-router-dom";
+import { bugCatcherLevels } from "../../data/catcher";
 
-const levels = [
-  {
-    prompt: "Este código debería saludar, pero algo está mal.",
-    buggyCode: `function saludo() {
-  console.log("Hola mundo"
-}`,
-    correctCode: `function saludo() {
-  console.log("Hola mundo");
-}`,
-  },
-  {
-    prompt: "Corrige la suma: debería imprimir 5.",
-    buggyCode: `function suma() {
-  console.log(2 + );
-}`,
-    correctCode: `function suma() {
-  console.log(2 + 3);
-}`,
-  },
-  {
-    prompt: "Algo falta en este condicional.",
-    buggyCode: `if (x > 10 {
-  console.log("Mayor que 10");
-}`,
-    correctCode: `if (x > 10) {
-  console.log("Mayor que 10");
-}`,
-  },
-];
+const BugCatcherPage = () => {
+  const { moduleid } = useParams();
+  const levels = bugCatcherLevels[moduleid];
 
-const App = () => {
-  return (
-    <div>
-      <BugCatcher levels={levels} />
-    </div>
-  );
+  if (!levels) {
+    return <div>⚠️ No se encontraron niveles para este ID.</div>;
+  }
+
+  return <BugCatcher levels={levels} />;
 };
 
-export default App;
+export default BugCatcherPage;

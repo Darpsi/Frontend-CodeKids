@@ -3,7 +3,7 @@ import "../../assets/styles/levels/levels.css";
 import { useNavigate } from "react-router-dom";
 
 
-const Levels = ({ secciones, titulo }) => {
+const Levels = ({ secciones, titulo, rutaFinal }) => {
   const [indice, setIndice] = useState(0);
   const seccionActual = secciones[indice];
 
@@ -71,7 +71,7 @@ const Levels = ({ secciones, titulo }) => {
           onClick={() => {
             if (indice === secciones.length - 1) {
               // acción al finalizar
-              navigate("/modules/1"); // cambia "/ruta-final" por la ruta a la que quieras ir
+              navigate(rutaFinal);
             } else {
               avanzar();
             }
