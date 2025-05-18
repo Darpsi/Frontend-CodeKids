@@ -32,20 +32,20 @@ export const pyramidData = [
   {
     moduleId: 4,
     niveles: [
-      { id: 1, label: "Funciones", info: "Aprende a crear funciones para organizar tu código.", ruta: "/quiz/4" },
-      { id: 2, label: "Ámbito de variables", info: "Descubre cómo las variables pueden ser locales o globales.", ruta: "/minigame/4/catcher" },
-      { id: 3, label: "Funciones recursivas", info: "Entiende cómo una función puede llamarse a sí misma.", ruta: "/minigame/4/sorter" },
-      { id: 4, label: "Funciones anónimas", info: "Aprende a usar funciones sin nombre.", ruta: "/minigame/4/maze" },
+      { id: 1, label: "Funciones", info: "Aprende a crear funciones para organizar tu código.", ruta: "/modules/4/levels/1" },
+      { id: 2, label: "Ámbito de variables", info: "Descubre cómo las variables pueden ser locales o globales.", ruta: "/modules/4/levels/2" },
+      { id: 3, label: "Funciones recursivas", info: "Entiende cómo una función puede llamarse a sí misma.", ruta: "/modules/4/levels/3" },
+      { id: 4, label: "Funciones anónimas", info: "Aprende a usar funciones sin nombre.", ruta: "/modules/4/levels/4" },
       { id: 5, label: "Examen Final", info: "¡Demuestra todo lo que has aprendido sobre funciones!", ruta: "/exam/4" }
     ]
   },
   {
   moduleId: 5,
   niveles: [
-    { id: 1, label: "Listas y arreglos", info: "Organiza datos en listas que puedes recorrer.", ruta: "/quiz/5" },
-    { id: 2, label: "Diccionarios y mapas", info: "Asocia claves y valores para acceder fácilmente a los datos.", ruta: "/minigame/5/catcher" },
-    { id: 3, label: "Lectura de datos", info: "Aprende cómo los programas leen información del usuario o de archivos.", ruta: "/minigame/5/sorter" },
-    { id: 4, label: "Manipulación de datos", info: "Modifica, ordena y filtra datos de forma sencilla.", ruta: "/minigame/5/maze" },
+    { id: 1, label: "Listas y arreglos", info: "Organiza datos en listas que puedes recorrer.", ruta: "/modules/5/levels/1" },
+    { id: 2, label: "Diccionarios y mapas", info: "Asocia claves y valores para acceder fácilmente a los datos.", ruta: "/modules/5/levels/2" },
+    { id: 3, label: "Lectura de datos", info: "Aprende cómo los programas leen información del usuario o de archivos.", ruta: "/modules/5/levels/3" },
+    { id: 4, label: "Manipulación de datos", info: "Modifica, ordena y filtra datos de forma sencilla.", ruta: "/modules/5/levels/4" },
     { id: 5, label: "Examen Final", info: "¡Demuestra lo aprendido sobre el manejo de datos!", ruta: "/exam/5" }
   ]
   },
