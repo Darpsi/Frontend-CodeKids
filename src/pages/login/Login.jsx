@@ -4,7 +4,7 @@ import { login } from "../../services/authService";
 import "../../assets/styles/login/Login.css";
 import loginImage from "../../assets/images/login-image.png";
 import logo from "../../assets/images/codekids_logo_n.png";
-
+import ToastInsignia, { intentarDesbloquearInsignia } from "../../components/insignia/Toast";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +13,7 @@ const Login = () => {
   });
 
   const navigate = useNavigate();
+  const [insigniaDesbloqueadaId, setInsigniaDesbloqueadaId] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,21 +23,29 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      const result = await login(formData);
-      alert(result.message);
-      localStorage.setItem('email', formData.email);
-      if (result.tipo === "normal")
-        navigate('/modules')
-      else if (result.tipo === "admin")
-        navigate('/admin')
-    } catch (error) {
-      alert(error.message);
+  try {
+    const result = await login(formData);
+    alert(result.message);
+    localStorage.setItem("email", formData.email);
+
+    if (result.tipo === "normal") {
+      await intentarDesbloquearInsignia(
+        formData.email,
+        12,
+        setInsigniaDesbloqueadaId
+      );
+      // Retrasamos la navegación 3 segundos (mismo tiempo que el toast)
+      setTimeout(() => navigate("/modules"), 3000);
+    } else if (result.tipo === "admin") {
+      navigate("/admin");
     }
-  };
+  } catch (error) {
+    alert(error.message);
+  }
+};
 
   return (
     <div className="section-login">
@@ -77,10 +86,11 @@ const Login = () => {
           <button className="login-button" type="submit">
             Entrar
           </button>
-          <a href="/Register">¿No tienes cuenta? Registrate</a>
+          <a href="/Register">¿No tienes cuenta? Regístrate</a>
           <a href="/forgot-password">¿Olvidaste tu contraseña?</a>
         </form>
       </div>
+      <ToastInsignia idInsignia={insigniaDesbloqueadaId} />
     </div>
   );
 };
