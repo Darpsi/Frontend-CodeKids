@@ -5,8 +5,6 @@ import useUserData from "../hooks/User-data";
 import "../assets/styles/sidebar.css";
 import logo from "../assets/images/codekids_logo_n.png";
 
-
-
 const BarraLateral = () => {
   const [visible, setVisible] = useState(true);
   const [modalAbierto, setModalAbierto] = useState(false);
@@ -22,14 +20,16 @@ const BarraLateral = () => {
 
   return (
     <>
+      {/* BOTÓN FUERA DEL SIDEBAR */}
+      <button className="toggle" onClick={() => setVisible(!visible)}>
+        {visible ? "<<" : ">>"}
+      </button>
+
+      {/* SIDEBAR */}
       <div className={`barra-lateral ${visible ? "visible" : "oculta"}`}>
         <div className="logo-container">
           <img src={logo} alt="Logo" />
         </div>
-
-        <button className="toggle" onClick={() => setVisible(!visible)}>
-          {visible ? "<<" : ">>"}
-        </button>
         <div className="contenido-barra">
           <div className="perfil">
             <img src={perfil} alt="Perfil" />

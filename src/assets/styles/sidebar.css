@@ -11,20 +11,22 @@
 }
 
 .barra-lateral.oculta {
-  transform: translateX(-80%);
+  transform: translateX(-100%);
 }
 
 .toggle {
-  position: absolute;
+  position: fixed;
   top: 10px;
-  left: calc(100% - 16%);
+  left: 10px;
+  z-index: 1100;
   background: #fbc02d;
-  border: none;
+  border: 0.2px solid black;
   color: black;
-  font-size: 100%;
+  font-size: 1.5rem;
   cursor: pointer;
-  padding: 2%;
-  transition: left 0.3s ease-in-out;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .perfil {
@@ -147,14 +149,26 @@
 /* === MEDIA QUERIES === */
 @media (max-width: 768px) {
   .barra-lateral {
-    width: 200px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 20px;
+    transform: translateX(0);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .barra-lateral.oculta {
+    transform: translateX(-100%);
   }
 
   .toggle {
-    left: calc(100% - 30px);
-  }
-
-  .barra-lateral.oculta .toggle {
-    left: calc(20% - 30px);
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
   }
 }
