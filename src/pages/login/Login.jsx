@@ -37,7 +37,6 @@ const handleSubmit = async (e) => {
         12,
         setInsigniaDesbloqueadaId
       );
-      // Retrasamos la navegación 3 segundos (mismo tiempo que el toast)
       setTimeout(() => navigate("/modules"), 3000);
     } else if (result.tipo === "admin") {
       navigate("/admin");
