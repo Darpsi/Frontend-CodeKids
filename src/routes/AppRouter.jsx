@@ -21,11 +21,11 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/modules" element={<Modules/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/modules" element={<Modules />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/quiz/:moduleid" element={<Level/>} />
+        <Route path="/quiz/:moduleid" element={<Level />} />
         <Route path="/forgot-password" element={<RecoverPassword />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/verify-token" element={<VerifyToken />} />

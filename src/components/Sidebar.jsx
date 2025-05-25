@@ -8,12 +8,32 @@ import logo from "../assets/images/codekids_logo_n.png";
 const BarraLateral = () => {
   const [visible, setVisible] = useState(true);
   const [modalAbierto, setModalAbierto] = useState(false);
+  const [modalChisteAbierto, setModalChisteAbierto] = useState(false);
+  const [chiste, setChiste] = useState("");
+
   const navigate = useNavigate();
   const { userName, institutionName } = useUserData();
 
   const irAPerfil = () => {
     navigate("/perfil");
   };
+
+  const abrirModalChiste = async () => {
+    setModalChisteAbierto(true);
+    try {
+      const response = await fetch("https://v2.jokeapi.dev/joke/Programming?lang=es");
+      const data = await response.json();
+      if (data.type === "single") {
+        setChiste(data.joke);
+      } else {
+        setChiste(`${data.setup}\n\n${data.delivery}`);
+      }
+    } catch (error) {
+      console.error("Error al obtener el consejo:", error);
+      setChiste("No se pudo obtener un consejo en este momento.");
+    }
+  }
+  const cerrarModalChiste = () => setModalChisteAbierto(false);
 
   const abrirModal = () => setModalAbierto(true);
   const cerrarModal = () => setModalAbierto(false);
@@ -37,6 +57,7 @@ const BarraLateral = () => {
           </div>
           <div className="botones-barra">
             <button onClick={abrirModal}>Institución</button>
+            <button onClick={abrirModalChiste}>Chiste</button>
             <a href="/modules">Módulos</a>
             <a href="/">Salir</a>
           </div>
@@ -53,6 +74,17 @@ const BarraLateral = () => {
           </div>
         </div>
       )}
+      {/* MODAL CONSEJO */}
+      {modalChisteAbierto && (
+        <div className="modal-overlay" onClick={cerrarModalChiste}>
+          <div className="modal-contenido" onClick={(e) => e.stopPropagation()}>
+            <h2>Chiste del día</h2>
+            <p>{chiste}</p>
+            <button onClick={cerrarModalChiste}>Cerrar</button>
+          </div>
+        </div>
+      )}
+
     </>
   );
 };
