@@ -31,7 +31,7 @@ const Home = () => {
             <p>No lo dudes mas y <a href="/register">Aprende ahora!</a></p>
           </div>
           <div className='contenido-img1'>
-            <img src={niño_home} alt="Codekids" />
+            <img src={niño_home} alt="niño portada pagina de bienvenida Codekids" />
           </div>
         </div>
       </section>
@@ -41,15 +41,15 @@ const Home = () => {
         <h2 className='subtitulo'>Desarrollaras nuevas habilidades</h2>
         <div className='tarjetas'>
 
-          <CardHome 
-          img = {logica}
-          text = "Aprende a pensar como un programador y resuelve problemas de forma eficiente"/>
-          <CardHome 
-          img = {conceptos}
-          text = "Descubre herramientas y conocimientos que te ayudarán a crear grandes proyectos"/>
-          <CardHome 
-          img = {sueños}
-          text = "Explora, crea e innova, el único límite es tu creatividad."/>
+          <CardHome
+            img={logica}
+            text="Aprende a pensar como un programador y resuelve problemas de forma eficiente" />
+          <CardHome
+            img={conceptos}
+            text="Descubre herramientas y conocimientos que te ayudarán a crear grandes proyectos" />
+          <CardHome
+            img={sueños}
+            text="Explora, crea e innova, el único límite es tu creatividad." />
 
         </div>
       </section>
@@ -57,22 +57,22 @@ const Home = () => {
       <section id="section3" className="section-3">
         <div className='card-contain-total2'>
           <div className='card-cont1'>
-          <CardHome2
-          img = {ControlFLujo}
-          text = "En codeKids aprenderas los diferentes manejos de control de flujo" />
-          <CardHome2
-          img = {ManejoDatos}
-          text = "Aprende a guardar, modificar y usar tus datos para crear programas útiles"
-          reverse />
+            <CardHome2
+              img={ControlFLujo}
+              text="En codeKids aprenderas los diferentes manejos de control de flujo" />
+            <CardHome2
+              img={ManejoDatos}
+              text="Aprende a guardar, modificar y usar tus datos para crear programas útiles"
+              reverse />
           </div>
           <div className='card-cont2'>
-          <CardHome2
-          img = {Funciones}
-          text = "Las funciones te ayudarán a reutilizar código y organizar tus ideas" />
-          <CardHome2
-          img = {OrientadaObjetos}
-          text = "Descubre cómo los objetos y clases pueden dar vida a tus programas"
-          reverse />
+            <CardHome2
+              img={Funciones}
+              text="Las funciones te ayudarán a reutilizar código y organizar tus ideas" />
+            <CardHome2
+              img={OrientadaObjetos}
+              text="Descubre cómo los objetos y clases pueden dar vida a tus programas"
+              reverse />
           </div>
         </div>
       </section>

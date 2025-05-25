@@ -7,7 +7,7 @@ import { addUserInstitution } from "../../services/authService";
 const BarraLateral = () => {
   const [visible, setVisible] = useState(true);
   const [modalAbierto, setModalAbierto] = useState(false);
-  const [pk_correo, setpk_correo] = useState(""); 
+  const [pk_correo, setpk_correo] = useState("");
 
   const abrirModal = () => setModalAbierto(true);
   const cerrarModal = () => setModalAbierto(false);
@@ -49,11 +49,11 @@ const BarraLateral = () => {
         <div className="modal-overlay" onClick={cerrarModal}>
           <div className="modal-contenido" onClick={(e) => e.stopPropagation()}>
             <h2>Ingresa el correo del estudiante</h2>
-            <input 
-            type="email"
-            value={pk_correo}
-            onChange={(e) => setpk_correo(e.target.value)}
-            required />
+            <input
+              type="email"
+              value={pk_correo}
+              onChange={(e) => setpk_correo(e.target.value)}
+              required />
             <button onClick={enviarForm}>Enviar</button>
             <button onClick={cerrarModal}>Cerrar</button>
           </div>
