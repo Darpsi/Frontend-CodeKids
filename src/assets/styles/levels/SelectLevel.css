@@ -50,18 +50,21 @@
   height: 70px;
   clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
 }
+
 .nivel-2 {
   width: 112%;
   bottom: 75px;
   height: 70px;
   clip-path: polygon(12% 0%, 88% 0%, 100% 100%, 0% 100%);
 }
+
 .nivel-3 {
   width: 85%;
   bottom: 150px;
   height: 80px;
   clip-path: polygon(14% 0%, 86% 0%, 100% 100%, 0% 100%);
 }
+
 .nivel-4 {
   width: 61%;
   bottom: 235px;
@@ -77,7 +80,6 @@
   transition: clip-path 0.5s ease;
   padding-top: 5rem;
 }
-
 
 .nivel.activo {
   height: 120px;
@@ -173,5 +175,292 @@
   z-index: -1;
 }
 
+/* Media Queries for 1200px */
+@media (max-width: 1200px) {
+  .piramide-container {
+    max-width: 700px;
+    margin-left: 200px;
+    padding: 1.5rem;
+  }
 
-  
+  .piramide-rectangular {
+    height: 400px;
+    max-width: 350px;
+  }
+
+  .nivel-1 {
+    width: 135%;
+    height: 65px;
+  }
+
+  .nivel-2 {
+    width: 108%;
+    bottom: 70px;
+    height: 65px;
+  }
+
+  .nivel-3 {
+    width: 80%;
+    bottom: 140px;
+    height: 75px;
+  }
+
+  .nivel-4 {
+    width: 58%;
+    bottom: 220px;
+    height: 65px;
+  }
+
+  .nivel-5 {
+    width: 70%;
+    bottom: 290px;
+    height: 140px;
+    padding-top: 4.5rem;
+  }
+
+  .nivel.activo {
+    height: 110px;
+  }
+
+  .nivel-5.activo {
+    height: 140px;
+  }
+
+  .contenido-piramide {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+
+  .boton-entrar-piramide {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .nube-1 {
+    left: 250px;
+    width: 90px;
+  }
+
+  .nube-2 {
+    right: 250px;
+    width: 110px;
+  }
+
+  .cactus-1 {
+    right: 400px;
+    width: 70px;
+  }
+
+  .cactus-2 {
+    left: 400px;
+    width: 80px;
+  }
+
+  .sol {
+    left: 400px;
+    width: 130px;
+    height: 130px;
+  }
+
+  .desert {
+    width: 700px;
+    height: 270px;
+    top: 190px;
+    left: -200px;
+  }
+}
+
+/* Media Queries for 992px */
+@media (max-width: 992px) {
+  .piramide-container {
+    max-width: 500px;
+    margin-left: 150px;
+    padding: 1.25rem;
+  }
+
+  .piramide-rectangular {
+    height: 350px;
+    max-width: 300px;
+  }
+
+  .nivel-1 {
+    width: 130%;
+    height: 60px;
+  }
+
+  .nivel-2 {
+    width: 105%;
+    bottom: 65px;
+    height: 60px;
+  }
+
+  .nivel-3 {
+    width: 78%;
+    bottom: 130px;
+    height: 70px;
+  }
+
+  .nivel-4 {
+    width: 56%;
+    bottom: 200px;
+    height: 60px;
+  }
+
+  .nivel-5 {
+    width: 68%;
+    bottom: 265px;
+    height: 130px;
+    padding-top: 4rem;
+  }
+
+  .nivel.activo {
+    height: 100px;
+  }
+
+  .nivel-5.activo {
+    height: 130px;
+  }
+
+  .contenido-piramide {
+    font-size: 0.75rem;
+    padding: 0.35rem;
+  }
+
+  .boton-entrar-piramide {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .nube-1 {
+    left: 150px;
+    width: 80px;
+  }
+
+  .nube-2 {
+    right: 150px;
+    width: 100px;
+  }
+
+  .cactus-1 {
+    right: 300px;
+    width: 60px;
+  }
+
+  .cactus-2 {
+    left: 300px;
+    width: 70px;
+  }
+
+  .sol {
+    left: 300px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .desert {
+    width: 500px;
+    height: 240px;
+    top: 170px;
+    left: -150px;
+  }
+}
+
+/* Media Queries for 768px */
+@media (max-width: 768px) {
+  .piramide-container {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+  }
+
+  .piramide-rectangular {
+    height: 300px;
+    max-width: 250px;
+  }
+
+  .nivel-1 {
+    width: 125%;
+    height: 55px;
+    bottom: -35px;
+  }
+
+  .nivel-2 {
+    width: 102%;
+    bottom: 25px;
+    height: 55px;
+  }
+
+  .nivel-3 {
+    width: 76%;
+    bottom: 85px;
+    height: 65px;
+  }
+
+  .nivel-4 {
+    width: 54%;
+    bottom: 155px;
+    height: 55px;
+  }
+
+  .nivel-5 {
+    width: 66%;
+    bottom: 215px;
+    height: 120px;
+    padding-top: 3.5rem;
+    font-size: x-small;
+  }
+
+  .nivel.activo {
+    height: 120px;
+  }
+
+  .nivel-5.activo {
+    height: 120px;
+  }
+
+  .contenido-piramide {
+    font-size: 0.7rem;
+    padding: 0.3rem;
+  }
+
+  .boton-entrar-piramide {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .nube-1 {
+    left: -10%;
+    width: 70px;
+  }
+
+  .nube-2 {
+    right: -20%;
+    width: 90px;
+  }
+
+  .cactus-1 {
+    right: -30%;
+    width: 50px;
+    top: 92%;
+  }
+
+  .cactus-2 {
+    top: 90%;
+    left: -30%;
+    width: 60px;
+  }
+
+  .sol {
+    left: 80%;
+    width: 100px;
+    height: 100px;
+  }
+
+  .desert {
+    width: 175%;
+    height: 200px;
+    top: 156px;
+    left: -30%;
+  }
+}

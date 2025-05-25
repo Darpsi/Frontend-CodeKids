@@ -66,7 +66,7 @@
     width: 200px;
     height: 200px;
     transition: transform 0.2s;
-    z-index: 0;
+    z-index: -1;
 }
 
 .grassbg {
@@ -75,7 +75,7 @@
     left: 19.1%;
     width: 850px;
     height: 300px;
-    z-index: -1;
+    z-index: -2;
 }
 
 .bug-catcher-end {
@@ -198,14 +198,14 @@
     .caterpillar {
         width: 120px;
         height: 120px;
-        top: 440px;
+        top: 560px;
         left: 45%;
     }
 
     .grassbg {
         width: 90%;
         height: 150px;
-        top: 320px;
+        top: 496.4px;
         left: 5%;
     }
 
