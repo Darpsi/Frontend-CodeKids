@@ -6,49 +6,49 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: sans-serif;
-  }
-  
-  .code-maze-title {
+}
+
+.code-maze-title {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
     color: #333;
-  }
-  
-  .code-maze-prompt {
+}
+
+.code-maze-prompt {
     font-size: 16px;
     margin-bottom: 20px;
     text-align: center;
     color: #555;
-  }
-  
-  .code-maze-step {
+}
+
+.code-maze-step {
     margin-bottom: 15px;
-  }
-  
-  .code-maze-options {
+}
+
+.code-maze-options {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 5px;
-  }
-  
-  .code-maze-option {
+}
+
+.code-maze-option {
     padding: 8px 12px;
     background-color: #eef3ff;
     border: 1px solid #bbb;
     border-radius: 6px;
     cursor: pointer;
     font-family: monospace;
-  }
-  
-  .code-maze-option.selected {
+}
+
+.code-maze-option.selected {
     background-color: #aee8c7;
     border-color: #00a86b;
-  }
-  
-  .code-maze-button,
-  .code-maze-next {
+}
+
+.code-maze-button,
+.code-maze-next {
     margin-top: 15px;
     padding: 10px 20px;
     background-color: #00a86b;
@@ -60,27 +60,27 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .code-maze-button:hover,
-  .code-maze-next:hover {
+}
+
+.code-maze-button:hover,
+.code-maze-next:hover {
     background-color: #008e5b;
-  }
-  
-  .code-maze-feedback {
+}
+
+.code-maze-feedback {
     margin-top: 15px;
     font-weight: bold;
     text-align: center;
-  }
-  
-  .code-maze-end {
+}
+
+.code-maze-end {
     text-align: center;
     margin-top: 20px;
     font-size: 18px;
     color: #444;
-  }
+}
 
-  .code-maze-return {
+.code-maze-return {
     margin-top: 15px;
     padding: 10px 20px;
     background-color: #6c757d;
@@ -89,18 +89,188 @@
     border-radius: 6px;
     font-size: 15px;
     cursor: pointer;
-  }
-  
-  .code-maze-return:hover {
-    background-color: #5a6268;
-  }
+}
 
-  .code-maze-thinking {
+.code-maze-return:hover {
+    background-color: #5a6268;
+}
+
+.code-maze-thinking {
     position: absolute;
-    top: 465px;             
-    left: 23%;                
+    top: 465px;
+    left: 23%;
     width: 750px;
     height: 180px;
     z-index: 10;
-  }
-  
+}
+
+/* Media Queries for 1200px */
+@media (max-width: 1200px) {
+    .code-maze-card {
+        max-width: 500px;
+        padding: 15px;
+    }
+
+    .code-maze-title {
+        font-size: 22px;
+    }
+
+    .code-maze-prompt {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .code-maze-step {
+        margin-bottom: 12px;
+    }
+
+    .code-maze-options {
+        gap: 8px;
+    }
+
+    .code-maze-option {
+        padding: 7px 10px;
+        font-size: 14px;
+    }
+
+    .code-maze-button,
+    .code-maze-next {
+        font-size: 15px;
+        padding: 8px 18px;
+    }
+
+    .code-maze-feedback {
+        font-size: 15px;
+    }
+
+    .code-maze-end {
+        font-size: 16px;
+    }
+
+    .code-maze-return {
+        font-size: 14px;
+        padding: 8px 18px;
+    }
+
+    .code-maze-thinking {
+        width: 600px;
+        height: 160px;
+        top: 450px;
+        left: 20%;
+    }
+}
+
+/* Media Queries for 992px */
+@media (max-width: 992px) {
+    .code-maze-card {
+        max-width: 400px;
+        padding: 12px;
+    }
+
+    .code-maze-title {
+        font-size: 20px;
+    }
+
+    .code-maze-prompt {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .code-maze-step {
+        margin-bottom: 10px;
+    }
+
+    .code-maze-options {
+        gap: 6px;
+    }
+
+    .code-maze-option {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+
+    .code-maze-button,
+    .code-maze-next {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .code-maze-feedback {
+        font-size: 14px;
+    }
+
+    .code-maze-end {
+        font-size: 15px;
+    }
+
+    .code-maze-return {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+
+    .code-maze-thinking {
+        width: 500px;
+        height: 140px;
+        top: 430px;
+        left: 15%;
+    }
+}
+
+/* Media Queries for 768px */
+@media (max-width: 768px) {
+    .code-maze-card {
+        max-width: 90%;
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .code-maze-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .code-maze-prompt {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .code-maze-step {
+        margin-bottom: 8px;
+    }
+
+    .code-maze-options {
+        gap: 5px;
+    }
+
+    .code-maze-option {
+        padding: 5px 7px;
+        font-size: 12px;
+    }
+
+    .code-maze-button,
+    .code-maze-next {
+        font-size: 13px;
+        padding: 6px 14px;
+    }
+
+    .code-maze-feedback {
+        font-size: 13px;
+    }
+
+    .code-maze-end {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .code-maze-return {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+
+    .code-maze-thinking {
+        width: 90%;
+        height: 120px;
+        top: 410px;
+        left: 5%;
+    }
+}

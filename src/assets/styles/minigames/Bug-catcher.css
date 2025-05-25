@@ -6,22 +6,22 @@
     background-color: #a2d6f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: sans-serif;
-  }
-  
-  .bug-catcher-title {
+}
+
+.bug-catcher-title {
     font-size: 24px;
     margin-bottom: 10px;
     text-align: center;
     color: #333;
-  }
-  
-  .bug-catcher-prompt {
+}
+
+.bug-catcher-prompt {
     font-size: 16px;
     margin-bottom: 15px;
     color: #555;
-  }
-  
-  .bug-catcher-textarea {
+}
+
+.bug-catcher-textarea {
     width: 100%;
     height: 200px;
     font-family: monospace;
@@ -31,9 +31,9 @@
     border-radius: 6px;
     resize: vertical;
     box-sizing: border-box;
-  }
-  
-  .bug-catcher-button {
+}
+
+.bug-catcher-button {
     margin-top: 15px;
     padding: 10px 20px;
     background-color: #008cff;
@@ -45,42 +45,172 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .bug-catcher-button:hover {
+}
+
+.bug-catcher-button:hover {
     background-color: #0071cc;
-  }
-  
-  .bug-catcher-feedback {
+}
+
+.bug-catcher-feedback {
     margin-top: 15px;
     font-weight: bold;
     text-align: center;
     color: #222;
-  }
+}
 
-  .caterpillar {
+.caterpillar {
     position: absolute;
     transform: scalex(-1);
-    top: 500px;             
-    left: 50%;                
+    top: 500px;
+    left: 50%;
     width: 200px;
     height: 200px;
     transition: transform 0.2s;
     z-index: 0;
-  }
+}
 
-  .grassbg {
+.grassbg {
     position: absolute;
-    top: 350px;             
-    left: 19.1%;                
+    top: 350px;
+    left: 19.1%;
     width: 850px;
     height: 300px;
     z-index: -1;
-  }
+}
 
-  .bug-catcher-end {
+.bug-catcher-end {
     text-align: center;
     margin-top: 20px;
-  }
-  
-  
+}
+
+/* Media Queries for 1200px */
+@media (max-width: 1200px) {
+    .bug-catcher-card {
+        max-width: 500px;
+        padding: 15px;
+    }
+
+    .bug-catcher-title {
+        font-size: 22px;
+    }
+
+    .bug-catcher-prompt {
+        font-size: 15px;
+    }
+
+    .bug-catcher-textarea {
+        height: 180px;
+        font-size: 13px;
+    }
+
+    .bug-catcher-button {
+        font-size: 15px;
+        padding: 8px 18px;
+    }
+
+    .caterpillar {
+        width: 180px;
+        height: 180px;
+        top: 480px;
+    }
+
+    .grassbg {
+        width: 700px;
+        height: 250px;
+        top: 340px;
+        left: 15%;
+    }
+}
+
+/* Media Queries for 992px */
+@media (max-width: 992px) {
+    .bug-catcher-card {
+        max-width: 400px;
+        padding: 12px;
+    }
+
+    .bug-catcher-title {
+        font-size: 20px;
+    }
+
+    .bug-catcher-prompt {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .bug-catcher-textarea {
+        height: 160px;
+        font-size: 12px;
+    }
+
+    .bug-catcher-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .caterpillar {
+        width: 160px;
+        height: 160px;
+        top: 460px;
+    }
+
+    .grassbg {
+        width: 600px;
+        height: 200px;
+        top: 330px;
+        left: 10%;
+    }
+}
+
+/* Media Queries for 768px */
+@media (max-width: 768px) {
+    .bug-catcher-card {
+        max-width: 90%;
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .bug-catcher-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .bug-catcher-prompt {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .bug-catcher-textarea {
+        height: 140px;
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .bug-catcher-button {
+        font-size: 13px;
+        padding: 6px 14px;
+    }
+
+    .bug-catcher-feedback {
+        font-size: 14px;
+    }
+
+    .caterpillar {
+        width: 120px;
+        height: 120px;
+        top: 440px;
+        left: 45%;
+    }
+
+    .grassbg {
+        width: 90%;
+        height: 150px;
+        top: 320px;
+        left: 5%;
+    }
+
+    .bug-catcher-end {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+}
