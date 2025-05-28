@@ -1,23 +1,23 @@
 .bug-catcher-card {
-    max-width: 600px;
-    margin: 30px auto;
+    max-width: 50%;
+    margin: 3% auto;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 3%;
     background-color: #a2d6f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3% rgba(0, 0, 0, 0.1);
     font-family: sans-serif;
 }
 
 .bug-catcher-title {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 150%;
+    margin-bottom: 2%;
     text-align: center;
     color: #333;
 }
 
 .bug-catcher-prompt {
-    font-size: 16px;
-    margin-bottom: 15px;
+    font-size: 100%;
+    margin-bottom: 2%;
     color: #555;
 }
 
@@ -25,22 +25,22 @@
     width: 100%;
     height: 200px;
     font-family: monospace;
-    font-size: 14px;
-    padding: 10px;
+    font-size: 120%;
+    padding: 2%;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 0%;
     resize: vertical;
     box-sizing: border-box;
 }
 
 .bug-catcher-button {
-    margin-top: 15px;
-    padding: 10px 20px;
+    margin-top: 3%;
+    padding: 1.7% 3%;
     background-color: #008cff;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 13%;
+    font-size: 100%;
     cursor: pointer;
     display: block;
     margin-left: auto;
@@ -52,7 +52,7 @@
 }
 
 .bug-catcher-feedback {
-    margin-top: 15px;
+    margin-top: 2%;
     font-weight: bold;
     text-align: center;
     color: #222;
@@ -61,26 +61,26 @@
 .caterpillar {
     position: absolute;
     transform: scalex(-1);
-    top: 500px;
+    top: 80%;
     left: 50%;
-    width: 200px;
-    height: 200px;
+    width: 15%;
+    height: 30%;
     transition: transform 0.2s;
     z-index: -1;
 }
 
 .grassbg {
     position: absolute;
-    top: 350px;
+    top: 53.7%;
     left: 19.1%;
-    width: 850px;
-    height: 300px;
+    width: 65.5%;
+    height: 46.4%;
     z-index: -2;
 }
 
 .bug-catcher-end {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 4%;
 }
 
 /* Media Queries for 1200px */
@@ -198,15 +198,15 @@
     .caterpillar {
         width: 120px;
         height: 120px;
-        top: 560px;
+        top: 85%;
         left: 45%;
     }
 
     .grassbg {
-        width: 90%;
+        width: 100%;
         height: 150px;
-        top: 496.4px;
-        left: 5%;
+        top: 73.2%;
+        left: 0%;
     }
 
     .bug-catcher-end {
