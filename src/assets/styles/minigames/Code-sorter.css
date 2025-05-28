@@ -6,30 +6,30 @@
     background-color: #a2d6f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: sans-serif;
-  }
-  
-  .code-sorter-title {
+}
+
+.code-sorter-title {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
     color: #333;
-  }
-  
-  .code-sorter-prompt {
+}
+
+.code-sorter-prompt {
     font-size: 16px;
     margin-bottom: 15px;
     color: #555;
-  }
-  
-  .code-sorter-blocks {
+}
+
+.code-sorter-blocks {
     border: 1px solid #ccc;
     padding: 10px;
     background-color: #ffffff;
     border-radius: 6px;
     min-height: 120px;
-  }
-  
-  .code-sorter-block {
+}
+
+.code-sorter-block {
     background-color: #eef3ff;
     margin: 8px 0;
     padding: 10px;
@@ -38,14 +38,14 @@
     font-family: monospace;
     font-size: 14px;
     user-select: none;
-  }
-  
-  .code-sorter-block:active {
+}
+
+.code-sorter-block:active {
     cursor: grabbing;
     background-color: #dde6ff;
-  }
-  
-  .code-sorter-button {
+}
+
+.code-sorter-button {
     margin-top: 15px;
     padding: 10px 20px;
     background-color: #00a86b;
@@ -57,19 +57,19 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .code-sorter-button:hover {
+}
+
+.code-sorter-button:hover {
     background-color: #008e5b;
-  }
-  
-  .code-sorter-feedback {
+}
+
+.code-sorter-feedback {
     margin-top: 15px;
     font-weight: bold;
     text-align: center;
-  }
-  
-  .code-sorter-next-button {
+}
+
+.code-sorter-next-button {
     margin: 20px auto;
     display: block;
     padding: 10px 20px;
@@ -79,34 +79,180 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-  }
-  
-  .code-sorter-next-button:hover {
+}
+
+.code-sorter-next-button:hover {
     background-color: #0056b3;
-  }
-  
-  .code-sorter-finished {
-    font-size: 20px;
-    font-weight: bold;
-    color: #28a745;
-    text-align: center;
-    margin-top: 40px;
-  }
-  
-  .code-sorter-finished {
+}
+
+.code-sorter-finished {
     margin-top: 30px;
     text-align: center;
     font-weight: bold;
-    font-size: 18px;
-    color: #222;
-  }
+    font-size: 20px;
+    color: #28a745;
+}
 
-  .code-sorter-puzzle {
+.code-sorter-puzzle {
     position: absolute;
-    top: 445px;             
-    left: 27%;                
+    top: 445px;
+    left: 27%;
     width: 650px;
     height: 200px;
     z-index: 10;
-  }
-  
+}
+
+/* Media Queries for 1200px */
+@media (max-width: 1200px) {
+    .code-sorter-card {
+        max-width: 500px;
+        padding: 15px;
+    }
+
+    .code-sorter-title {
+        font-size: 22px;
+    }
+
+    .code-sorter-prompt {
+        font-size: 15px;
+    }
+
+    .code-sorter-blocks {
+        min-height: 100px;
+    }
+
+    .code-sorter-block {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .code-sorter-button {
+        font-size: 15px;
+        padding: 8px 18px;
+    }
+
+    .code-sorter-feedback {
+        font-size: 15px;
+    }
+
+    .code-sorter-next-button {
+        font-size: 15px;
+        padding: 8px 18px;
+    }
+
+    .code-sorter-finished {
+        font-size: 18px;
+    }
+
+    .code-sorter-puzzle {
+        width: 550px;
+        height: 180px;
+        top: 430px;
+        left: 20%;
+    }
+}
+
+/* Media Queries for 992px */
+@media (max-width: 992px) {
+    .code-sorter-card {
+        max-width: 400px;
+        padding: 12px;
+    }
+
+    .code-sorter-title {
+        font-size: 20px;
+    }
+
+    .code-sorter-prompt {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .code-sorter-blocks {
+        min-height: 80px;
+    }
+
+    .code-sorter-block {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .code-sorter-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .code-sorter-feedback {
+        font-size: 14px;
+    }
+
+    .code-sorter-next-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .code-sorter-finished {
+        font-size: 16px;
+    }
+
+    .code-sorter-puzzle {
+        width: 450px;
+        height: 160px;
+        top: 410px;
+        left: 15%;
+    }
+}
+
+/* Media Queries for 768px */
+@media (max-width: 768px) {
+    .code-sorter-card {
+        max-width: 90%;
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .code-sorter-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .code-sorter-prompt {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .code-sorter-blocks {
+        min-height: 60px;
+    }
+
+    .code-sorter-block {
+        font-size: 11px;
+        padding: 5px;
+    }
+
+    .code-sorter-button {
+        font-size: 13px;
+        padding: 6px 14px;
+    }
+
+    .code-sorter-feedback {
+        font-size: 13px;
+    }
+
+    .code-sorter-next-button {
+        font-size: 13px;
+        padding: 6px 14px;
+    }
+
+    .code-sorter-finished {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .code-sorter-puzzle {
+        width: 90%;
+        height: 140px;
+        top: 390px;
+        left: 5%;
+    }
+}

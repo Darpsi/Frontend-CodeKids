@@ -8,7 +8,7 @@
   max-width: 900px;
   align-items: center;
   align-self: center;
-  margin-left: 250px;
+  margin-left: 19%;
 }
 
 .contenido-central-piramide {
@@ -46,71 +46,73 @@
 
 .nivel-1 {
   width: 140%;
-  bottom: 0;
-  height: 70px;
+  bottom: 0%;
+  height: 15%;
   clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
 }
+
 .nivel-2 {
   width: 112%;
-  bottom: 75px;
-  height: 70px;
+  bottom: 16.5%;
+  height: 15%;
   clip-path: polygon(12% 0%, 88% 0%, 100% 100%, 0% 100%);
 }
+
 .nivel-3 {
   width: 85%;
-  bottom: 150px;
-  height: 80px;
+  bottom: 33%;
+  height: 17%;
   clip-path: polygon(14% 0%, 86% 0%, 100% 100%, 0% 100%);
 }
+
 .nivel-4 {
   width: 61%;
-  bottom: 235px;
-  height: 70px;
+  bottom: 51%;
+  height: 15%;
   clip-path: polygon(16% 0%, 84% 0%, 100% 100%, 0% 100%);
 }
 
 .nivel-5 {
   width: 74%;
-  bottom: 310px;
-  height: 150px;
+  bottom: 67%;
+  height: 33%;
   clip-path: polygon(50% 0%, 50% 0%, 78% 100%, 22% 100%);
   transition: clip-path 0.5s ease;
-  padding-top: 5rem;
+  padding-top: 20%;
 }
 
-
 .nivel.activo {
-  height: 120px;
+  height: 30%;
   background-color: #fdd835;
   z-index: 2;
   justify-content: flex-start;
-  padding-top: 0.5rem;
+  padding-top: 2%;
 }
 
 .nivel-5.activo {
-  height: 150px;
+  height: 33%;
   background-color: #fdd835;
   z-index: 2;
   justify-content: flex-start;
-  padding-top: 0.5rem;
+  padding-top: 2%;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .label-piramide {
   pointer-events: none;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2%;
 }
 
 .contenido-piramide {
-  font-size: 0.85rem;
+  font-size: 100%;
   background-color: #fffde7;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
+  padding: 4%;
+  border-radius: 2%;
   border: 1px solid #fbc02d;
 }
 
 .espaciado-boton-piramide {
-  margin-top: 1rem;
+  margin-top: 3%;
 }
 
 .boton-entrar-piramide {
@@ -118,8 +120,8 @@
   color: #333;
   font-weight: bold;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  padding: 4% 10%;
+  border-radius: 10%;
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-family: 'Sour Gummy', sans-serif;
@@ -135,43 +137,336 @@
 }
 
 .nube-1 {
-  top: 20px;
-  left: 350px;
-  width: 100px;
+  top: 10%;
+  left: 80%;
+  width: 25%;
 }
 
 .nube-2 {
-  top: 80px;
-  right: 350px;
-  width: 120px;
+  top: 20%;
+  right: 100%;
+  width: 30%;
 }
 
 .cactus-1 {
-  bottom: 0px;
-  right: 500px;
-  width: 80px;
+  bottom: 0%;
+  right: 130%;
+  width: 20%;
 }
 
 .cactus-2 {
-  bottom: 0px;
-  left: 500px;
-  width: 90px;
+  bottom: 0%;
+  left: 130%;
+  width: 20%;
 }
 
 .sol {
-  top: -100px;
-  left: 500px;
-  width: 150px;
-  height: 150px;
+  top: -20%;
+  left: 120%;
+  width: 35%;
+  height: 35%;
 }
 
 .desert {
-  width: 900px;
-  height: 310px;
-  top: 205px;
-  left: -250px;
+  width: 225%;
+  height: 68%;
+  top: 45%;
+  left: -62.5%;
   z-index: -1;
 }
 
+/* Media Queries for 1200px */
+@media (max-width: 1200px) {
+  .piramide-container {
+    max-width: 100%;
+    margin-left: 200px;
+    padding: 1.5rem;
+  }
 
-  
+  .piramide-rectangular {
+    height: 400px;
+    max-width: 350px;
+  }
+
+  .nivel-1 {
+    width: 135%;
+    height: 65px;
+  }
+
+  .nivel-2 {
+    width: 108%;
+    bottom: 70px;
+    height: 65px;
+  }
+
+  .nivel-3 {
+    width: 80%;
+    bottom: 140px;
+    height: 75px;
+  }
+
+  .nivel-4 {
+    width: 58%;
+    bottom: 220px;
+    height: 65px;
+  }
+
+  .nivel-5 {
+    width: 70%;
+    bottom: 290px;
+    height: 140px;
+    padding-top: 4.5rem;
+  }
+
+  .nivel.activo {
+    height: 110px;
+  }
+
+  .nivel-5.activo {
+    height: 140px;
+  }
+
+  .contenido-piramide {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+
+  .boton-entrar-piramide {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .nube-1 {
+    left: 250px;
+    width: 90px;
+  }
+
+  .nube-2 {
+    right: 250px;
+    width: 110px;
+  }
+
+  .cactus-1 {
+    right: 400px;
+    width: 70px;
+    z-index: -10;
+  }
+
+  .cactus-2 {
+    left: 400px;
+    width: 80px;
+    z-index: -10;
+  }
+
+  .sol {
+    left: 400px;
+    width: 130px;
+    height: 130px;
+  }
+
+  .desert {
+    width: 700px;
+    height: 270px;
+    top: 190px;
+    left: -200px;
+  }
+}
+
+/* Media Queries for 992px */
+@media (max-width: 992px) {
+  .piramide-container {
+    max-width: 100%;
+    margin-left: 150px;
+    padding: 1.25rem;
+  }
+
+  .piramide-rectangular {
+    height: 350px;
+    max-width: 300px;
+  }
+
+  .nivel-1 {
+    width: 130%;
+    height: 60px;
+  }
+
+  .nivel-2 {
+    width: 105%;
+    bottom: 65px;
+    height: 60px;
+  }
+
+  .nivel-3 {
+    width: 78%;
+    bottom: 130px;
+    height: 70px;
+  }
+
+  .nivel-4 {
+    width: 56%;
+    bottom: 200px;
+    height: 60px;
+  }
+
+  .nivel-5 {
+    width: 68%;
+    bottom: 265px;
+    height: 130px;
+    padding-top: 4rem;
+  }
+
+  .nivel.activo {
+    height: 100px;
+  }
+
+  .nivel-5.activo {
+    height: 130px;
+  }
+
+  .contenido-piramide {
+    font-size: 0.75rem;
+    padding: 0.35rem;
+  }
+
+  .boton-entrar-piramide {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .nube-1 {
+    left: 150px;
+    width: 80px;
+  }
+
+  .nube-2 {
+    right: 150px;
+    width: 100px;
+  }
+
+  .cactus-1 {
+    right: 300px;
+    width: 60px;
+    z-index: -10;
+  }
+
+  .cactus-2 {
+    left: 300px;
+    width: 70px;
+    z-index: -10;
+  }
+
+  .sol {
+    left: 300px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .desert {
+    width: 500px;
+    height: 240px;
+    top: 170px;
+    left: -150px;
+  }
+}
+
+/* Media Queries for 768px */
+@media (max-width: 768px) {
+  .piramide-container {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+  }
+
+  .piramide-rectangular {
+    height: 300px;
+    max-width: 350px;
+  }
+
+  .nivel-1 {
+    width: 125%;
+    height: 55px;
+    bottom: -35px;
+  }
+
+  .nivel-2 {
+    width: 102%;
+    bottom: 25px;
+    height: 55px;
+  }
+
+  .nivel-3 {
+    width: 76%;
+    bottom: 85px;
+    height: 65px;
+  }
+
+  .nivel-4 {
+    width: 54%;
+    bottom: 155px;
+    height: 55px;
+  }
+
+  .nivel-5 {
+    width: 66%;
+    bottom: 215px;
+    height: 120px;
+    padding-top: 3.5rem;
+    font-size: x-small;
+  }
+
+  .nivel.activo {
+    height: 120px;
+  }
+
+  .nivel-5.activo {
+    height: 120px;
+  }
+
+  .contenido-piramide {
+    font-size: 0.7rem;
+    padding: 0.3rem;
+  }
+
+  .boton-entrar-piramide {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .nube-1 {
+    left: 0%;
+    width: 70px;
+  }
+
+  .nube-2 {
+    right: -5%;
+    width: 90px;
+  }
+
+  .cactus-1 {
+    right: -30%;
+    width: 50px;
+    top: 92%;
+    z-index: -10;
+  }
+
+  .cactus-2 {
+    top: 90%;
+    left: -30%;
+    width: 60px;
+    z-index: -10;
+  }
+
+  .sol {
+    left: 80%;
+    width: 100px;
+    height: 100px;
+  }
+
+  .desert {
+    width: 175%;
+    height: 200px;
+    top: 156px;
+    left: -30%;
+  }
+}

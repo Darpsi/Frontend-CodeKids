@@ -91,4 +91,15 @@
     right: 30px;
     z-index: 999;
   }
-  
+
+@media (max-width: 1200px) {
+  .mascota-examen{
+    z-index: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .mascota-examen{
+    z-index: -1;
+  }
+}
