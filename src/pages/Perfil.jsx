@@ -20,6 +20,8 @@ const Perfil = () => {
   const [loadingCertificado, setLoadingCertificado] = useState(false);
   const email = localStorage.getItem("email");
   const [insigniasDesbloqueadas, setInsigniasDesbloqueadas] = useState([]);
+  const [insigniasCount, setInsigniasCount] = useState(0);
+  const [modulosCompletados, setModulosCompletados] = useState(0);
 
 
   useEffect(() => {
@@ -41,28 +43,39 @@ const Perfil = () => {
         });
 
       // Verificar disponibilidad del certificado
-      fetch(`http://localhost:4000/certificado/estado/${email}`)
+      fetch(`http://localhost:4000/certificado/${email}`)
         .then((res) => res.json())
         .then((data) => setCertificadoDisponible(data.disponible))
         .catch((error) => console.error("Error al verificar certificado:", error))
         .finally(() => setLoadingCertificado(false));
+
+      // Obtener módulo actual
+      fetch(`http://localhost:4000/progreso/${email}`)
+        .then((res) => res.json())
+        .then((data) => {
+        console.log("Datos recibidos de modulos-completados:", data);
+        const completados = data.maxModulo;
+        setModulosCompletados(completados);})
+        .catch((error) => console.error("Error al obtener módulos completados:", error));
     }
   }, [email]);
 
-  useEffect(() => {
+useEffect(() => {
   const fetchInsignias = async () => {
     try {
       const res = await axios.get(`http://localhost:4000/insignias-desbloqueadas/${email}`);
       setInsigniasDesbloqueadas(res.data.desbloqueadas);
+      setInsigniasCount(res.data.desbloqueadas.length);
     } catch (error) {
       console.error("Error al obtener las insignias desbloqueadas:", error);
     }
   };
 
-  if (modalVisible === "insignias") {
+  if (email) {
     fetchInsignias();
   }
-}, [modalVisible, email]);
+}, [email]);
+
 
 
   const handleSubmit = (e) => {
@@ -114,6 +127,17 @@ const Perfil = () => {
     setModalVisible(tipo);
   };
 
+  const TituloPorModulo = (modulo) => {
+  const titulos = [
+    "Trainee", "Explorador", "Aventurero", "Mago",
+    "Guardián", "Maestro", "Gran Maestro", "Héroe"
+  ];
+  if (modulo >= 1 && modulo <= 8) {
+    return titulos[modulo - 1];
+  }
+  return "No hay título";
+  };
+
   return (
     <div className="perfil-container">
       <button className="btn-volver" onClick={() => navigate("/modules")}>
@@ -131,7 +155,7 @@ const Perfil = () => {
         </div>
 
         <div className="perfil-nivel">
-          <p className="font-bold text-lg">Nivel 3 - Explorador</p>
+          <p className="font-bold text-lg">Bienvenido, pequeño programador</p>
           <div className="w-48 h-4 bg-gray-200 rounded-full overflow-hidden">
             <div className="h-full bg-blue-500" style={{ width: '65%' }}></div>
           </div>
@@ -139,9 +163,9 @@ const Perfil = () => {
             Institución: {institutionName || "No perteneces a ninguna institución"}
           </p>
           <div className="perfil-stats">
-            <p><strong>Módulos completados:</strong> 2/4 PURA DECORACION</p>
-            <p><strong>Tiempo total:</strong> 3h 25min</p>
-            <p><strong>Insignias:</strong> 4</p>
+            <p><strong>Módulo actual:</strong> {modulosCompletados}</p>
+            <p><strong>Titulo otorgado:</strong> {TituloPorModulo(modulosCompletados)} </p>
+            <p><strong>Insignias obtenidas:</strong> {insigniasCount}</p>
           </div>
         </div>
       </div>
