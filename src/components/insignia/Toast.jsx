@@ -2,7 +2,7 @@ import "../../assets/styles/insignia/toast.css";
 
 import axios from "axios";
 
-export const intentarDesbloquearInsignia = async (correo, idInsignia, setInsigniaDesbloqueadaId) => {
+export const intentarDesbloquearInsignia = async (correo, idInsignia, setToastInfo) => {
   try {
     const res = await axios.post("http://localhost:4000/insignia/desbloquear", {
       correo,
@@ -10,10 +10,13 @@ export const intentarDesbloquearInsignia = async (correo, idInsignia, setInsigni
     });
 
     if (!res.data.itwasunlock) {
-      setInsigniaDesbloqueadaId(idInsignia);
+      setToastInfo({
+        id: idInsignia,
+        descripcion: res.data.descripcion,
+      });
 
       setTimeout(() => {
-        setInsigniaDesbloqueadaId(null);
+        setToastInfo(null);
       }, 3000);
     }
   } catch (error) {
@@ -21,13 +24,13 @@ export const intentarDesbloquearInsignia = async (correo, idInsignia, setInsigni
   }
 };
 
-
-const ToastInsignia = ({ idInsignia }) => {
-  if (!idInsignia) return null;
+const ToastInsignia = ({ info }) => {
+  if (!info) return null;
 
   return (
     <div className="toast-insignia">
-      🎉 ¡Has desbloqueado la insignia #{idInsignia}!
+      🎉 ¡Has desbloqueado la insignia #{info.id}!<br />
+      Logro: {info.descripcion}
     </div>
   );
 };
