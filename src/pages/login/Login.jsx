@@ -13,7 +13,8 @@ const Login = () => {
   });
 
   const navigate = useNavigate();
-  const [insigniaDesbloqueadaId, setInsigniaDesbloqueadaId] = useState(null);
+  const [insigniaDesbloqueada, setInsigniaDesbloqueada] = useState(null);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,7 +36,7 @@ const handleSubmit = async (e) => {
       await intentarDesbloquearInsignia(
         formData.email,
         12,
-        setInsigniaDesbloqueadaId
+        setInsigniaDesbloqueada
       );
       setTimeout(() => navigate("/modules"), 3000);
     } else if (result.tipo === "admin") {
@@ -89,7 +90,7 @@ const handleSubmit = async (e) => {
           <a href="/forgot-password">¿Olvidaste tu contraseña?</a>
         </form>
       </div>
-      <ToastInsignia idInsignia={insigniaDesbloqueadaId} />
+      <ToastInsignia info={insigniaDesbloqueada} />
     </div>
   );
 };
