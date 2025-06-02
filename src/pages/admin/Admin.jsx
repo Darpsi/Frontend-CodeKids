@@ -19,28 +19,28 @@ const Admin = () => {
       } catch (error) {
         console.error("Error al obtener los progresos:", error);
       }
-  }
+    }
     listaEstudiantes();
   }
-  , []);
+    , []);
 
-    return (
-      <div className="layout-container">
-        <Sidebar />
-        <div className="admin-container">
-          <h1>Panel de progreso</h1>
-          <div className='admin-progreso-general'>
-            <GraficoProgreso estudiantes={estudiantes} />
-          </div>
+  return (
+    <div className="layout-container">
+      <Sidebar />
+      <div className="admin-container">
+        <h1>Panel de progreso</h1>
+        <div className='admin-progreso-general'>
+          <GraficoProgreso estudiantes={estudiantes} />
+        </div>
 
-          <div className='admin-progreso-por-estudiante'>
-            <div className='progresoEstudiantes'>
-              <ProgressStudent />
-            </div>
+        <div className='admin-progreso-por-estudiante'>
+          <div className='progresoEstudiantes'>
+            <ProgressStudent />
           </div>
         </div>
       </div>
-    );
+    </div>
+  );
 }
 
 export default Admin;
