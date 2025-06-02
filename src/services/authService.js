@@ -116,7 +116,7 @@ export const getStudentsInInstitution = async (email) => {
 
 export const addUserInstitution = async (pk_correo, correo_institucion) => {
   try {
-    const response = await axios.post(`${API_URL}/users/update-institution`,{
+    const response = await axios.post(`${API_URL}/users/update-institution`, {
       pk_correo,
       correo_institucion
     });
@@ -126,6 +126,17 @@ export const addUserInstitution = async (pk_correo, correo_institucion) => {
   }
 }
 
+export const deleteUserInstitution = async (pk_correo, email_inst) => {
+  try {
+    const response = await axios.post(`${API_URL}/users/delete-institution`, {
+      pk_correo,
+      email_inst
+    });
+    return response.data;
+  } catch (error) {
+    handleAxiosError(error, 'Error al eliminar el usuario de la institución');
+  }
+}
 
 // Función reutilizable para manejar errores de axios
 const handleAxiosError = (error, defaultMessage) => {
