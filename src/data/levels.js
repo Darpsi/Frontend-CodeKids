@@ -67,6 +67,34 @@ import validacion_datos from "../assets/images/levels/level5/validacion_datos.pn
 import metodos_listas from "../assets/images/levels/level5/metodos_listas.png"
 import buscar_datos from "../assets/images/levels/level5/buscar_datos.png"
 
+// Imagenes modulo7
+import clase_ejemplo from "../assets/images/levels/level7/clase_ejemplo.png"
+import clase_plano from "../assets/images/levels/level7/clase_plano.png"
+import clase_organizada from "../assets/images/levels/level7/clase_organizada.png"
+import objeto_vivo from "../assets/images/levels/level7/objeto_vivo.png"
+import constructor_codigo from "../assets/images/levels/level7/constructor_codigo.png"
+import objeto_constructor from "../assets/images/levels/level7/objeto_constructor.png"
+import metodo_accion from "../assets/images/levels/level7/metodo_accion.png"
+import atributo_metodo from "../assets/images/levels/level7/atributo_metodo.png"
+import objeto_creacion from "../assets/images/levels/level7/objeto_creacion.png"
+import objeto_mundo_real from "../assets/images/levels/level7/objeto_mundo_real.png"
+import constructor_util from "../assets/images/levels/level7/constructor_util.png"
+import objetos_funciones from "../assets/images/levels/level7/objetos_funciones.png"
+
+// Imagenes modulo 8
+import herencia_uso from "../assets/images/levels/level8/herencia_uso.png"
+import herencia_clase from "../assets/images/levels/level8/herencia_clase.png"
+import herencia_sobrescritura from "../assets/images/levels/level8/herencia_sobrescritura.png"
+import encapsulamiento_beneficio from "../assets/images/levels/level8/encapsulamiento_beneficio.png"
+import encapsulamiento_getter_setter from "../assets/images/levels/level8/encapsulamiento_getter_setter.png"
+import encapsulamiento_privado from "../assets/images/levels/level8/encapsulamiento_privado.png"
+import composicion_partes from "../assets/images/levels/level8/composicion_partes.png"
+import composicion_ejemplo from "../assets/images/levels/level8/composicion_ejemplo.png"
+import composicion_beneficio from "../assets/images/levels/level8/composicion_beneficio.png"
+import polimorfismo_flexibilidad from "../assets/images/levels/level8/polimorfismo_flexibilidad.png"
+import polimorfismo_animales from "../assets/images/levels/level8/polimorfismo_animales.png"
+import polimorfismo_uso from "../assets/images/levels/level8/polimorfismo_uso.png"
+
 export const levelsData = {
   1: {
     ruta: "/modules/1",
@@ -74,7 +102,7 @@ export const levelsData = {
       1: [
         {
           text: "👋 ¡Hola, pequeño programador! Bienvenido a Codekids, un lugar donde aprenderás a programar desde cero mientras te diviertes. \n \n ¿Alguna vez te has preguntado cómo se crean los videojuegos, las apps o diferentes programas? ¡Aquí lo descubrirás paso a paso! 🤖💻"
-          
+
         },
         {
           text: "🧭 Este curso está dividido en módulos. Cada módulo trata un tema especial de la programación.\n \n Dentro de cada módulo hay niveles, tómalo como misiones que irás completando.\n Además, cada nivel tiene varias secciones, donde aprenderás con explicaciones sencillas, imágenes, videos... ¡y hasta minijuegos! 🎮✨",
@@ -170,16 +198,16 @@ export const levelsData = {
           imagen: var_change
         },
         {
-        text: "📐 Cuando creas una variable, debes seguir algunas reglas:\n\n- El nombre no puede comenzar con un número.\n- No puede tener espacios, en vez de eso usa _guiones_bajos_, si necesitas separar palabras.\n- No uses símbolos especiales (como @, $, %, etc.).\n\nEjemplos válidos: \n",
-        imagen: var_rules
+          text: "📐 Cuando creas una variable, debes seguir algunas reglas:\n\n- El nombre no puede comenzar con un número.\n- No puede tener espacios, en vez de eso usa _guiones_bajos_, si necesitas separar palabras.\n- No uses símbolos especiales (como @, $, %, etc.).\n\nEjemplos válidos: \n",
+          imagen: var_rules
         },
         {
-        text: "🎭 En Python, las variables son flexibles. ¡Pueden cambiar el tipo de dato que guardan!\n\nPrimero puedes guardar un número y luego un texto, en la misma variable. Python entiende lo que estás guardando. ¡Es como una mochila que se adapta!",
-        imagen: var_dynamic
+          text: "🎭 En Python, las variables son flexibles. ¡Pueden cambiar el tipo de dato que guardan!\n\nPrimero puedes guardar un número y luego un texto, en la misma variable. Python entiende lo que estás guardando. ¡Es como una mochila que se adapta!",
+          imagen: var_dynamic
         },
         {
-        text: "🧪 A veces, puedes usar el valor de una variable para crear otra. En este caso, la variable mensaje usó nombre para crear una frase nueva. ¡Muy útil! \n \n En este ejemplo usamos el + para unir el Hola con el nombre. \n El resultado final sera: Hola Alexis ",
-        imagen: var_concat
+          text: "🧪 A veces, puedes usar el valor de una variable para crear otra. En este caso, la variable mensaje usó nombre para crear una frase nueva. ¡Muy útil! \n \n En este ejemplo usamos el + para unir el Hola con el nombre. \n El resultado final sera: Hola Alexis ",
+          imagen: var_concat
         }
       ],
       2: [
@@ -308,119 +336,264 @@ export const levelsData = {
     }
   },
   4: {
-  ruta: "/modules/4",
-  niveles: {
-    1: [ // Funciones
-      {
-        text: "🛠️ Las *funciones* son como cajas mágicas que hacen una tarea por ti. Les das algo (entrada), hacen algo adentro, y te devuelven un resultado (salida).",
-        imagen: funcion_magica
-      },
-      {
-        text: "📦 Por ejemplo, una función para saludar podría recibir un nombre y devolver un saludo: `def saludar(nombre): return 'Hola ' + nombre`",
-        imagen: funcion_saludo
-      },
-      {
-        text: "🔁 Puedes usar la misma función muchas veces sin tener que escribir el mismo código una y otra vez. ¡Es como tener un robot que siempre hace lo mismo por ti! 🤖",
-        imagen: funcion_reutilizable
-      }
-    ],
-    2: [ // Ámbito de variables
-      {
-        text: "🔒 El *ámbito* de una variable es el lugar del código donde puede usarse. Algunas solo viven dentro de una función y otras viven en todo el programa.",
-      },
-      {
-        text: "👀 Una variable *local* solo existe dentro de la función donde se creó. Afuera, nadie la conoce.",
-        imagen: variable_local
-      },
-      {
-        text: "🌎 Una variable *global* existe fuera de las funciones y puede usarse en muchas partes del programa. ¡Pero hay que tener cuidado al usarla! ⚠️",
-        imagen: variable_global
-      }
-    ],
-    3: [ // Funciones recursivas
-      {
-        text: "♻️ Una *función recursiva* es una función que se llama a sí misma. Es útil cuando algo se repite en partes más pequeñas.",
-      },
-      {
-        text: "🧮 Ejemplo clásico: el factorial de un número.\n`def factorial(n): return 1 if n==0 else n * factorial(n-1)`",
-        imagen: factorial_recursivo
-      },
-      {
-        text: "📉 Pero cuidado: si no hay una condición para detener la repetición, ¡la función nunca termina y el programa se traba!",
-        imagen: recursion_error
-      }
-    ],
-    4: [ // Funciones anónimas
-      {
-        text: "🙊 Una *función anónima* es una función sin nombre. En Python se escribe con la palabra `lambda`. Es útil para cosas rápidas o simples.",
-      },
-      {
-        text: "⚡ Por ejemplo: `lambda x: x * 2` es una función que recibe un número y lo duplica. Se puede usar en listas u otras funciones.",
-        imagen: lambda_lista
-      },
-      {
-        text: "🎯 Usamos funciones lambda para escribir menos código cuando no necesitamos una función completa. Son como atajos. 🛣️",
-        imagen: lambda_atajo
-      }
-    ]
-  }
+    ruta: "/modules/4",
+    niveles: {
+      1: [ // Funciones
+        {
+          text: "🛠️ Las *funciones* son como cajas mágicas que hacen una tarea por ti. Les das algo (entrada), hacen algo adentro, y te devuelven un resultado (salida).",
+          imagen: funcion_magica
+        },
+        {
+          text: "📦 Por ejemplo, una función para saludar podría recibir un nombre y devolver un saludo: `def saludar(nombre): return 'Hola ' + nombre`",
+          imagen: funcion_saludo
+        },
+        {
+          text: "🔁 Puedes usar la misma función muchas veces sin tener que escribir el mismo código una y otra vez. ¡Es como tener un robot que siempre hace lo mismo por ti! 🤖",
+          imagen: funcion_reutilizable
+        }
+      ],
+      2: [ // Ámbito de variables
+        {
+          text: "🔒 El *ámbito* de una variable es el lugar del código donde puede usarse. Algunas solo viven dentro de una función y otras viven en todo el programa.",
+        },
+        {
+          text: "👀 Una variable *local* solo existe dentro de la función donde se creó. Afuera, nadie la conoce.",
+          imagen: variable_local
+        },
+        {
+          text: "🌎 Una variable *global* existe fuera de las funciones y puede usarse en muchas partes del programa. ¡Pero hay que tener cuidado al usarla! ⚠️",
+          imagen: variable_global
+        }
+      ],
+      3: [ // Funciones recursivas
+        {
+          text: "♻️ Una *función recursiva* es una función que se llama a sí misma. Es útil cuando algo se repite en partes más pequeñas.",
+        },
+        {
+          text: "🧮 Ejemplo clásico: el factorial de un número.\n`def factorial(n): return 1 if n==0 else n * factorial(n-1)`",
+          imagen: factorial_recursivo
+        },
+        {
+          text: "📉 Pero cuidado: si no hay una condición para detener la repetición, ¡la función nunca termina y el programa se traba!",
+          imagen: recursion_error
+        }
+      ],
+      4: [ // Funciones anónimas
+        {
+          text: "🙊 Una *función anónima* es una función sin nombre. En Python se escribe con la palabra `lambda`. Es útil para cosas rápidas o simples.",
+        },
+        {
+          text: "⚡ Por ejemplo: `lambda x: x * 2` es una función que recibe un número y lo duplica. Se puede usar en listas u otras funciones.",
+          imagen: lambda_lista
+        },
+        {
+          text: "🎯 Usamos funciones lambda para escribir menos código cuando no necesitamos una función completa. Son como atajos. 🛣️",
+          imagen: lambda_atajo
+        }
+      ]
+    }
   },
   5: {
-  ruta: "/modules/5",
-  niveles: {
-    1: [ // Listas y arreglos
-      {
-        text: "📚 Una *lista* es como una fila de casillas donde puedes guardar muchos datos. Puedes recorrerla, ordenarla y modificarla.",
-      },
-      {
-        text: "📦 Por ejemplo: `nombres = ['Ana', 'Luis', 'Pedro']` te guarda varios nombres en una sola variable.",
-        imagen: lista_uso
-      },
-      {
-        text: "🔁 Puedes usar un bucle `for` para recorrer la lista y hacer algo con cada elemento. ¡Es muy útil! 🚀",
-        imagen: lista_bucle
-      }
-    ],
-    2: [ // Diccionarios y mapas
-      {
-        text: "🗂️ Un *diccionario* guarda información en forma de *clave: valor*. Como una libreta de contactos donde cada nombre tiene un número.",
-      },
-      {
-        text: "🗝️ Por ejemplo: `contactos = {'Ana': 123, 'Luis': 456}`. Para ver el número de Ana, usas `contactos['Ana']`",
-        imagen: diccionario_uso
-      },
-      {
-        text: "🔧 Puedes añadir, cambiar o eliminar valores en un diccionario. Es ideal para organizar información. 🧠",
-        imagen: diccionario_mod
-      }
-    ],
-    3: [ // Lectura de datos
-      {
-        text: "📥 Los programas pueden leer datos que tú escribas con el teclado usando `input()`. Así pueden reaccionar a lo que digas. 🧑‍💻",
-      },
-      {
-        text: "🗂️ También pueden leer información guardada en archivos. Como cuando abres una receta o un cuento en la compu. 📖",
-        imagen: archivo_lectura
-      },
-      {
-        text: "✅ Es importante validar los datos que llegan para asegurarse de que tengan sentido antes de usarlos. ¡Evita errores! 🛡️",
-        imagen: validacion_datos
-      }
-    ],
-    4: [ // Manipulación de datos
-      {
-        text: "🛠️ *Manipular datos* significa cambiarlos, ordenarlos o filtrarlos. ¡Así los programas entienden mejor la información! 🧮",
-      },
-      {
-        text: "🧹 Puedes usar métodos como `.append()`, `.sort()`, o `filter()` para trabajar con listas. Es como limpiar y ordenar tus juguetes. 🧸",
-        imagen: metodos_listas
-      },
-      {
-        text: "🔍 También puedes buscar datos dentro de listas y diccionarios con bucles o condiciones.",
-        imagen: buscar_datos
-      }
-    ]
-  }
+    ruta: "/modules/5",
+    niveles: {
+      1: [ // Listas y arreglos
+        {
+          text: "📚 Una *lista* es como una fila de casillas donde puedes guardar muchos datos. Puedes recorrerla, ordenarla y modificarla.",
+        },
+        {
+          text: "📦 Por ejemplo: `nombres = ['Ana', 'Luis', 'Pedro']` te guarda varios nombres en una sola variable.",
+          imagen: lista_uso
+        },
+        {
+          text: "🔁 Puedes usar un bucle `for` para recorrer la lista y hacer algo con cada elemento. ¡Es muy útil! 🚀",
+          imagen: lista_bucle
+        }
+      ],
+      2: [ // Diccionarios y mapas
+        {
+          text: "🗂️ Un *diccionario* guarda información en forma de *clave: valor*. Como una libreta de contactos donde cada nombre tiene un número.",
+        },
+        {
+          text: "🗝️ Por ejemplo: `contactos = {'Ana': 123, 'Luis': 456}`. Para ver el número de Ana, usas `contactos['Ana']`",
+          imagen: diccionario_uso
+        },
+        {
+          text: "🔧 Puedes añadir, cambiar o eliminar valores en un diccionario. Es ideal para organizar información. 🧠",
+          imagen: diccionario_mod
+        }
+      ],
+      3: [ // Lectura de datos
+        {
+          text: "📥 Los programas pueden leer datos que tú escribas con el teclado usando `input()`. Así pueden reaccionar a lo que digas. 🧑‍💻",
+        },
+        {
+          text: "🗂️ También pueden leer información guardada en archivos. Como cuando abres una receta o un cuento en la compu. 📖",
+          imagen: archivo_lectura
+        },
+        {
+          text: "✅ Es importante validar los datos que llegan para asegurarse de que tengan sentido antes de usarlos. ¡Evita errores! 🛡️",
+          imagen: validacion_datos
+        }
+      ],
+      4: [ // Manipulación de datos
+        {
+          text: "🛠️ *Manipular datos* significa cambiarlos, ordenarlos o filtrarlos. ¡Así los programas entienden mejor la información! 🧮",
+        },
+        {
+          text: "🧹 Puedes usar métodos como `.append()`, `.sort()`, o `filter()` para trabajar con listas. Es como limpiar y ordenar tus juguetes. 🧸",
+          imagen: metodos_listas
+        },
+        {
+          text: "🔍 También puedes buscar datos dentro de listas y diccionarios con bucles o condiciones.",
+          imagen: buscar_datos
+        }
+      ]
+    }
   },
-
+  7: {
+    ruta: "/modules/7",
+    niveles: {
+      1: [ // ¿Qué es una clase?
+        {
+          text: "🏗️ Una *clase* es como un plano o receta. Define cómo serán los objetos y qué pueden hacer. 📐",
+        },
+        {
+          text: "📦 Por ejemplo: `class Perro:` define cómo serán todos los perros que creemos. Para definir una clase usamos la palabra reservada `class` y el nombre de la clase.",
+          imagen: clase_ejemplo
+        },
+        {
+          text: "🧩 Dentro de una clase se pueden definir características (atributos) y acciones (métodos) los cuales son funciones dentro de clases.",
+          imagen: clase_plano
+        },
+        {
+          text: "🔍 Con clases podemos organizar y planear mejor nuestro código, ¡como arquitectos de programas! 🏢, \n por ejemplo aqui creamos una clase llamada Coche que tiene el metodo arrancar.",
+          imagen: clase_organizada
+        }
+      ],
+      2: [ // Constructores
+        {
+          text: "🏗️ Un *constructor* es una función especial llamada `__init__` que se ejecuta cuando creas un objeto. 🎓",
+        },
+        {
+          text: "🔨 Por ejemplo: `def __init__(self, nombre):` permite darle un nombre al objeto al crearlo.",
+          imagen: constructor_codigo
+        },
+        {
+          text: "📦 Así, `persona1 = Persona('pepito')` crea una persona llamada pepito. \n\nEl constructor asegura que el objeto tenga todo lo que necesita desde el principio.",
+          imagen: objeto_constructor
+        },
+        {
+          text: "🚀 Los constructores aseguran que los objetos se creen correctamente con la información que necesitan. 🧠",
+          imagen: constructor_util
+        }
+      ],
+      3: [ // ¿Qué es un objeto?
+        {
+          text: "🧸 Un *objeto* es una cosa creada a partir de una clase, como un juguete hecho siguiendo un plano. 🎈",
+        },
+        {
+          text: "📦 Por ejemplo: Supongamos que ya tenemos una clase Perro, `mi_perro = Perro('Fido', 3)` crea un objeto que representa un perro llamado Fido y su edad 3 años.",
+          imagen: objeto_creacion
+        },
+        {
+          text: "🔨 Cada objeto puede tener sus propios datos y hacer cosas. Son como juguetes únicos. 🐕",
+          imagen: objetos_funciones
+        },
+        {
+          text: "🌍 Los objetos hacen que el código sea más fácil de entender y más parecido al mundo real.",
+          imagen: objeto_mundo_real
+        }
+      ],
+      4: [ // Atributos y métodos
+        {
+          text: "🎨 *Atributos* son las características de un objeto, como color, tamaño o edad. 📝",
+        },
+        {
+          text: "🔧 *Métodos* son las acciones que un objeto puede hacer, como correr, saltar o ladrar. 🚀",
+          imagen: metodo_accion
+        },
+        {
+          text: "📦 Por ejemplo: `mi_perro.nombre = 'Fido'` y `mi_perro.ladrar()` le dan un nombre y lo hacen ladrar. \n\n En base al ejemplo anterior donde definimos los metodos o funciones en la clase, aqui podemos utilizar esos metodos en nuestros objetos, empleando el objeto seguido de un punto y el nombre del metodo, como por ejemplo `mi_perro.ladrar()`.",
+          imagen: atributo_metodo
+        },
+        {
+          text: "🔍 Los atributos y métodos hacen que los objetos sean completos y útiles. 🌟, podemos ver un ejemplo completo de una clase Robot con metodos y atributos.",
+          imagen: objeto_vivo
+        }
+      ]
+    }
+  },
+  8: {
+    ruta: "/modules/8",
+    niveles: {
+      1: [ // Herencia
+        {
+          text: "👨‍👧 La *herencia* permite que una clase hija use cosas de una clase padre. ¡Como heredar habilidades! 🧬"
+        },
+        {
+          text: "🧱 Por ejemplo, si tienes una clase `Animal`, puedes crear una clase `Perro` que herede de ella. \n\n Así, `Perro` tendrá todo lo que `Animal` tiene, como atributos y métodos. 🐾 \n\n En Python, usamos la palabra reservada `class` seguida del nombre de la clase hija y entre paréntesis el nombre de la clase padre.",
+          imagen: herencia_clase
+        },
+        {
+          text: "📥 La clase hija usa los atributos y métodos de la clase padre. ¡No hay que repetir código! ♻️",
+          imagen: herencia_uso
+        },
+        {
+          text: "🔄 También puedes agregar o cambiar cosas en la clase hija. Se llama *sobrescritura*.",
+          imagen: herencia_sobrescritura
+        }
+      ],
+      2: [ // Encapsulamiento
+        {
+          text: "🔐 El *encapsulamiento* protege los datos dentro de un objeto para que no se cambien por error. 🛡️"
+        },
+        {
+          text: "📦 Puedes hacer atributos privados usando guiones bajos `_nombre`. Así solo se usan desde adentro.",
+          imagen: encapsulamiento_privado
+        },
+        {
+          text: "🧰 Usamos *getters* y *setters* para acceder o cambiar los datos de forma segura.",
+          imagen: encapsulamiento_getter_setter
+        },
+        {
+          text: "✅ Encapsular hace que el código sea más claro, seguro y fácil de mantener. 🧼",
+          imagen: encapsulamiento_beneficio
+        }
+      ],
+      3: [ // Polimorfismo
+        {
+          text: "🌀 El *polimorfismo* permite que diferentes objetos respondan distinto al mismo mensaje. ¡Como magia! ✨"
+        },
+        {
+          text: "🐶🐱 Por ejemplo, un `Perro` y un `Gato` pueden tener un método `hacer_sonido()`, pero cada uno hace algo diferente.",
+          imagen: polimorfismo_animales
+        },
+        {
+          text: "🔁 Esto funciona muy bien cuando usas herencia. ¡Cada clase puede tener su propia versión!",
+          imagen: polimorfismo_uso
+        },
+        {
+          text: "🧠 Así puedes escribir código que funciona con muchos tipos de objetos sin preocuparte por cuál es cuál.",
+          imagen: polimorfismo_flexibilidad
+        }
+      ],
+      4: [ // Composición
+        {
+          text: "🏗️ La *composición* es cuando una clase usa objetos de otras clases como partes internas. 🔧"
+        },
+        {
+          text: "🚗 Por ejemplo, un `Coche` puede tener un `Motor`, un `Volante` y unas `Ruedas`. No hereda, ¡los contiene!",
+          imagen: composicion_ejemplo
+        },
+        {
+          text: "🔄 Esto permite crear objetos más complejos a partir de piezas simples y reutilizables.",
+          imagen: composicion_partes
+        },
+        {
+          text: "🎯 La composición ayuda a organizar bien tu programa y evita relaciones confusas.",
+          imagen: composicion_beneficio
+        }
+      ]
+    }
+  }
 };
