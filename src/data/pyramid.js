@@ -52,10 +52,10 @@ export const pyramidData = [
   {
   moduleId: 6,
   niveles: [
-    { id: 1, label: "Errores comunes", info: "Identifica errores típicos y cómo evitarlos.", ruta: "/quiz/6" },
-    { id: 2, label: "Depuración básica", info: "Aprende técnicas para encontrar errores en tu código.", ruta: "/minigame/6/catcher" },
-    { id: 3, label: "Bloques try-catch", info: "Evita que tu programa se detenga usando manejo de excepciones.", ruta: "/minigame/6/sorter" },
-    { id: 4, label: "Errores personalizados", info: "Crea tus propios mensajes de error.", ruta: "/minigame/6/maze" },
+    { id: 1, label: "Errores comunes", info: "Identifica errores típicos y cómo evitarlos.", ruta: "/modules/6/levels/1" },
+    { id: 2, label: "Depuración básica", info: "Aprende técnicas para encontrar errores en tu código.", ruta: "/modules/6/levels/2" },
+    { id: 3, label: "Bloques try-catch", info: "Evita que tu programa se detenga usando manejo de excepciones.", ruta: "/modules/6/levels/3" },
+    { id: 4, label: "Errores personalizados", info: "Crea tus propios mensajes de error.", ruta: "/modules/6/levels/4" },
     { id: 5, label: "Examen Final", info: "¡Comprueba cuánto sabes sobre manejo de errores!", ruta: "/exam/6" }
   ]
   },

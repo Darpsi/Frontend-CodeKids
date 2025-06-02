@@ -67,6 +67,23 @@ import validacion_datos from "../assets/images/levels/level5/validacion_datos.pn
 import metodos_listas from "../assets/images/levels/level5/metodos_listas.png"
 import buscar_datos from "../assets/images/levels/level5/buscar_datos.png"
 
+// Imagenes modulo6
+import error_icon_class from "../assets/images/levels/level6/error_icon_class.jpg"
+import name_error from "../assets/images/levels/level6/name_error.png"
+import zero_division from "../assets/images/levels/level6/zero_division.png"
+import syntax_error from "../assets/images/levels/level6/syntax_error.png"
+import checklist from "../assets/images/levels/level6/checklist.png"
+import debug_magnifier from "../assets/images/levels/level6/debug_magnifier.jpg"
+import print_debug from "../assets/images/levels/level6/print_debug.png"
+import debug_example from "../assets/images/levels/level6/debug_example.png"
+import experiment from "../assets/images/levels/level6/experiment.png"
+import try_except_example from "../assets/images/levels/level6/try_except_example.png"
+import detour from "../assets/images/levels/level6/detour.png"
+import multi_except from "../assets/images/levels/level6/multi_except.png"
+import raise_error from "../assets/images/levels/level6/raise_error.png"
+import warning_sign from "../assets/images/levels/level6/warning_sign.png"
+import custom_try_except from "../assets/images/levels/level6/custom_try_except.png"
+
 export const levelsData = {
   1: {
     ruta: "/modules/1",
@@ -422,5 +439,83 @@ export const levelsData = {
     ]
   }
   },
-
+  6: {
+    ruta: "/modules/6",
+    niveles: {
+      1: [ // Errores comunes
+        {
+          text: "😱 ¡Oh no! A veces, cuando programamos, la computadora se confunde y aparece un *error*. ¡Es como tropezar cuando corres! 🏃‍♂️ No te preocupes, vamos a aprender qué son los errores comunes y cómo evitarlos. 🚧",
+          imagen: error_icon_class
+        },
+        {
+          text: "🔍 Un error común es escribir mal el nombre de una variable. Por ejemplo, si defines `edad = 10` pero luego escribes `edadd`, ¡la compu no lo encuentra! Esto se llama *NameError*. ",
+          imagen: name_error
+        },
+        {
+          text: "📉 Otro error es intentar dividir por cero, como `10 / 0`. ¡Eso no se puede! Esto causa un *ZeroDivisionError*. Es como querer repartir 10 galletas entre 0 amigos. 🍪🚫",
+          imagen: zero_division
+        },
+        {
+          text: "✍️ El error más común dentro de un programa es *SyntaxError* que ocurre si escribes mal el código, como olvidar los dos puntos `:` después de un `if`. ¡Es como olvidar una coma en una carta! 📜",
+          imagen: syntax_error
+        },
+        {
+          text: "🛡️ Para evitar estos errores, revisa bien tu código, usa nombres claros para las variables y asegúrate de no dividir por cero. ¡Es como revisar tu mochila antes de salir! 🎒",
+          imagen: checklist
+        }
+      ],
+      2: [ // Depuración básica
+        {
+          text: "🕵️‍♂️ *Depurar* es como ser un detective buscando pistas para arreglar tu código. Cuando algo no funciona, ¡tienes que encontrar el error y solucionarlo! 🔎",
+          imagen: debug_magnifier
+        },
+        {
+          text: "💡 Una forma de depurar es usar `print()` para ver qué está pasando. Por ejemplo, si tu código no da el resultado esperado, imprime las variables para ver sus valores. 🖨️",
+          imagen: print_debug
+        },
+        {
+          text: "🔧 Ejemplo: Si tienes `x = 5` y esperas que sea 10, usa `print(x)` para comprobarlo. Si ves `5`, ¡sabrás dónde está el problema! Aquí va un ejemplo:\n```python\nx = 5\nprint('El valor de x es:', x)  # Imprime: El valor de x es: 5\n```",
+          imagen: debug_example
+        },
+        {
+          text: "🎯 También puedes probar tu código paso a paso. Cambia una cosa, corre el programa y mira qué pasa. ¡Es como experimentar en un laboratorio! 🧪",
+          imagen: experiment
+        }
+      ],
+      3: [ // Bloques try-catch
+        {
+          text: "🛡️ Los bloques *try-except* son como un chaleco salvavidas para tu programa. Si algo sale mal, el programa no se detiene, ¡sino que hace otra cosa! 🚤",
+        },
+        {
+          text: "📝 En Python, usamos `try` para intentar algo que podría fallar y `except` para decir qué hacer si hay un error. Por ejemplo:\n```python\ntry:\n    x = 10 / 0  # ¡Error!\nexcept ZeroDivisionError:\n    print('¡No puedes dividir por cero!')\n```",
+          imagen: try_except_example
+        },
+        {
+          text: "🚦 Esto es como un semáforo: si el camino está bloqueado (error), tomas otra ruta (except). Así tu programa sigue funcionando. 🛤️",
+          imagen: detour
+        },
+        {
+          text: "🌟 Puedes usar varios `except` para manejar diferentes errores, como *NameError* o *TypeError*. ¡Es como tener un plan B para cada problema! 📋",
+          imagen: multi_except
+        }
+      ],
+      4: [ // Errores personalizados
+        {
+          text: "🎨 A veces quieres crear tus propios mensajes de error para que tu programa sea más claro. ¡Es como escribir una nota personalizada! ✍️",
+        },
+        {
+          text: "🔨 En Python, usas `raise` para lanzar un error personalizado. Por ejemplo:\n```python\nedad = 5\nif edad < 10:\n    raise ValueError('¡Eres muy pequeño para este juego!')\n```",
+          imagen: raise_error
+        },
+        {
+          text: "🗣️ Esto es útil para avisar a otros programadores (o a ti mismo) por qué algo salió mal. ¡Es como poner una señal de advertencia! ⚠️",
+          imagen: warning_sign
+        },
+        {
+          text: "🧩 Puedes combinar `raise` con `try-except` para manejar tus errores personalizados. Así controlas exactamente qué pasa. Ejemplo:\n```python\ntry:\n    raise ValueError('Algo salió mal')\nexcept ValueError as e:\n    print(e)  # Imprime: Algo salió mal\n```",
+          imagen: custom_try_except
+        }
+      ]
+    }
+  }
 };
