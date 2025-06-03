@@ -55,4 +55,21 @@ export const bugCatcherLevels = {
       correctCode: `persona = {"id": 5, "nombre": "X"}\nprint(persona["nombre"])`,
     },
   ],
+  "6": [
+    {
+      prompt: "¡El código debería sumar dos números, pero el resultado está mal! Usa print() para encontrar el error.",
+      buggyCode: `def suma():\n    a = 3\n    b = 4\n    print(a - b)`,
+      correctCode: `def suma():\n    a = 3\n    b = 4\n    print("a:", a)\n    print("b:", b)\n    print(a + b)`
+    },
+    {
+      prompt: "Este código no imprime lo esperado. ¡Prueba paso a paso para ver qué pasa!",
+      buggyCode: `def contar():\n    n = 0\n    for i in range(3):\n        n = i\n    print(n)`,
+      correctCode: `def contar():\n    n = 0\n    for i in range(3):\n        n += 1\n        print("i:", i, "n:", n)\n    print(n)`
+    },
+    {
+      prompt: "La variable no da el valor correcto. Usa print() para investigar.",
+      buggyCode: `def edad():\n    n = 10\n    n *= 2\n    print(n)`,
+      correctCode: `def edad():\n    n = 10\n    print("n:", n)\n    n += 2\n    print(n)`
+    }
+  ]
 };
