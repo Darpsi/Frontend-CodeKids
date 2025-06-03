@@ -10,57 +10,43 @@ const Quiz = ({ titulo = "NIVEL", subtitulo = "¡Demuestra tu conocimiento!", qu
   const [quizFinished, setQuizFinished] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
   const [optionStyles, setOptionStyles] = useState({});
-  const [result, setResult] = useState("");
 
   const navigate = useNavigate();
   const correctAnswer = questions[currentQuestionIndex]?.correct;
 
   useEffect(() => {
-    if (!quizFinished) {
-      const timer = setInterval(() => {
-        setTimeLeft((prev) => {
-          if (prev > 0) return prev - 2;
-          return 0;
-        });
-      }, 100);
+    if (quizFinished || selectedOption || timeLeft <= 0) return;
 
-      return () => clearInterval(timer);
-    }
-  }, [currentQuestionIndex, quizFinished]);
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => (prev > 0 ? prev - 2 : 0));
+    }, 100);
+
+    return () => clearInterval(timer);
+  }, [timeLeft, quizFinished, selectedOption]);
 
   useEffect(() => {
-    if (!quizFinished && timeLeft > 0) {
-      const timer = setInterval(() => {
-        setTimeLeft((prev) => (prev > 0 ? prev - 2 : 0));
-      }, 100);
+    if (!selectedOption && timeLeft > 0) return;
 
-      setOptionStyles({
-        [selectedOption]: "selected",
-      });
+    const isCorrect = selectedOption === correctAnswer;
+    const newCorrectCount = isCorrect ? correctCount + 1 : correctCount;
 
-      return () => clearInterval(timer);
-    } else if (timeLeft === 0) {
-      const isCorrect = selectedOption === correctAnswer;
-      if (isCorrect) setCorrectCount((prev) => prev + 1);
+    setOptionStyles({
+      [selectedOption]: isCorrect ? "correct" : "wrong",
+      [correctAnswer]: "correct",
+    });
 
-      setOptionStyles({
-        [selectedOption]: isCorrect ? "correct" : "wrong",
-        [correctAnswer]: "correct",
-      });
-
-      setTimeout(() => {
-        if (currentQuestionIndex < questions.length - 1) {
-          setSelectedOption(null);
-          setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-          setTimeLeft(100);
-          setOptionStyles({});
-        } else {
-          setQuizFinished(true);
-          setResult(isCorrect || correctCount >= 2 ? "ganado" : "perdido");
-        }
-      }, 1000);
-    }
-  }, [timeLeft, quizFinished, currentQuestionIndex, selectedOption, correctAnswer, correctCount, questions.length]);
+    setTimeout(() => {
+      if (currentQuestionIndex < questions.length - 1) {
+        setSelectedOption(null);
+        setCurrentQuestionIndex((prev) => prev + 1);
+        setTimeLeft(100);
+        setOptionStyles({});
+      } else {
+        setQuizFinished(true);
+        setCorrectCount(newCorrectCount);
+      }
+    }, 1000);
+  }, [selectedOption, timeLeft, quizFinished, currentQuestionIndex, correctAnswer, correctCount, questions.length]);
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
@@ -73,7 +59,6 @@ const Quiz = ({ titulo = "NIVEL", subtitulo = "¡Demuestra tu conocimiento!", qu
     setQuizFinished(false);
     setCorrectCount(0);
     setOptionStyles({});
-    setResult("");
   };
 
   const handleBack = () => {
@@ -81,6 +66,7 @@ const Quiz = ({ titulo = "NIVEL", subtitulo = "¡Demuestra tu conocimiento!", qu
   };
 
   if (quizFinished) {
+    const result = correctCount / questions.length >= 0.6 ? "ganado" : "perdido";
     return (
       <div className="app-container">
         <BarraLateral />
