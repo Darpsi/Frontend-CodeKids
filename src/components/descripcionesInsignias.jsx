@@ -8,7 +8,6 @@ export const descripcionesInsignias = [
     "Completó todos los módulos al 100% ¡Dominaste cada parte! Todos los módulos completados al máximo.",
     "Completó su primer curso ¡Felicidades! Has terminado tu primer curso completo.",
     "Completó 3 cursos ¡Triple logro! Ya completaste tres cursos.",
-    "Completó 5 cursos ¡Cinco cursos, cinco victorias! Excelente dedicación.",
     "Finalizó todos los cursos disponibles ¡Maestría desbloqueada! Completaste todos los cursos del sistema.",
     "Obtuvo su certificado ¡Reconocimiento merecido! Ya tienes tu certificado oficial.", 
     "Inició sesión por primera vez ¡Bienvenido! Esta es tu primera vez dentro.", 
@@ -19,7 +18,6 @@ export const descripcionesInsignias = [
     "Vio su primer video de clase ¡Comenzaste tu camino visual! Primer video visto.", 
     "Completó su primer ejercicio ¡Tu primer ejercicio completo! Bien hecho.", 
     "Realizó su primera evaluación ¡Hora de demostrar lo aprendido! Primera evaluación realizada.",
-    "Reprobó y volvió a intentar una evaluación ¡Lo importante es seguir! Volviste a intentarlo.", 
     "Completó un módulo en un solo día ¡Velocidad y dedicación! Terminaste un módulo en tiempo récord.", 
     "Realizó 10 ejercicios ¡Ya llevas 10 ejercicios! Sigue así.", 
     "Realizó 50 ejercicios ¡50 ejercicios completados! Eso es compromiso.", 
@@ -33,5 +31,7 @@ export const descripcionesInsignias = [
     "Leyó todas las explicaciones de un módulo ¡Eres detallista! Leíste todo antes de continuar.", 
     "Usó pistas para aprender mejor ¡Aprender también es saber pedir ayuda!", 
     "Terminó un módulo sin usar ninguna pista ¡Sin ayuda! Completaste un módulo por tu cuenta.", 
-    "Jugó un minijuego por primera vez ¡La diversión comienza! Jugaste tu primer minijuego."
+    "Jugó un minijuego por primera vez ¡La diversión comienza! Jugaste tu primer minijuego.",
+    "¡Personalizó su perfil! Le diste tu toque personal a tu perfil",
+    "Descubrió un secreto escondido ¡Explorador experto! Encontraste un secreto oculto."
 ];
