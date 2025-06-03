@@ -26,7 +26,7 @@ export const pyramidData = [
       { id: 2, label: "Condiciones y estructuras if-else", info: "Explora cómo ejecutar instrucciones según diferentes condiciones.", ruta: "/modules/3/levels/2" },
       { id: 3, label: "Bucles (for, while)", info: "Descubre cómo repetir tareas automáticamente con bucles.", ruta: "/modules/3/levels/3" },
       { id: 4, label: "Operadores lógicos", info: "Combina condiciones usando AND, OR y NOT.", ruta: "/modules/3/levels/4" },
-      { id: 5, label: "Examen Final", info: "¡Demuestra todo lo que has aprendido sobre control de flujo!", ruta: "/exam/2" },
+      { id: 5, label: "Examen Final", info: "¡Demuestra todo lo que has aprendido sobre control de flujo!", ruta: "/exam/3" },
     ]
   },
   {
