@@ -108,7 +108,7 @@
 
 .cuadro:hover {
   transform: scale(1.05);
-  background-color: #1E96FC; 
+  background-color: #1E96FC;
 }
 
 .barra-inferior {
@@ -131,58 +131,30 @@
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   z-index: 1000;
   animation: fadeIn 0.3s ease-in-out;
 }
 
 .modal {
+  position: fixed;
+  top: 10vh;
+  left: 50%;
+  transform: translate(-50%, 0);
   background: #ffffff;
   border-radius: 16px;
   padding: 30px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-  width: 400px;
   max-width: 90%;
-  animation: scaleInFromOrigin 0.25s ease-out;
-  position: absolute;
+  box-sizing: border-box;
   z-index: 1100;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.modal-certificado {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-  width: fit-content;
-  max-width: 90%;
-  animation: scaleInFromOrigin 0.25s ease-out;
-  position: absolute;
-  z-index: 1100;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes scaleInFromOrigin {
-  from {
-    opacity: 0;
-    transform: scale(0.2) translate(-50%, -50%);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translate(-50%, -50%);
-  }
+  animation: slideIn 0.3s ease-out;
 }
 
 .modal-content {
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
   position: relative;
 }
 
@@ -210,31 +182,31 @@
 
 .modal input {
   width: 100%;
-  margin: 10px 0;
+  margin-bottom: 8px;
   padding: 10px;
   font-size: 16px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  transition: box-shadow 0.2s;
+  box-sizing: border-box;
 }
 
 .modal input:focus {
   outline: none;
   border: 1px solid #4A90E2;
-  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+  box-shadow: 0 0 4px rgba(40, 144, 226, 0.5);
 }
 
 .modal button {
-  padding: 10px 16px;
   background: #4A90E2;
   color: white;
-  border: none;
+  padding: 10px;
   font-size: 16px;
   border-radius: 6px;
+  border: none;
   cursor: pointer;
-  margin-top: 10px;
   width: 100%;
-  transition: background 0.2s;
+  margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
 .modal button:hover {
@@ -242,18 +214,18 @@
 }
 
 .btn-volver {
-  position: absolute;
+  position: fixed;
   top: 15px;
   left: 15px;
   background-color: #B3D4FC;
-  color: #2E4057;
   border: 2px solid #4A90E2;
   padding: 8px 16px;
   border-radius: 8px;
   font-size: 16px;
   font-weight: bold;
+  color: #2E4057;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
   z-index: 10;
 }
 
@@ -261,22 +233,22 @@
   background-color: #94C1F3;
 }
 
-
 .insignias-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
   gap: 12px;
   padding: 10px;
-  max-height: 400px;
+  max-height: 250px;
   overflow-y: auto;
+  margin-bottom: 20px;
 }
 
 .insignia {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  transition: transform 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s;
 }
 
 .insignia:hover {
@@ -286,24 +258,65 @@
 .botones-perfil {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   margin-top: 20px;
 }
 
 .botones-perfil button {
-  padding: 10px;
-  font-weight: bold;
   background-color: #007bff;
   color: white;
+  padding: 10px;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
 .botones-perfil button:hover {
   background-color: #0056b3;
 }
+
 .botones-perfil button:disabled {
-  background-color: #ccc;
+  background-color: #cccccc;
   cursor: not-allowed;
+}
+
+.descripcion-insignia {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #eaf3ff;
+  border-radius: 10px;
+  border: 2px dashed #4A90E2;
+  color: #2E4057;
+  text-align: center;
+  font-family: 'Sour Gummy', sans-serif;
+  box-sizing: border-box;
+}
+
+.descripcion-insignia h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.descripcion-insignia h5 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #4A90E2;
+  margin-bottom: 8px;
+}
+
+.descripcion-insignia p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
 }

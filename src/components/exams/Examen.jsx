@@ -4,12 +4,22 @@ import "../../assets/styles/exams/Exam.css";
 import BarraLateral from "../Sidebar";
 import Mascota from "../pet";
 import { useNavigate } from "react-router-dom";
+import ToastInsignia, { intentarDesbloquearInsignia } from "../insignia/Toast";
+
+const mapaInsigniasPorModulo = {
+  1: 3,
+  2: 4,
+  3: 5,
+  8: 6,
+};
 
 const Examen = ({ preguntas }) => {
   const [respuestas, setRespuestas] = useState(Array(preguntas.length).fill(null));
   const [resultado, setResultado] = useState(null);
   const navigate = useNavigate();
   const { moduleId } = useParams();
+  const [insigniaDesbloqueada, setInsigniaDesbloqueada] = useState(null);
+
 
   const handleSeleccion = (indicePregunta, indiceOpcion) => {
     const nuevas = [...respuestas];
@@ -17,34 +27,48 @@ const Examen = ({ preguntas }) => {
     setRespuestas(nuevas);
   };
 
-  const confirmarRespuestas = () => {
-    const correctas = respuestas.reduce((acc, respuesta, i) =>
-      respuesta === preguntas[i].correcta ? acc + 1 : acc, 0
-    );
+  const confirmarRespuestas = async () => {
+  const correctas = respuestas.reduce(
+    (acc, respuesta, i) => respuesta === preguntas[i].correcta ? acc + 1 : acc,
+    0
+  );
 
-    if (correctas >= preguntas.length * 0.8) {
-      setResultado({
-        estado: "ganaste",
-        mensaje: `🎉 ¡Ganaste! Obtuviste ${correctas} de ${preguntas.length} respuestas correctas.`
-      });
+  const paso = correctas >= preguntas.length * 0.8;
 
-      const correo = localStorage.getItem("email");
+  if (paso) {
+    setResultado({
+      estado: "ganaste",
+      mensaje: `🎉 ¡Ganaste! Obtuviste ${correctas} de ${preguntas.length} respuestas correctas.`
+    });
 
-      fetch("http://localhost:4000/progreso/actualizar", {
+    const correo = localStorage.getItem("email");
+
+    try {
+      await fetch("http://localhost:4000/progreso/actualizar", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ correo, modulo: moduleId })
-      })
-        .then(res => res.json())
-        .then(data => console.log("Progreso actualizado:", data))
-        .catch(err => console.error("Error actualizando progreso:", err));
-    } else {
-      setResultado({
-        estado: "perdiste",
-        mensaje: `😓 Perdiste. Solo obtuviste ${correctas} de ${preguntas.length} respuestas correctas.`
       });
+
+      const idModulo = Number(moduleId);
+      const idInsignia = mapaInsigniasPorModulo[idModulo];
+
+      if (idInsignia) {
+        await intentarDesbloquearInsignia(correo, idInsignia, setInsigniaDesbloqueada);
+      }
+
+    } catch (err) {
+      console.error("Error actualizando progreso o desbloqueando insignia:", err);
     }
-  };
+
+  } else {
+    setResultado({
+      estado: "perdiste",
+      mensaje: `😓 Perdiste. Solo obtuviste ${correctas} de ${preguntas.length} respuestas correctas.`
+    });
+  }
+};
+
 
   const reintentar = () => {
     setRespuestas(Array(preguntas.length).fill(null));
@@ -88,6 +112,7 @@ const Examen = ({ preguntas }) => {
           </div>
         </div>
       ))}
+      <ToastInsignia info={insigniaDesbloqueada} />
 
       {!resultado && (
         <button className="confirmar-btn" onClick={confirmarRespuestas}>

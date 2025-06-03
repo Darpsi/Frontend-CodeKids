@@ -29,7 +29,8 @@ const ToastInsignia = ({ info }) => {
 
   return (
     <div className="toast-insignia">
-      🎉 ¡Has desbloqueado la insignia #{info.id}!<br />
+                Felicidades🎉 
+      ¡Has desbloqueado la insignia #{info.id}!<br />
       Logro: {info.descripcion}
     </div>
   );
