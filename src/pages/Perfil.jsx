@@ -45,7 +45,7 @@ const Perfil = () => {
       // Verificar disponibilidad del certificado
       fetch(`http://localhost:4000/certificado/${email}`)
         .then((res) => res.json())
-        .then((data) => setCertificadoDisponible(data.disponible))
+        .then((data) => setCertificadoDisponible(data.certificado))
         .catch((error) => console.error("Error al verificar certificado:", error))
         .finally(() => setLoadingCertificado(false));
 
