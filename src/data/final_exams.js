@@ -190,6 +190,111 @@ export const examQuestions = [
     ]
   },
   {
+    moduleId: 3,
+    preguntas: [
+      {
+        texto: "¿Qué es el control de flujo en programación?",
+        opciones: [
+          "Un tipo de variable",
+          "Decidir qué hacer según condiciones",
+          "Un bucle que nunca termina",
+          "Un mensaje de error"
+        ],
+        correcta: 1
+      },
+      {
+        texto: "¿Qué palabra usas en Python para hacer una decisión?",
+        opciones: [
+          "while",
+          "for",
+          "if",
+          "return"
+        ],
+        correcta: 2
+      },
+      {
+        texto: "¿Qué hace este código?\n\nif x > 5:\n    print('Mayor')\nelse:\n    print('Menor')",
+        opciones: [
+          "Imprime siempre 'Mayor'",
+          "Imprime 'Mayor' o 'Menor' según x",
+          "Da un error",
+          "No imprime nada"
+        ],
+        correcta: 1
+      },
+      {
+        texto: "¿Qué es un bucle for en Python?",
+        opciones: [
+          "Una condición que decide algo",
+          "Una repetición de acciones",
+          "Una función anónima",
+          "Un comentario"
+        ],
+        correcta: 1
+      },
+      {
+        texto: "¿Qué hace este código?\n\nfor i in range(3):\n    print(i)",
+        opciones: [
+          "Imprime 0, 1, 2",
+          "Imprime 1, 2, 3",
+          "Imprime 3",
+          "Da un error"
+        ],
+        correcta: 0
+      },
+      {
+        texto: "¿Qué hace un bucle while?",
+        opciones: [
+          "Repite mientras una condición sea verdadera",
+          "Para el programa",
+          "Solo ejecuta una vez",
+          "Crea una variable"
+        ],
+        correcta: 0
+      },
+      {
+        texto: "¿Qué imprime este código?\n\nx = 1\nwhile x < 4:\n    print(x)\n    x += 1",
+        opciones: [
+          "1, 2, 3",
+          "4",
+          "1, 2, 3, 4",
+          "Nada"
+        ],
+        correcta: 0
+      },
+      {
+        texto: "¿Qué operador lógico significa 'y'?",
+        opciones: [
+          "OR",
+          "NOT",
+          "AND",
+          "IF"
+        ],
+        correcta: 2
+      },
+      {
+        texto: "¿Qué hace este código?\n\nif x > 5 and y < 10:\n    print('Ok')",
+        opciones: [
+          "Imprime 'Ok' si x es mayor a 5 o y es menor a 10",
+          "Imprime 'Ok' si ambas condiciones son verdaderas",
+          "Imprime 'Ok' siempre",
+          "Da un error"
+        ],
+        correcta: 1
+      },
+      {
+        texto: "¿Qué operador cambia verdadero a falso?",
+        opciones: [
+          "AND",
+          "OR",
+          "NOT",
+          "ELSE"
+        ],
+        correcta: 2
+      }
+    ]
+  },
+  {
     moduleId: 4,
     preguntas: [
       {
@@ -396,6 +501,111 @@ export const examQuestions = [
           "len()"
         ],
         correcta: 3,
+      }
+    ]
+  },
+  {
+    moduleId: 6,
+    preguntas: [
+      {
+        texto: "¿Qué es un NameError en Python?",
+        opciones: [
+          "Dividir por cero",
+          "Usar una variable que no existe",
+          "Olvidar un signo de dos puntos",
+          "Sumar texto y números"
+        ],
+        correcta: 1
+      },
+      {
+        texto: "¿Qué causa un ZeroDivisionError?",
+        opciones: [
+          "Escribir mal una variable",
+          "Intentar dividir por cero",
+          "Usar un bucle infinito",
+          "No cerrar un paréntesis"
+        ],
+        correcta: 1
+      },
+      {
+        texto: "¿Qué es un SyntaxError?",
+        opciones: [
+          "Un error al escribir mal el código",
+          "Un error al usar una variable",
+          "Un error al dividir números",
+          "Un error al crear funciones"
+        ],
+        correcta: 0
+      },
+      {
+        texto: "¿Cómo puedes evitar errores en tu código?",
+        opciones: [
+          "Escribir rápido",
+          "Usar nombres claros y revisar el código",
+          "Ignorar los errores",
+          "Usar siempre print()"
+        ],
+        correcta: 1
+      },
+      {
+        texto: "¿Qué hace print() al depurar código?",
+        opciones: [
+          "Corrige errores",
+          "Muestra valores de variables",
+          "Crea nuevas variables",
+          "Para el programa"
+        ],
+        correcta: 1
+      },
+      {
+        texto: "¿Qué hace este código?\n\nx = 5\nprint(x)",
+        opciones: [
+          "Imprime 5",
+          "Da un error",
+          "Imprime 'x'",
+          "No hace nada"
+        ],
+        correcta: 0
+      },
+      {
+        texto: "¿Qué hace un bloque try-except?",
+        opciones: [
+          "Repite un código",
+          "Maneja errores sin detener el programa",
+          "Crea variables",
+          "Imprime mensajes"
+        ],
+        correcta: 1
+      },
+      {
+        texto: "¿Qué imprime este código?\n\ntry:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print('Error')",
+        opciones: [
+          "10",
+          "Error",
+          "Nada",
+          "0"
+        ],
+        correcta: 1
+      },
+      {
+        texto: "¿Qué hace raise en Python?",
+        opciones: [
+          "Crea una variable",
+          "Lanza un error personalizado",
+          "Imprime un mensaje",
+          "Para un bucle"
+        ],
+        correcta: 1
+      },
+      {
+        texto: "¿Qué imprime este código?\n\ntry:\n    raise ValueError('Mal')\nexcept ValueError as e:\n    print(e)",
+        opciones: [
+          "Mal",
+          "ValueError",
+          "Nada",
+          "Error"
+        ],
+        correcta: 0
       }
     ]
   },
