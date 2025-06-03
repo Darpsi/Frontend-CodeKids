@@ -108,5 +108,35 @@ export const mazeLevels = {
       correctPath: [0, 0],
     },
   ],
+  "6": [
+    {
+      prompt: "Elige las líneas para lanzar un error personalizado si el número es negativo.",
+      steps: [
+        {
+          question: "n = -1\nif n < 0:",
+          options: ["raise ValueError('No negativos')", "print('No negativos')"]
+        },
+        {
+          question: "¿Qué hace raise correctamente?",
+          options: ["Lanza un error con mensaje", "Imprime un mensaje"]
+        }
+      ],
+      correctPath: [0, 0]
+    },
+    {
+      prompt: "Completa el código para manejar un error personalizado con try-except.",
+      steps: [
+        {
+          question: "try:\n    raise ValueError('Error')",
+          options: ["except ValueError as e:\n    print(e)", "print('Error')"]
+        },
+        {
+          question: "¿Qué imprime el except correcto?",
+          options: ["Error", "Nada"]
+        }
+      ],
+      correctPath: [0, 0]
+    }
+  ]
 };
 

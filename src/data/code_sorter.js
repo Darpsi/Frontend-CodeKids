@@ -94,6 +94,37 @@ export const sorterLevels = {
       ],
     },
   ],
+  "6": [
+    {
+      prompt: "Nivel 1: Ordena el código para manejar un error al dividir por cero.",
+      correctOrder: [
+        "try:",
+        "    x = 10 / 0",
+        "except ZeroDivisionError:",
+        "    print('No dividas por cero')"
+      ]
+    },
+    {
+      prompt: "Nivel 2: Ordena el código para manejar un error al convertir texto a número.",
+      correctOrder: [
+        "try:",
+        "    n = int('abc')",
+        "except ValueError:",
+        "    print('Eso no es un número')"
+      ]
+    },
+    {
+      prompt: "Nivel 3: Ordena el código para manejar dos tipos de errores.",
+      correctOrder: [
+        "try:",
+        "    x = y / 0",
+        "except ZeroDivisionError:",
+        "    print('No dividas por cero')",
+        "except NameError:",
+        "    print('Variable no definida')"
+      ]
+    }
+  ]
 };
 
 

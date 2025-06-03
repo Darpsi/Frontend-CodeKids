@@ -107,6 +107,37 @@ export const quizData = {
     correct: "frutas[0]"
   }
   ],
-
+  6: [
+    {
+      question: "¿Qué error ocurre si escribes mal el nombre de una variable en Python?",
+      options: [
+        "SyntaxError",
+        "NameError",
+        "ZeroDivisionError",
+        "TypeError"
+      ],
+      correct: "NameError"
+    },
+    {
+      question: "¿Qué causa un ZeroDivisionError en un programa?",
+      options: [
+        "Olvidar un signo de dos puntos (:) en un if",
+        "Intentar dividir un número por cero",
+        "Usar una variable que no está definida",
+        "Escribir un número como texto"
+      ],
+      correct: "Intentar dividir un número por cero"
+    },
+    {
+      question: "¿Cómo puedes evitar errores como SyntaxError o NameError?",
+      options: [
+        "Escribir el código más rápido",
+        "Usar nombres de variables confusos",
+        "Revisar bien el código y usar nombres claros",
+        "Siempre dividir por cero"
+      ],
+      correct: "Revisar bien el código y usar nombres claros"
+    }
+  ]
 };
 
