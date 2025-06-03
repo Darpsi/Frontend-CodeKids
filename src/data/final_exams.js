@@ -190,318 +190,423 @@ export const examQuestions = [
     ]
   },
   {
-  moduleId: 3,
+    moduleId: 4,
     preguntas: [
       {
-        texto: "¿Qué es el control de flujo en programación?",
+        texto: "¿Qué es una función en programación?",
         opciones: [
-          "Un tipo de variable",
-          "Decidir qué hacer según condiciones",
-          "Un bucle que nunca termina",
+          "Un tipo de dato",
+          "Una forma de repetir código sin bucles",
+          "Una parte del código que se puede reutilizar",
           "Un mensaje de error"
         ],
-        correcta: 1
+        correcta: 2,
       },
       {
-        texto: "¿Qué palabra usas en Python para hacer una decisión?",
+        texto: "¿Cómo se define una función en Python?",
         opciones: [
-          "while",
-          "for",
-          "if",
-          "return"
+          "function mi_funcion()",
+          "crear funcion mi_funcion",
+          "def mi_funcion():",
+          "func mi_funcion:"
         ],
-        correcta: 2
+        correcta: 2,
       },
       {
-        texto: "¿Qué hace este código?\n\nif x > 5:\n    print('Mayor')\nelse:\n    print('Menor')",
+        texto: "¿Qué significa el 'ámbito' de una variable?",
         opciones: [
-          "Imprime siempre 'Mayor'",
-          "Imprime 'Mayor' o 'Menor' según x",
-          "Da un error",
-          "No imprime nada"
+          "El tipo de dato que tiene",
+          "El valor máximo que puede tener",
+          "Dónde puede ser usada una variable en el código",
+          "Cómo se imprime una variable"
         ],
-        correcta: 1
+        correcta: 2,
       },
       {
-        texto: "¿Qué es un bucle for en Python?",
+        texto: "¿Qué pasa si defines una variable dentro de una función?",
         opciones: [
-          "Una condición que decide algo",
-          "Una repetición de acciones",
-          "Una función anónima",
-          "Un comentario"
+          "Es global automáticamente",
+          "Solo existe dentro de esa función",
+          "Es visible en todo el programa",
+          "No se puede definir ahí"
         ],
-        correcta: 1
+        correcta: 1,
       },
       {
-        texto: "¿Qué hace este código?\n\nfor i in range(3):\n    print(i)",
+        texto: "¿Qué es una función recursiva?",
         opciones: [
-          "Imprime 0, 1, 2",
-          "Imprime 1, 2, 3",
-          "Imprime 3",
-          "Da un error"
+          "Una función que se llama a sí misma",
+          "Una función que nunca termina",
+          "Una función que se ejecuta sola al inicio",
+          "Una función que repite el código de otra"
         ],
-        correcta: 0
+        correcta: 0,
       },
       {
-        texto: "¿Qué hace un bucle while?",
+        texto: "¿Cuál de estas funciones es recursiva?",
         opciones: [
-          "Repite mientras una condición sea verdadera",
-          "Para el programa",
-          "Solo ejecuta una vez",
-          "Crea una variable"
+          "def sumar():\n  return 2 + 2",
+          "def contar():\n  contar()",
+          "def saludo():\n  print('Hola')",
+          "def resta():\n  return a - b"
         ],
-        correcta: 0
+        correcta: 1,
       },
       {
-        texto: "¿Qué imprime este código?\n\nx = 1\nwhile x < 4:\n    print(x)\n    x += 1",
+        texto: "¿Qué es una función anónima en Python?",
         opciones: [
-          "1, 2, 3",
-          "4",
-          "1, 2, 3, 4",
-          "Nada"
+          "Una función sin retorno",
+          "Una función que no imprime nada",
+          "Una función sin nombre definida con lambda",
+          "Una función que se llama automáticamente"
         ],
-        correcta: 0
+        correcta: 2,
       },
       {
-        texto: "¿Qué operador lógico significa 'y'?",
+        texto: "¿Cuál es la forma correcta de crear una función anónima?",
         opciones: [
-          "OR",
-          "NOT",
-          "AND",
-          "IF"
+          "lambda x: x * 2",
+          "def (x): return x * 2",
+          "crear funcion x * 2",
+          "function(x) = x * 2"
         ],
-        correcta: 2
+        correcta: 0,
       },
       {
-        texto: "¿Qué hace este código?\n\nif x > 5 and y < 10:\n    print('Ok')",
+        texto: "¿Para qué sirve 'return' dentro de una función?",
         opciones: [
-          "Imprime 'Ok' si x es mayor a 5 o y es menor a 10",
-          "Imprime 'Ok' si ambas condiciones son verdaderas",
-          "Imprime 'Ok' siempre",
-          "Da un error"
+          "Para mostrar un valor por pantalla",
+          "Para terminar la ejecución del programa",
+          "Para devolver un valor al llamar la función",
+          "Para repetir el código"
         ],
-        correcta: 1
+        correcta: 2,
       },
       {
-        texto: "¿Qué operador cambia verdadero a falso?",
+        texto: "¿Qué hace este código?\n\ndef doble(n):\n  return n * 2",
         opciones: [
-          "AND",
-          "OR",
-          "NOT",
-          "ELSE"
+          "Define una variable",
+          "Muestra el doble en pantalla",
+          "Define una función que duplica un número",
+          "Crea un ciclo infinito"
         ],
-        correcta: 2
+        correcta: 2,
       }
     ]
   },
   {
-  moduleId: 5,
-  preguntas: [
-    {
-      texto: "¿Qué es una lista en Python?",
-      opciones: [
-        "Una función especial",
-        "Un tipo de dato que almacena varios elementos",
-        "Un número decimal",
-        "Un texto en mayúsculas"
-      ],
-      correcta: 1,
-    },
-    {
-      texto: "¿Cómo se accede al primer elemento de una lista llamada datos?",
-      opciones: [
-        "datos(1)",
-        "datos[1]",
-        "datos[0]",
-        "datos{0}"
-      ],
-      correcta: 2,
-    },
-    {
-      texto: "¿Qué es un diccionario en Python?",
-      opciones: [
-        "Una lista de textos",
-        "Un tipo de dato que guarda pares clave-valor",
-        "Una función para ordenar listas",
-        "Un conjunto de variables globales"
-      ],
-      correcta: 1,
-    },
-    {
-      texto: "¿Cómo accedes al valor de la clave 'nombre' en un diccionario llamado persona?",
-      opciones: [
-        "persona.nombre",
-        "persona[nombre]",
-        "persona['nombre']",
-        "persona->nombre"
-      ],
-      correcta: 2,
-    },
-    {
-      texto: "¿Cuál es la forma correcta de leer texto del usuario en Python?",
-      opciones: [
-        "leer()",
-        "input()",
-        "scanf()",
-        "console.read()"
-      ],
-      correcta: 1,
-    },
-    {
-      texto: "¿Qué hace esta línea?\n\nnumero = int(input())",
-      opciones: [
-        "Lee un número entero ingresado por el usuario",
-        "Convierte texto en decimal",
-        "Imprime un número",
-        "Lee un archivo"
-      ],
-      correcta: 0,
-    },
-    {
-      texto: "¿Cuál de estas opciones ordena una lista llamada datos?",
-      opciones: [
-        "ordenar(datos)",
-        "datos.sort()",
-        "datos.ordenar()",
-        "sort(datos)"
-      ],
-      correcta: 1,
-    },
-    {
-      texto: "¿Cómo puedes filtrar los números pares de una lista llamada numeros?",
-      opciones: [
-        "pares = [n for n in numeros if n % 2 == 0]",
-        "pares = numeros.todos(n % 2 == 0)",
-        "pares = numeros.filtrar(par)",
-        "pares = numeros.2n"
-      ],
-      correcta: 0,
-    },
-    {
-      texto: "¿Qué hace este código?\n\ndatos = [1, 2, 3]\ndatos.append(4)",
-      opciones: [
-        "Elimina el último número",
-        "Agrega el número 4 a la lista",
-        "Convierte la lista en cadena",
-        "Reemplaza el primer número"
-      ],
-      correcta: 1,
-    },
-    {
-      texto: "¿Qué función se usa para conocer la cantidad de elementos en una lista?",
-      opciones: [
-        "size()",
-        "length()",
-        "count()",
-        "len()"
-      ],
-      correcta: 3,
-    }
-  ]
-  },
-  {
-    moduleId: 6,
+    moduleId: 5,
     preguntas: [
       {
-        texto: "¿Qué es un NameError en Python?",
+        texto: "¿Qué es una lista en Python?",
         opciones: [
-          "Dividir por cero",
-          "Usar una variable que no existe",
-          "Olvidar un signo de dos puntos",
-          "Sumar texto y números"
+          "Una función especial",
+          "Un tipo de dato que almacena varios elementos",
+          "Un número decimal",
+          "Un texto en mayúsculas"
         ],
-        correcta: 1
+        correcta: 1,
       },
       {
-        texto: "¿Qué causa un ZeroDivisionError?",
+        texto: "¿Cómo se accede al primer elemento de una lista llamada datos?",
         opciones: [
-          "Escribir mal una variable",
-          "Intentar dividir por cero",
-          "Usar un bucle infinito",
-          "No cerrar un paréntesis"
+          "datos(1)",
+          "datos[1]",
+          "datos[0]",
+          "datos{0}"
         ],
-        correcta: 1
+        correcta: 2,
       },
       {
-        texto: "¿Qué es un SyntaxError?",
+        texto: "¿Qué es un diccionario en Python?",
         opciones: [
-          "Un error al escribir mal el código",
-          "Un error al usar una variable",
-          "Un error al dividir números",
-          "Un error al crear funciones"
+          "Una lista de textos",
+          "Un tipo de dato que guarda pares clave-valor",
+          "Una función para ordenar listas",
+          "Un conjunto de variables globales"
         ],
-        correcta: 0
+        correcta: 1,
       },
       {
-        texto: "¿Cómo puedes evitar errores en tu código?",
+        texto: "¿Cómo accedes al valor de la clave 'nombre' en un diccionario llamado persona?",
         opciones: [
-          "Escribir rápido",
-          "Usar nombres claros y revisar el código",
-          "Ignorar los errores",
-          "Usar siempre print()"
+          "persona.nombre",
+          "persona[nombre]",
+          "persona['nombre']",
+          "persona->nombre"
         ],
-        correcta: 1
+        correcta: 2,
       },
       {
-        texto: "¿Qué hace print() al depurar código?",
+        texto: "¿Cuál es la forma correcta de leer texto del usuario en Python?",
         opciones: [
-          "Corrige errores",
-          "Muestra valores de variables",
-          "Crea nuevas variables",
-          "Para el programa"
+          "leer()",
+          "input()",
+          "scanf()",
+          "console.read()"
         ],
-        correcta: 1
+        correcta: 1,
       },
       {
-        texto: "¿Qué hace este código?\n\nx = 5\nprint(x)",
+        texto: "¿Qué hace esta línea?\n\nnumero = int(input())",
         opciones: [
-          "Imprime 5",
-          "Da un error",
-          "Imprime 'x'",
-          "No hace nada"
+          "Lee un número entero ingresado por el usuario",
+          "Convierte texto en decimal",
+          "Imprime un número",
+          "Lee un archivo"
         ],
-        correcta: 0
+        correcta: 0,
       },
       {
-        texto: "¿Qué hace un bloque try-except?",
+        texto: "¿Cuál de estas opciones ordena una lista llamada datos?",
         opciones: [
-          "Repite un código",
-          "Maneja errores sin detener el programa",
-          "Crea variables",
-          "Imprime mensajes"
+          "ordenar(datos)",
+          "datos.sort()",
+          "datos.ordenar()",
+          "sort(datos)"
         ],
-        correcta: 1
+        correcta: 1,
       },
       {
-        texto: "¿Qué imprime este código?\n\ntry:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print('Error')",
+        texto: "¿Cómo puedes filtrar los números pares de una lista llamada numeros?",
         opciones: [
-          "10",
-          "Error",
-          "Nada",
-          "0"
+          "pares = [n for n in numeros if n % 2 == 0]",
+          "pares = numeros.todos(n % 2 == 0)",
+          "pares = numeros.filtrar(par)",
+          "pares = numeros.2n"
         ],
-        correcta: 1
+        correcta: 0,
       },
       {
-        texto: "¿Qué hace raise en Python?",
+        texto: "¿Qué hace este código?\n\ndatos = [1, 2, 3]\ndatos.append(4)",
         opciones: [
-          "Crea una variable",
-          "Lanza un error personalizado",
-          "Imprime un mensaje",
-          "Para un bucle"
+          "Elimina el último número",
+          "Agrega el número 4 a la lista",
+          "Convierte la lista en cadena",
+          "Reemplaza el primer número"
         ],
-        correcta: 1
+        correcta: 1,
       },
       {
-        texto: "¿Qué imprime este código?\n\ntry:\n    raise ValueError('Mal')\nexcept ValueError as e:\n    print(e)",
+        texto: "¿Qué función se usa para conocer la cantidad de elementos en una lista?",
         opciones: [
-          "Mal",
-          "ValueError",
-          "Nada",
-          "Error"
+          "size()",
+          "length()",
+          "count()",
+          "len()"
         ],
-        correcta: 0
+        correcta: 3,
       }
     ]
-  }
+  },
+  {
+    "moduleId": 7,
+    "preguntas": [
+      {
+        "texto": "¿Qué es una clase en programación orientada a objetos?",
+        "opciones": [
+          "Un conjunto de instrucciones que realiza una tarea",
+          "Un plano o molde para crear objetos",
+          "Un tipo de dato como texto o número",
+          "Una función para modificar datos"
+        ],
+        "correcta": 1
+      },
+      {
+        "texto": "¿Qué es un constructor en una clase?",
+        "opciones": [
+          "Una función especial que inicializa los objetos",
+          "Una forma de eliminar atributos de un objeto",
+          "Una variable global para almacenar datos",
+          "Un bucle que recorre una lista"
+        ],
+        "correcta": 0
+      },
+      {
+        "texto": "¿Cuál es la palabra clave usada para definir una clase en Python?",
+        "opciones": [
+          "object",
+          "define",
+          "class",
+          "create"
+        ],
+        "correcta": 2
+      },
+      {
+        "texto": "¿Cómo se crea un objeto a partir de una clase llamada Perro?",
+        "opciones": [
+          "Perro = objeto()",
+          "mi_perro = Perro()",
+          "crear Perro()",
+          "Perro.crear()"
+        ],
+        "correcta": 1
+      },
+      {
+        "texto": "¿Qué hace el método __init__ en una clase?",
+        "opciones": [
+          "Define el comportamiento por defecto de un objeto",
+          "Define los atributos y valores iniciales del objeto",
+          "Imprime información del objeto",
+          "Elimina un objeto existente"
+        ],
+        "correcta": 1
+      },
+      {
+        "texto": "¿Cómo se accede al atributo nombre de un objeto mi_perro?",
+        "opciones": [
+          "mi_perro.nombre",
+          "mi_perro[nombre]",
+          "mi_perro('nombre')",
+          "mi_perro->nombre"
+        ],
+        "correcta": 0
+      },
+      {
+        "texto": "¿Cómo se llama un método ladrar() de un objeto mi_perro?",
+        "opciones": [
+          "mi_perro:ladrar()",
+          "mi_perro.ladrar()",
+          "ladrar(mi_perro)",
+          "mi_perro->ladrar()"
+        ],
+        "correcta": 1
+      },
+      {
+        "texto": "¿Qué son los atributos de un objeto?",
+        "opciones": [
+          "Las funciones que puede realizar",
+          "Los valores o características que tiene",
+          "El tipo de dato del objeto",
+          "El nombre de la clase a la que pertenece"
+        ],
+        "correcta": 1
+      },
+      {
+        "texto": "¿Qué son los métodos de un objeto?",
+        "opciones": [
+          "Las variables locales de una función",
+          "Los nombres de cada atributo",
+          "Las acciones o comportamientos del objeto",
+          "El tipo de datos usado por los atributos"
+        ],
+        "correcta": 2
+      },
+      {
+        "texto": "¿Qué representa un objeto en POO?",
+        "opciones": [
+          "Un tipo de dato",
+          "Una instancia concreta de una clase",
+          "Una lista de atributos",
+          "Un conjunto de instrucciones"
+        ],
+        "correcta": 1
+      }
+    ]
+  },
+  {
+    "moduleId": 8,
+    "preguntas": [
+      {
+        "texto": "¿Qué es la herencia en programación orientada a objetos?",
+        "opciones": [
+          "Permite que una clase hija obtenga atributos y métodos de una clase padre",
+          "Oculta información en una clase",
+          "Permite combinar objetos dentro de otros",
+          "Permite que un objeto se comporte de forma diferente según el contexto"
+        ],
+        "correcta": 0
+      },
+      {
+        "texto": "¿Cuál es el símbolo usado comúnmente para indicar un atributo privado en Python?",
+        "opciones": [
+          "_",
+          "$",
+          "@",
+          "!"
+        ],
+        "correcta": 0
+      },
+      {
+        "texto": "¿Qué es el polimorfismo?",
+        "opciones": [
+          "Permite que objetos de distintas clases usen el mismo nombre de método y hagan cosas distintas",
+          "Permite combinar objetos dentro de otros",
+          "Permite ocultar atributos y métodos",
+          "Permite crear objetos desde clases"
+        ],
+        "correcta": 0
+      },
+      {
+        "texto": "¿Qué es la composición en POO?",
+        "opciones": [
+          "Reutilizar código mediante clases padres e hijas",
+          "Combinar varios objetos para formar uno más complejo",
+          "Permitir comportamientos distintos según el contexto",
+          "Ocultar información y proteger atributos"
+        ],
+        "correcta": 1
+      },
+      {
+        "texto": "¿Cuál es un ejemplo de herencia?",
+        "opciones": [
+          "Una clase `Auto` que se convierte en `Barco`",
+          "Una clase `Perro` que hereda de `Animal`",
+          "Una clase que mezcla dos clases sin relación",
+          "Una clase con muchos atributos"
+        ],
+        "correcta": 1
+      },
+      {
+        "texto": "¿Qué permite hacer el encapsulamiento?",
+        "opciones": [
+          "Permite ocultar información dentro de una clase",
+          "Permite reutilizar código mediante herencia",
+          "Permite cambiar el tipo de dato de un atributo",
+          "Permite crear nuevos objetos"
+        ],
+        "correcta": 0
+      },
+      {
+        "texto": "Si tienes una clase `Perro` y `Gato`, ambas con un método `hablar()`, ¿qué permite que puedas llamarlo sin preocuparte de la clase?",
+        "opciones": [
+          "Herencia",
+          "Encapsulamiento",
+          "Polimorfismo",
+          "Composición"
+        ],
+        "correcta": 2
+      },
+      {
+        "texto": "¿Qué permite hacer la composición?",
+        "opciones": [
+          "Combinar varios objetos en uno solo, como un coche con un motor",
+          "Reutilizar métodos de una clase padre",
+          "Definir atributos ocultos",
+          "Reescribir métodos de la clase padre"
+        ],
+        "correcta": 0
+      },
+      {
+        "texto": "¿Qué significa que un objeto esté compuesto por otros?",
+        "opciones": [
+          "Que tiene métodos de la clase padre",
+          "Que contiene otros objetos para realizar tareas",
+          "Que tiene muchos atributos",
+          "Que es polimórfico"
+        ],
+        "correcta": 1
+      },
+      {
+        "texto": "¿Cuál es el beneficio del encapsulamiento?",
+        "opciones": [
+          "Combinar varios objetos dentro de uno",
+          "Permitir comportamientos distintos según la clase",
+          "Proteger datos y métodos del acceso externo",
+          "Reutilizar código entre clases"
+        ],
+        "correcta": 2
+      }
+    ]
+  },
 ];
