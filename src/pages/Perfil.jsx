@@ -6,12 +6,15 @@ import PopupCert from "../components/PopupCert";
 import Certificado from "../components/Certificado";
 import axios from "axios";
 import { changePasword, getName, getNameInstitution } from "../services/authService";
+import { descripcionesInsignias } from "../components/descripcionesInsignias";
 import "../assets/styles/Perfil.css";
 
 const Perfil = () => {
-  const [modalVisible, setModalVisible] = useState(null); // "cambio", "insignias" o "certificado"
-  const [modalPos, setModalPos] = useState({ top: "50%", left: "50%" });
-  const [certificadoPos, setCertificadoPos] = useState({ top: "50%", left: "50%" });
+  const [modalVisible, setModalVisible] = useState(null);
+  const [modalPos, setModalPos] = useState({ top: "10vh", left: "50%" });
+  const [modalSize, setModalSize] = useState({ width: "400px", minHeight: "400px", maxHeight: "95vh" });
+  const [certificadoPos, setCertificadoPos] = useState({ top: "10vh", left: "50%" });
+  const [descripcionSeleccionada, setDescripcionSeleccionada] = useState(null);
   const navigate = useNavigate();
 
   const [userName, setUserName] = useState("");
@@ -23,24 +26,16 @@ const Perfil = () => {
   const [insigniasCount, setInsigniasCount] = useState(0);
   const [modulosCompletados, setModulosCompletados] = useState(0);
 
-
   useEffect(() => {
+    console.log("Descripciones de insignias:", descripcionesInsignias);
     if (email) {
       getName(email)
-        .then((name) => {
-          setUserName(name);
-        })
-        .catch((error) => {
-          console.error("Error al obtener el nombre del usuario:", error);
-        });
+        .then((name) => setUserName(name))
+        .catch((error) => console.error("Error al obtener el nombre del usuario:", error));
 
       getNameInstitution(email)
-        .then((instName) => {
-          setInstitutionName(instName);
-        })
-        .catch((error) => {
-          console.error("Error al obtener el nombre de la institución:", error);
-        });
+        .then((instName) => setInstitutionName(instName))
+        .catch((error) => console.error("Error al obtener el nombre de la institución:", error));
 
       // Verificar disponibilidad del certificado
       fetch(`http://localhost:4000/certificado/${email}`)
@@ -53,30 +48,39 @@ const Perfil = () => {
       fetch(`http://localhost:4000/progreso/${email}`)
         .then((res) => res.json())
         .then((data) => {
-        console.log("Datos recibidos de modulos-completados:", data);
-        const completados = data.maxModulo;
-        setModulosCompletados(completados);})
-        .catch((error) => console.error("Error al obtener módulos completados:", error));
+          console.log("Datos recibidos de modulos-completados:", data);
+          setModulosCompletados(data.maxModulo);
+        })
+        .catch((error) => console.error("Error al obtener módulos:", error));
     }
   }, [email]);
 
-useEffect(() => {
-  const fetchInsignias = async () => {
-    try {
-      const res = await axios.get(`http://localhost:4000/insignias-desbloqueadas/${email}`);
-      setInsigniasDesbloqueadas(res.data.desbloqueadas);
-      setInsigniasCount(res.data.desbloqueadas.length);
-    } catch (error) {
-      console.error("Error al obtener las insignias desbloqueadas:", error);
-    }
-  };
+  useEffect(() => {
+    const fetchInsignias = async () => {
+      try {
+        const res = await axios.get(`http://localhost:4000/insignias-desbloqueadas/${email}`);
+        console.log("Insignias desbloqueadas recibidas:", res.data.desbloqueadas);
+        setInsigniasDesbloqueadas(res.data.desbloqueadas || []);
+        setInsigniasCount(res.data.desbloqueadas ? res.data.desbloqueadas.length : 0);
+      } catch (error) {
+        console.error("Error al obtener las insignias desbloqueadas:", error);
+      }
+    };
 
-  if (email) {
-    fetchInsignias();
-  }
-}, [email]);
+    if (email) fetchInsignias();
 
+    //para pruebas: descomentar para simular insignias desbloqueadas
+    //setInsigniasDesbloqueadas([1, 2, 3, 10]);
+    //setInsigniasCount(4);
+  }, [email]);
 
+  useEffect(() => {
+    setModalSize({
+      width: "400px",
+      minHeight: descripcionSeleccionada ? "500px" : "400px",
+      maxHeight: "95vh",
+    });
+  }, [descripcionSeleccionada]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -90,52 +94,28 @@ useEffect(() => {
       return;
     }
 
-    try {
-      changePasword(email, currentPassword, newPassword)
-        .then(() => {
-          alert("Contraseña cambiada con éxito");
-          setModalVisible(null);
-        })
-        .catch((error) => {
-          console.error("Error al cambiar la contraseña:", error);
-          alert("Error al cambiar la contraseña. Intenta nuevamente.");
-        });
-    } catch (error) {
-      console.error("Error al cambiar la contraseña:", error);
-      alert("Error al cambiar la contraseña. Intenta nuevamente.");
-    }
+    changePasword(email, currentPassword, newPassword)
+      .then(() => {
+        alert("Contraseña cambiada con éxito");
+        setModalVisible(null);
+      })
+      .catch((error) => {
+        console.error("Error al cambiar la contraseña:", error);
+        alert("Error al cambiar la contraseña.");
+      });
   };
 
   const abrirModalDesde = (e, tipo) => {
-    if (tipo === "certificado") {
-      // Posición especial para certificado
-      const scrollX = window.scrollX || window.pageXOffset;
-      const centerLeft = e.target.getBoundingClientRect().left + scrollX + e.target.offsetWidth / 2;
-
-      setModalPos({ top: `30vh`, left: `${centerLeft}px` });
-    } else {
-      const rect = e.target.getBoundingClientRect();
-      const scrollY = window.scrollY || window.pageYOffset;
-      const scrollX = window.scrollX || window.pageXOffset;
-
-      const centerTop = rect.top + scrollY + rect.height / 2;
-      const centerLeft = rect.left + scrollX + rect.width / 2;
-
-      setModalPos({ top: `${centerTop}px`, left: `${centerLeft}px` });
-    }
-
+    setModalPos({ top: "10vh", left: "50%" });
     setModalVisible(tipo);
   };
 
   const TituloPorModulo = (modulo) => {
-  const titulos = [
-    "Trainee", "Explorador", "Aventurero", "Mago",
-    "Guardián", "Maestro", "Gran Maestro", "Héroe"
-  ];
-  if (modulo >= 1 && modulo <= 8) {
-    return titulos[modulo - 1];
-  }
-  return "No hay título";
+    const titulos = [
+      "Trainee", "Explorador", "Aventurero", "Mago",
+      "Guardián", "Maestro", "Gran Maestro", "Héroe"
+    ];
+    return modulo >= 1 && modulo <= 8 ? titulos[modulo - 1] : "No hay título";
   };
 
   return (
@@ -157,14 +137,14 @@ useEffect(() => {
         <div className="perfil-nivel">
           <p className="font-bold text-lg">Bienvenido, pequeño programador</p>
           <div className="w-48 h-4 bg-gray-200 rounded-full overflow-hidden">
-            <div className="h-full bg-blue-500" style={{ width: '65%' }}></div>
+            <div className="h-full bg-blue-500" style={{ width: "65%" }}></div>
           </div>
           <p className="text-sm text-gray-600">
             Institución: {institutionName || "No perteneces a ninguna institución"}
           </p>
           <div className="perfil-stats">
             <p><strong>Módulo actual:</strong> {modulosCompletados}</p>
-            <p><strong>Titulo otorgado:</strong> {TituloPorModulo(modulosCompletados)} </p>
+            <p><strong>Título otorgado:</strong> {TituloPorModulo(modulosCompletados)}</p>
             <p><strong>Insignias obtenidas:</strong> {insigniasCount}</p>
           </div>
         </div>
@@ -196,7 +176,7 @@ useEffect(() => {
         visible={modalVisible === "cambio"}
         onClose={() => setModalVisible(null)}
         title="Cambiar Contraseña"
-        triggerPosition={modalPos}
+        size={modalSize}
       >
         <form onSubmit={handleSubmit}>
           <input name="currentPassword" type="password" placeholder="Contraseña actual" required />
@@ -206,38 +186,69 @@ useEffect(() => {
         </form>
       </PopupModal>
 
-      {/* Modal: Insignias */}
-<PopupModal
-  visible={modalVisible === "insignias"}
-  onClose={() => setModalVisible(null)}
-  title="Insignias"
-  triggerPosition={modalPos}
->
-  <div className="insignias-grid">
-    {[...Array(35)].map((_, i) => {
-      const id = i + 1;
-      const nombre = `insignia${id}`;
-      const bn = require(`../assets/insignias/${nombre}-bn.png`);
-      const color = require(`../assets/insignias/${nombre}-color.png`);
-      const estaDesbloqueada = insigniasDesbloqueadas.includes(id);
+      <PopupModal
+        visible={modalVisible === "insignias"}
+        onClose={() => {
+          setModalVisible(null);
+          setDescripcionSeleccionada(null);
+        }}
+        title="Insignias"
+        size={modalSize}
+      >
+        <div className="insignias-grid">
+          {[...Array(35)].map((_, i) => {
+            const id = i + 1;
+            const nombre = `insignia${id}`;
+            let bn, color;
+            try {
+              bn = require(`../assets/insignias/${nombre}-bn.png`);
+              color = require(`../assets/insignias/${nombre}-color.png`);
+              console.log(`Cargando insignia ${id}:`, bn, color);
+            } catch (error) {
+              console.error(`Error al cargar imágenes para insignia ${id}:`, error);
+              return null;
+            }
+            const estaDesbloqueada = insigniasDesbloqueadas.includes(id);
+            console.log(`Insignia ${id} desbloqueada:`, estaDesbloqueada);
 
-      return (
-        <img
-          key={id}
-          src={estaDesbloqueada ? color : bn}
-          alt={`Insignia ${id}`}
-          className="insignia"
-          onMouseEnter={(e) => {
-            if (!estaDesbloqueada) e.currentTarget.src = color;
-          }}
-          onMouseLeave={(e) => {
-            if (!estaDesbloqueada) e.currentTarget.src = bn;
-          }}
-        />
-      );
-    })}
-  </div>
-</PopupModal>
+            return (
+              <img
+                key={id}
+                src={estaDesbloqueada ? color : bn}
+                alt={`Insignia ${id}`}
+                className="insignia"
+                onClick={() => {
+                  console.log("Clic en insignia ID:", id, "Desbloqueada:", estaDesbloqueada);
+                  if (estaDesbloqueada) {
+                    setDescripcionSeleccionada(id);
+                  } else {
+                    console.log("Insignia no desbloqueada, no se muestra descripción");
+                  }
+                }}
+              />
+            );
+          })}
+        </div>
+
+        {descripcionSeleccionada && (
+          <div className="descripcion-insignia">
+            <h4>Insignia #{descripcionSeleccionada}</h4>
+            {(() => {
+              const descripcion = descripcionesInsignias[descripcionSeleccionada - 1] || "Descripción no disponible";
+              const partes = descripcion.split("!", 2);
+              const subtitulo = partes[0].trim();
+              const cuerpo = partes[1] ? partes[1].trim() : "";
+              console.log(`Descripción insignia ${descripcionSeleccionada}:`, { subtitulo, cuerpo });
+              return (
+                <>
+                  <h5>{subtitulo}</h5>
+                  {cuerpo && <p>{cuerpo}</p>}
+                </>
+              );
+            })()}
+          </div>
+        )}
+      </PopupModal>
 
 
       {/* Modal: Certificado */}
