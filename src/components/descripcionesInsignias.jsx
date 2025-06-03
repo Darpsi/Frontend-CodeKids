@@ -32,6 +32,6 @@ export const descripcionesInsignias = [
     "Usó pistas para aprender mejor ¡Aprender también es saber pedir ayuda!", 
     "Terminó un módulo sin usar ninguna pista ¡Sin ayuda! Completaste un módulo por tu cuenta.", 
     "Jugó un minijuego por primera vez ¡La diversión comienza! Jugaste tu primer minijuego.",
-    "¡Personalizó su perfil! Le diste tu toque personal a tu perfil",
+    "¡Personalizó su perfil! Le diste tu toque personal a tu perfil.",
     "Descubrió un secreto escondido ¡Explorador experto! Encontraste un secreto oculto."
 ];
