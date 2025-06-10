@@ -5,8 +5,9 @@ const PopupCert = ({ visible, onClose, title, children, triggerPosition }) => {
   if (!visible) return null;
 
   const modalStyle = {
-    top: triggerPosition.top,
-    left: triggerPosition.left,
+    position: "fixed",
+    top: "50%",
+    left: "50%",
     transform: "translate(-50%, -50%)"
   };
 
